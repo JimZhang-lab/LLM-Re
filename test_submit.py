@@ -460,9 +460,8 @@ class HierarchicalEntityExtractor:
         # Build coarse extraction prompt
         coarse_types_str = ", ".join(coarse_types_with_other)
         
-        # Select examples based on language (check if Chinese characters in sentence)
-        has_chinese = any('\u4e00' <= char <= '\u9fff' for char in sentence)
-        if has_chinese:
+        # Select examples based on language environment variable
+        if self.language.lower() == "chinese":
             examples = HIERARCHICAL_PROMPTS.get("coarse_extraction_examples_zh", 
                                                HIERARCHICAL_PROMPTS["coarse_extraction_examples_en"])
         else:
@@ -830,10 +829,17 @@ Now, carefully review the text again and find ANY MISSED entities of type '{coar
         
         for attempt in range(max_retries + 1):
             try:
-                # Get examples for this coarse type
-                examples = HIERARCHICAL_PROMPTS["fine_extraction_examples"].get(
+                # Get examples for this coarse type based on language
+                if self.language.lower() == "chinese":
+                    examples_dict = HIERARCHICAL_PROMPTS.get("fine_extraction_examples_zh", 
+                                                            HIERARCHICAL_PROMPTS["fine_extraction_examples"])
+                else:
+                    examples_dict = HIERARCHICAL_PROMPTS.get("fine_extraction_examples_en", 
+                                                            HIERARCHICAL_PROMPTS["fine_extraction_examples"])
+                
+                examples = examples_dict.get(
                     coarse_type.lower(),
-                    HIERARCHICAL_PROMPTS["fine_extraction_examples"].get("person", "")
+                    examples_dict.get("person", examples_dict.get("人", ""))
                 )
                 
                 # Build fine extraction prompt (no limit on types)
@@ -1078,10 +1084,17 @@ Please provide ONE of the above fine-grained types in the format: Type: [type_na
         logger.info(f"📋 可用细粒度类型 ({len(fine_types)}个): {fine_types[:10]}{'...' if len(fine_types) > 10 else ''}")
         
         try:
-            # Get appropriate examples for this coarse type
-            examples = HIERARCHICAL_PROMPTS["re_extraction_examples"].get(
+            # Get appropriate examples for this coarse type based on language
+            if self.language.lower() == "chinese":
+                examples_dict = HIERARCHICAL_PROMPTS.get("re_extraction_examples_zh", 
+                                                        HIERARCHICAL_PROMPTS["re_extraction_examples"])
+            else:
+                examples_dict = HIERARCHICAL_PROMPTS.get("re_extraction_examples_en", 
+                                                        HIERARCHICAL_PROMPTS["re_extraction_examples"])
+            
+            examples = examples_dict.get(
                 coarse_type, 
-                HIERARCHICAL_PROMPTS["re_extraction_examples"].get("person", "")
+                examples_dict.get("person", examples_dict.get("人", ""))
             )
             
             # Build re-extraction prompt (no limit on types)

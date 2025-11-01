@@ -129,31 +129,54 @@ Type: [exact_fine_type_name]
 ---Your Answer---
 Type:"""
 
-HIERARCHICAL_PROMPTS["fine_extraction_examples"] = {
-    "person": """Example: Entity "薛瑞勇" (coarse: 人) in "薛瑞勇，男，汉族，1963年10月生，河北唐山人。"
-Available fine types: 研究者, 专家, 学者, 教授, 官员, 企业家, 作家, 编辑, 记者, 运动员, 艺术家, 演员, 导演, 歌手, 音乐家, 画家, 科学家, 工程师, 医生, 律师
-Answer: 研究者""",
+# 中文细粒度分类示例（从zh_data_train1.json选取）
+HIERARCHICAL_PROMPTS["fine_extraction_examples_zh"] = {
+    "人": """示例: 实体 "薛瑞勇" (粗粒度: 人) 出现在 "薛瑞勇，男，汉族，1963年10月生，河北唐山人。"
+可用细粒度类型: 概念
+答案: 概念""",
     
+    "职位": """示例: 实体 "记者" (粗粒度: 职位) 出现在 "截至9月末，深圳现金累计投放量同比出现负数。近日，一位接近监管部门人士对本报记者称。"
+可用细粒度类型: 概念
+答案: 概念""",
+    
+    "位置": """示例: 实体 "日本" (粗粒度: 位置) 出现在 "随后，日本、韩国、英国、德国等国际大公司纷纷前来。"
+可用细粒度类型: 国家, 城市, 省份, 地区, 乡镇, 村庄
+答案: 国家""",
+    
+    "组织机构": """示例: 实体 "宝钢" (粗粒度: 组织机构) 出现在 "据我所知，宝钢对于衍生品市场的操作相对比较谨慎，应该不会在期货市场上有很大损失。"
+可用细粒度类型: 政府, 大学, 公司, 银行, 企业, 组织, 机构
+答案: 公司""",
+    
+    "科学": """示例: 实体 "本科学历" (粗粒度: 科学) 出现在 "2007年7月加入工作，本科学历，自动化仪表高级工程师，精通热能工程专业。"
+可用细粒度类型: 学历, 专业, 学科, 概念
+答案: 学历""",
+}
+
+# 英文细粒度分类示例（从en_data_train1.json选取）
+HIERARCHICAL_PROMPTS["fine_extraction_examples_en"] = {
     "location": """Example: Entity "China" (coarse: location) in "In China, where it is known as bai lan (白蘭), the flowers are used to prepare yulan tea."
-Available fine types: address, amenity, area, astronomical object, atoll, basin, bridge, canyon, castle, city, coast, community, company, concept, continent, country, crater, delta, desert, district, facility
+Available fine types: address, city, country, province, region, town, village, district
 Answer: country""",
     
-    "organization": """Example: Entity "宝钢" (coarse: 组织机构) in "据我所知，宝钢对于衍生品市场的操作相对比较谨慎，应该不会在期货市场上有很大损失。"
-Available fine types: 政府, 大学, 公司, 银行, 企业, 组织, 机构, 协会, 联盟, 团队, 媒体, 学校, 医院, 研究所, 实验室
-Answer: 公司""",
+    "organization": """Example: Entity "Ritsumeikan University" (coarse: organization) in "A version of HIIT was based on a 1996 study by Ritsumeikan University Professor Izumi Tabata."
+Available fine types: university, company, government, bank, school, academy, institution
+Answer: university""",
     
     "science": """Example: Entity "C4 - C - N - PEG9" (coarse: science) in "Since C4 - C - N - PEG9 has relatively bigger headgroup size compared to the C12EO4."
-Available fine types: algorithm, chemical, concept, element, equipment, field, formula, manufacturing process, material, method, metric, mineral, model, molecule, organic compound, physical quantity, principle, protein, research, research area, scientific law, structure, substance, system, technique, technology, theory, unit
+Available fine types: algorithm, chemical, compound, element, formula, material, method, technology, theory
 Answer: chemical""",
     
     "biology": """Example: Entity "flowering plant" (coarse: biology) in "Rhododendron hippophaeoides is a species of flowering plant in the Ericaceae family."
-Available fine types: DNA, RNA, anatomy, animal, bacteria, biologist, biomedical, bone, botanist, cell line, chemical, disease, ecology, enzyme, gene, geneticist, metabolite, microorganism, molecule, nucleotide, organ, organism, plant, process, protein, researcher, species, tissue, virus
+Available fine types: DNA, RNA, animal, bacteria, plant, organism, species, tissue, virus
 Answer: plant""",
     
-    "职位": """Example: Entity "记者" (coarse: 职位) in "截至9月末，深圳现金累计投放量同比出现负数。近日，一位接近监管部门人士对本报记者称。"
-Available fine types: 概念
-Answer: 概念""",
+    "person": """Example: Entity "Professor" (coarse: person) in "A version of HIIT was based on a 1996 study by Ritsumeikan University Professor Izumi Tabata."
+Available fine types: researcher, expert, scholar, professor, scientist, engineer
+Answer: professor""",
 }
+
+# 向后兼容：默认使用中文示例
+HIERARCHICAL_PROMPTS["fine_extraction_examples"] = HIERARCHICAL_PROMPTS["fine_extraction_examples_zh"]
 
 # ============== Original Prompts (for backward compatibility) ==============
 
@@ -282,28 +305,48 @@ Type: [exact_type_name]
 ---Your Answer---
 Type:"""
 
-HIERARCHICAL_PROMPTS["re_extraction_examples"] = {
-    "person": """Example 1: Entity "薛瑞勇" in text "薛瑞勇，男，汉族，1963年10月生，河北唐山人。"
-Available types: 研究者, 专家, 学者, 教授, 官员, 企业家
-Answer: 研究者
-
-Example 2: Entity "记者" in text "近日，一位接近监管部门人士对本报记者称。"
-Available types: 概念, 职业, 专家, 学者
-Answer: 概念""",
+# 中文反向提取示例（从zh_data_train1.json选取）
+HIERARCHICAL_PROMPTS["re_extraction_examples_zh"] = {
+    "人": """示例 1: 实体 "薛瑞勇" 出现在 "薛瑞勇，男，汉族，1963年10月生，河北唐山人。"
+可用类型: 概念
+答案: 概念""",
     
+    "职位": """示例 1: 实体 "记者" 出现在 "近日，一位接近监管部门人士对本报记者称。"
+可用类型: 概念
+答案: 概念
+
+示例 2: 实体 "自动化仪表高级工程师" 出现在 "2007年7月加入工作，本科学历，自动化仪表高级工程师，精通热能工程专业。"
+可用类型: 专业, 职业, 概念
+答案: 专业""",
+    
+    "位置": """示例 1: 实体 "日本" 出现在 "随后，日本、韩国、英国、德国等国际大公司纷纷前来。"
+可用类型: 国家, 城市, 省份, 地区, 大陆
+答案: 国家
+
+示例 2: 实体 "深圳" 出现在 "截至9月末，深圳现金累计投放量同比出现负数。"
+可用类型: 国家, 城市, 省份, 地区
+答案: 城市""",
+    
+    "组织机构": """示例 1: 实体 "宝钢" 出现在 "据我所知，宝钢对于衍生品市场的操作相对比较谨慎。"
+可用类型: 公司, 政府, 大学, 银行, 企业, 组织
+答案: 公司""",
+    
+    "科学": """示例 1: 实体 "本科学历" 出现在 "2007年7月加入工作，本科学历，自动化仪表高级工程师。"
+可用类型: 学历, 专业, 学科
+答案: 学历
+
+示例 2: 实体 "热能工程专业" 出现在 "本科学历，自动化仪表高级工程师，精通热能工程专业。"
+可用类型: 学历, 专业, 学科
+答案: 专业""",
+}
+
+# 英文反向提取示例（从en_data_train1.json选取）
+HIERARCHICAL_PROMPTS["re_extraction_examples_en"] = {
     "location": """Example 1: Entity "China" in text "In China, where it is known as bai lan (白蘭), the flowers are used to prepare yulan tea."
 Available types: city, town, village, country, province, region
-Answer: country
-
-Example 2: Entity "日本" in text "随后，日本、韩国、英国、德国等国际大公司纷纷前来。"
-Available types: 国家, 城市, 省份, 地区, 大陆
-Answer: 国家""",
+Answer: country""",
     
-    "organization": """Example 1: Entity "宝钢" in text "据我所知，宝钢对于衍生品市场的操作相对比较谨慎。"
-Available types: 公司, 政府, 大学, 银行, 企业, 组织
-Answer: 公司
-
-Example 2: Entity "Ritsumeikan University" in text "A version of HIIT was based on a 1996 study by Ritsumeikan University Professor Izumi Tabata."
+    "organization": """Example 1: Entity "Ritsumeikan University" in text "A version of HIIT was based on a 1996 study by Ritsumeikan University Professor Izumi Tabata."
 Available types: university, company, government, bank, school, academy
 Answer: university""",
     
@@ -322,7 +365,14 @@ Answer: plant
 Example 2: Entity "Ericaceae" in text "Rhododendron hippophaeoides is a species of flowering plant in the Ericaceae family."
 Available types: plant, animal, bacteria, family, genus, species
 Answer: plant""",
+    
+    "person": """Example 1: Entity "Professor" in text "A version of HIIT was based on a 1996 study by Ritsumeikan University Professor Izumi Tabata."
+Available types: researcher, expert, scholar, professor, scientist
+Answer: professor""",
 }
+
+# 向后兼容：默认使用中文示例
+HIERARCHICAL_PROMPTS["re_extraction_examples"] = HIERARCHICAL_PROMPTS["re_extraction_examples_zh"]
 
 # User prompt for initial extraction
 HIERARCHICAL_PROMPTS["entity_extraction_user_prompt"] = """---Task---
