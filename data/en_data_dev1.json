@@ -1,0 +1,5740 @@
+[
+    {
+        "source": "FabNER",
+        "sentence": "After renewing the cylinder assembly , it was tested around Brighton and Eastleigh using an LNER Dynamometer car , where good running was experienced at high costs in fuel and effort on the part of the fireman .",
+        "coarse_types": [
+            "organization",
+            "science",
+            "politics",
+            "location",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Brighton",
+                "coarse_type": "location",
+                "fine_type": "city"
+            },
+            {
+                "name": "Eastleigh",
+                "coarse_type": "location",
+                "fine_type": "town"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The alterations of 5 - HT and 5 - HIAA levels in several regions of the brain under the conditions examined may indicate that IDPN ' s neurotoxicity primarily affects 5 - HT - containing neurones .",
+        "coarse_types": [
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A leading role has also occasionally been suggested for the Bank for International Settlements .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "medicine",
+            "film information",
+            "restaurant information"
+        ],
+        "entities": [
+            {
+                "name": "Bank for International Settlements",
+                "coarse_type": "organization",
+                "fine_type": "financial institution"
+            },
+            {
+                "name": "Bank for International Settlements",
+                "coarse_type": "finance",
+                "fine_type": "financial institution"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Red fox and the sea eagle are common predators in the area , the latter now being very common after decades of protection .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "product",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "yes obviously we have our special chapel that week",
+        "coarse_types": [
+            "finance",
+            "time",
+            "person"
+        ],
+        "entities": [
+            {
+                "name": "that week",
+                "coarse_type": "time",
+                "fine_type": "date"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The winery was shut down by Prohibition in 1919 , and the company sold off its assets to avoid bankruptcy .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "science",
+            "location",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Prohibition",
+                "coarse_type": "event",
+                "fine_type": "politics"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "List of countries by beer consumption per capita is led by the Czech Republic , followed by Germany and Austria .",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "computer science",
+            "film information",
+            "restaurant information",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Czech Republic",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Germany",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Austria",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Different glucocorticoid hormones ( GCH ) show differences in the intensity and in the kinetics of their immunomodulating activity .",
+        "coarse_types": [
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Arrow-shooting machines (  katapeltai  ) are briefly mentioned by Aeneas Tacticus in his treatise on siegecraft written around 350 BC .",
+        "coarse_types": [
+            "person",
+            "science",
+            "food",
+            "restaurant information",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Aeneas Tacticus",
+                "coarse_type": "person",
+                "fine_type": "historian"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "This species formerly occupied much of the Tennessee River system , where it was a common species .",
+        "coarse_types": [
+            "biology",
+            "product",
+            "science",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "while cold temperatures are generated mainly from the Fraser Valley in British Columbia .",
+        "coarse_types": [
+            "science",
+            "organization",
+            "food",
+            "time",
+            "event",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The term  black dwarf  still refers to a white dwarf that has cooled to the point that it no longer emits significant amounts of light .",
+        "coarse_types": [
+            "medicine",
+            "organization",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "the hills are isolated , rugged , and scenic , with spectacular bluffs along the Brazos River as it flows through the region .",
+        "coarse_types": [
+            "biology",
+            "medicine",
+            "food",
+            "restaurant information",
+            "location",
+            "politics",
+            "music",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Brazos River",
+                "coarse_type": "location",
+                "fine_type": "river"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The 3D macroporous structures were created via templating of polystyrene spheres , followed by infiltration of the desired precursor solution and annealing at high temperature .",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "time",
+            "biology",
+            "science",
+            "film information",
+            "restaurant information",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "polystyrene",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The epoch for the position measurements in the latest edition is J2000 .",
+        "coarse_types": [
+            "biology",
+            "literature",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "looking for takaras",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "food",
+            "event",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "takaras",
+                "coarse_type": "food",
+                "fine_type": "dish"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The first subgroup served as AD control ; the second one , which served as positive control , was treated orally with the conventional therapy for AD ( rivastigmine ) at a dose of 0 . 3 mg / kg body weight ( b . w . ) daily for 3 months .",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "medicine",
+            "biology",
+            "science",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "rivastigmine",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A consommé is made by adding a mixture of ground meats , together with mirepoix ( a combination of carrots , celery , and onion ) , tomatoes , and egg whites into either bouillon or stock .",
+        "coarse_types": [
+            "person",
+            "medicine",
+            "food",
+            "restaurant information",
+            "location",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "bouillon",
+                "coarse_type": "food",
+                "fine_type": "soup"
+            },
+            {
+                "name": "stock",
+                "coarse_type": "food",
+                "fine_type": "mixture"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In conclusion , we find that sinapic acid exhibits hepatoprotective and antifibrotic effects against DMN - induced liver injury , most likely due to its antioxidant activities of scavenging radicals , its capacity to suppress TGF - beta 1 and its ability to attenuate activation of hepatic stellate cells .",
+        "coarse_types": [
+            "biology",
+            "science",
+            "film information",
+            "restaurant information",
+            "location",
+            "politics",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "sinapic acid",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            },
+            {
+                "name": "DMN",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the black Audi TT RS 8S on the Upper-part of the image and the olive yellow Dongfeng Dfsk d sven two plus on the bottom-left",
+        "coarse_types": [
+            "vehicle information",
+            "computer science",
+            "film information",
+            "restaurant information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Upper-part",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            },
+            {
+                "name": "bottom-left",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            },
+            {
+                "name": "TT RS 8S",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "Dfsk d sven two plus",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "black",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "olive yellow",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "Audi",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Dongfeng",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": ") is the smallest administrative division in Haiti .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "time",
+            "biology",
+            "medicine",
+            "location",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Haiti",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In 1943 she was requisitioned as a dumb lighter ( coal hulk ) by the Royal Australian Navy for service with other hulks in New Guinea waters .",
+        "coarse_types": [
+            "biology",
+            "product",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A clay figurine of the 4th millennium BC from a temple site on the island of Malta , depicts a woman masturbating .",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "food",
+            "film information",
+            "location",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Malta",
+                "coarse_type": "location",
+                "fine_type": "island"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Primovula santacarolinensis  is a species of sea snail , a marine gastropod mollusk in the family Ovulidae , the ovulids , cowry allies or false cowries .",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "time",
+            "biology",
+            "event",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "sea snail",
+                "coarse_type": "biology",
+                "fine_type": "animal"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A shell-shaped close cell lattice structure bio-mimicking a sea urchin shape was introduced for the load-bearing structure application .",
+        "coarse_types": [
+            "organization",
+            "biology",
+            "science",
+            "food",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "structure",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In the United Kingdom , Ireland , New Zealand , Australia , Switzerland , and Israel senior lecturer is a faculty position at a university or similar institution .",
+        "coarse_types": [
+            "computer science",
+            "location",
+            "politics",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "United Kingdom",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Ireland",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "New Zealand",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Australia",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Switzerland",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Israel",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Gloucestershire 280 and 188 ( J. Russell 57 , M. Lynch 50 ;",
+        "coarse_types": [
+            "organization",
+            "person",
+            "time",
+            "computer science",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Gloucestershire",
+                "coarse_type": "organization",
+                "fine_type": "team"
+            },
+            {
+                "name": "J. Russell",
+                "coarse_type": "person",
+                "fine_type": "athlete"
+            },
+            {
+                "name": "M. Lynch",
+                "coarse_type": "person",
+                "fine_type": "athlete"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a Multi-color BMW Five two zero i driving RIGHT with 19 km/h and a pale blue GMC S-15 driving away at a speed of 74 kilometers per hour",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "organization",
+            "person",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "BMW",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "GMC",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "RIGHT",
+                "coarse_type": "vehicle information",
+                "fine_type": "orientation of vehicle"
+            },
+            {
+                "name": "away",
+                "coarse_type": "vehicle information",
+                "fine_type": "orientation of vehicle"
+            },
+            {
+                "name": "Multi-color",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "pale blue",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "You 've been watching CNN Headline News .",
+        "coarse_types": [
+            "literature",
+            "biology",
+            "food",
+            "film information",
+            "restaurant information",
+            "location",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "CNN Headline News",
+                "coarse_type": "product",
+                "fine_type": "work of art"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a Yellow Honda NSR one five zero SP driving left with 133 km/h and a lemon yellow Suzuki GSX-S1000",
+        "coarse_types": [
+            "vehicle information",
+            "biology",
+            "computer science",
+            "food",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Honda NSR one five zero SP",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            },
+            {
+                "name": "Suzuki GSX-S1000",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Chalabi is the founder and leader of the Iraqi National Congress .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "vehicle information",
+            "science",
+            "film information",
+            "politics",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Chalabi",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Chalabi",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new black Audi Q five",
+        "coarse_types": [
+            "vehicle information",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Elimination of the inducible response requires simultaneous mutation of both sequences , however , in the presence of an intact EpRE the upstream AP - 1 site is irrelevant to induction .",
+        "coarse_types": [
+            "organization",
+            "vehicle information",
+            "person",
+            "biology",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "AP - 1 site",
+                "coarse_type": "biology",
+                "fine_type": "gene"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "68 Steve Stricker",
+        "coarse_types": [
+            "politics",
+            "music",
+            "person",
+            "medicine"
+        ],
+        "entities": [
+            {
+                "name": "Steve Stricker",
+                "coarse_type": "person",
+                "fine_type": "athlete"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He also pursued his research on Mira variables , also known as Long period variable stars .",
+        "coarse_types": [
+            "literature",
+            "biology",
+            "science",
+            "film information",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Mira",
+                "coarse_type": "science",
+                "fine_type": "astronomical object"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Yesterday , we had the French Foreign Minister , today we have Budor Homback , who is the head of the international community 's Stability Pact for Southeast Europe .",
+        "coarse_types": [
+            "time",
+            "medicine",
+            "biology",
+            "science",
+            "computer science",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Yesterday",
+                "coarse_type": "time",
+                "fine_type": "date"
+            },
+            {
+                "name": "Stability Pact for Southeast Europe",
+                "coarse_type": "event",
+                "fine_type": "politics"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2. Practicing how best to communicate .",
+        "coarse_types": [
+            "science",
+            "music",
+            "product",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "2.",
+                "coarse_type": "science",
+                "fine_type": "cardinal"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the Black Ferrari 308 GT4 on the Bottom of the image and the peach-blossom Cadillac STS on the upper-part",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "organization",
+            "time",
+            "medicine"
+        ],
+        "entities": [
+            {
+                "name": "Bottom",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            },
+            {
+                "name": "upper-part",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "but please do n't publish the names of the countries where the prisons are located .",
+        "coarse_types": [
+            "location",
+            "organization",
+            "finance",
+            "time",
+            "event"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Feeling anxious when the old lady 's not here , and looking listlessly out the window / So bored of this dumb view , it 's much better when the silly little thing 's around . ",
+        "coarse_types": [
+            "science",
+            "product",
+            "literature",
+            "politics",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Despite the name , they are not actually canines .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "biology",
+            "science",
+            "computer science",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "canines",
+                "coarse_type": "biology",
+                "fine_type": "animal"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The  black mamo  (  Drepanis funerea  ) , also known as the  hoa  , is an extinct species of bird once endemic to the island of Molokai ; there is also subfossil evidence of it having lived on Maui .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "time",
+            "medicine",
+            "biology",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "bird",
+                "coarse_type": "biology",
+                "fine_type": "animal"
+            },
+            {
+                "name": "Molokai",
+                "coarse_type": "location",
+                "fine_type": "island"
+            },
+            {
+                "name": "Maui",
+                "coarse_type": "location",
+                "fine_type": "island"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He went on to score three more league goals in the month of September , including a late equaliser in the 2 – 2 away draw to Valencia .",
+        "coarse_types": [
+            "science",
+            "location",
+            "biology",
+            "organization",
+            "medicine",
+            "literature"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A 2004 study found that while in general artificial trees pose little health risk from lead contamination , there do exist  worst-case scenarios  where major health risks to young children exist .",
+        "coarse_types": [
+            "biology",
+            "science",
+            "location",
+            "event"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "and we 're hopeful that under the new leadership that they 'll continue to do that .",
+        "coarse_types": [
+            "politics",
+            "product",
+            "science",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new fuchsia red Toyota Wildlander",
+        "coarse_types": [
+            "vehicle information",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a Black BMW S one zero zero zero XR driving AWAY with 107 km/h and a rose-madder Toyota Levin hybrid",
+        "coarse_types": [
+            "vehicle information",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The dough is essentially similar throughout the country ; a plain sweet bread made from flour , eggs , milk , butter , sugar and salt .",
+        "coarse_types": [
+            "organization",
+            "product",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Yes I am .",
+        "coarse_types": [
+            "finance",
+            "literature",
+            "science",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "She studied composition with Hans Vogt and Harald Genzmer and film music for a short time in Siena .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "food",
+            "event",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Due to the cost of investing in new equipment , long hours , BSE , foot-and-mouth disease and mainly falling milk prices , the county 's milk production has drastically reduced , with only a few farms still in dairy farming .",
+        "coarse_types": [
+            "literature",
+            "time",
+            "medicine",
+            "computer science",
+            "film information",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "BSE",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "foot-and-mouth disease",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He has also contributed vocals to a Rick Wakeman album ,  Criminal Record  .",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "time",
+            "medicine",
+            "computer science",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Rick Wakeman",
+                "coarse_type": "person",
+                "fine_type": "musician"
+            },
+            {
+                "name": "Rick Wakeman",
+                "coarse_type": "music",
+                "fine_type": "musician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new SILVER Peugeot E2008 appears in the top-right of the screen at a speed of 105 kilometers per hour",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "person",
+            "restaurant information",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "105 kilometers per hour",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle velocity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Lawmakers are expected to try to restore the funds once a pending deficit - cutting measure has been signed into law .",
+        "coarse_types": [
+            "science",
+            "organization",
+            "person",
+            "event",
+            "literature",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "UPGA is power ! '",
+        "coarse_types": [
+            "science",
+            "location",
+            "finance",
+            "time",
+            "politics"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A seal knob inscription carved by Wang for his wife .",
+        "coarse_types": [
+            "person",
+            "organization",
+            "medicine",
+            "food",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Wang",
+                "coarse_type": "person",
+                "fine_type": "artist"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "I think it 'll be pretty interesting",
+        "coarse_types": [
+            "science",
+            "organization",
+            "time",
+            "event",
+            "literature",
+            "politics"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "With progression of the tribochemical reaction , the sliding surfaces become very conformal and smooth , so that the pressure is greatly reduced and further wear is strongly reduced .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The relatively scanty number of examples , which could be justified by the variety and complexity of combined exposure , allows to conclude that life - style factors have considerable influence on interindividual differences in susceptibility to xenobiotics toxicity .",
+        "coarse_types": [
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Churrasco  is a staple food of the coastal region , especially Guayaquil .",
+        "coarse_types": [
+            "science",
+            "food",
+            "restaurant information",
+            "location",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Churrasco",
+                "coarse_type": "food",
+                "fine_type": "dish"
+            },
+            {
+                "name": "Guayaquil",
+                "coarse_type": "location",
+                "fine_type": "city"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In H4IIE rat hepatoma cells , glucocorticoids , retinoic acid and cyclic AMP ( cAMP ) increase PEPCK gene transcription whereas insulin and phorbol esters have the opposite effect .",
+        "coarse_types": [
+            "time",
+            "biology",
+            "computer science",
+            "film information",
+            "restaurant information",
+            "location",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "PEPCK gene",
+                "coarse_type": "biology",
+                "fine_type": "gene"
+            },
+            {
+                "name": "insulin",
+                "coarse_type": "biology",
+                "fine_type": "gene"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Bryce Dallas Howard , Jordana Brewster and Mélanie Laurent were also considered .",
+        "coarse_types": [
+            "film information",
+            "organization",
+            "person",
+            "medicine"
+        ],
+        "entities": [
+            {
+                "name": "Bryce Dallas Howard",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            },
+            {
+                "name": "Jordana Brewster",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            },
+            {
+                "name": "Mélanie Laurent",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The filling is made from minced fatty lamb and onion , pre-fried before filling .",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "time",
+            "biology",
+            "food",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "minced",
+                "coarse_type": "food",
+                "fine_type": "animal meat"
+            },
+            {
+                "name": "lamb",
+                "coarse_type": "food",
+                "fine_type": "animal meat"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "West Germany adopted the   as its official national anthem in 1952 for similar reasons , with only the third stanza sung on official occasions .",
+        "coarse_types": [
+            "food",
+            "film information",
+            "restaurant information",
+            "location",
+            "politics",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "West Germany",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "LIBS sampling inside the melt pool did not affect the clad properties according to optical microscopy and scanning electron microscopy measurements .",
+        "coarse_types": [
+            "person",
+            "medicine",
+            "science",
+            "food",
+            "restaurant information",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "sampling",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            },
+            {
+                "name": "properties",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            },
+            {
+                "name": "melt pool",
+                "coarse_type": "product",
+                "fine_type": "material"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "name a thriller with edward norton that was ok",
+        "coarse_types": [
+            "person",
+            "film information"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "but their niece like I think she 's the oldest Really ? uh-huh of all the kids I do n't know if you know much about the family but the one whose father got killed in Nicaragua fighting",
+        "coarse_types": [
+            "vehicle information",
+            "film information",
+            "music",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Nicaragua",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Under Palauan law foreigners are not allowed to own land there , but can only lease land for development .",
+        "coarse_types": [
+            "event",
+            "science",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It stretched as far north as southern Queensland and it was the worst dust storm in 70 years .",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "location",
+            "politics",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Queensland",
+                "coarse_type": "location",
+                "fine_type": "state"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Mr. Abrams said that Mr. Ortega is seeking to demobilize the Contras prior to the elections to remove any pressure to hold fair elections .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "biology",
+            "computer science",
+            "food",
+            "location",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Contras",
+                "coarse_type": "organization",
+                "fine_type": "political party"
+            },
+            {
+                "name": "Contras",
+                "coarse_type": "politics",
+                "fine_type": "political party"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "His father worked for the John Deere company and was eventually laid off , sending the family to deep poverty .",
+        "coarse_types": [
+            "biology",
+            "medicine",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The method of common sense espoused by such philosophers as Thomas Reid and G. E. Moore points out that whenever we investigate anything at all , whenever we start thinking about some subject , we have to make assumptions .",
+        "coarse_types": [
+            "person",
+            "time",
+            "medicine",
+            "biology",
+            "computer science",
+            "science",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Thomas Reid",
+                "coarse_type": "person",
+                "fine_type": "philosopher"
+            },
+            {
+                "name": "Thomas Reid",
+                "coarse_type": "science",
+                "fine_type": "philosopher"
+            },
+            {
+                "name": "G. E. Moore",
+                "coarse_type": "person",
+                "fine_type": "philosopher"
+            },
+            {
+                "name": "G. E. Moore",
+                "coarse_type": "science",
+                "fine_type": "philosopher"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Scoreboard in the Singer World",
+        "coarse_types": [
+            "event",
+            "science",
+            "food",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Singer World",
+                "coarse_type": "event",
+                "fine_type": "activity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It was found in 1887 from Halikko and it is dated to the 11 – 12th century .",
+        "coarse_types": [
+            "person",
+            "biology",
+            "food",
+            "film information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Halikko",
+                "coarse_type": "location",
+                "fine_type": "town"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The main crops grown are rice , onions , groundnuts and tomatoes .",
+        "coarse_types": [
+            "biology",
+            "literature",
+            "person",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The male thylacine had a pouch that acted as a protective sheath , covering his external reproductive organs while he ran through thick brush .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "food",
+            "medicine",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In an experiment involving zooplankton in artificial rock pools , local extinction rates were significantly higher in areas of interspecific competition .",
+        "coarse_types": [
+            "biology",
+            "medicine",
+            "organization",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Many other species of big game are hunted including kudu , antelope , and hartebeest .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "product",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Taken together, our findings suggest that tumor-derived gangliosides may blunt antitumor immune responses in patients with RCCs .",
+        "coarse_types": [
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "These locomotives , no longer in use , were used only in and around Mumbai with 1,5 kV DC power .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "medicine",
+            "literature",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It travels through the eastern part of Wallingford before entering the eastern part of the city of Meriden .",
+        "coarse_types": [
+            "biology",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Most of the findings , including remains of houses , date back to the years between 500 and 700 AD. It is thus known with confidence that the large traps and accompanying walls were used from the 6th century until the onset of the Black Death in the 14th century .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "For all but its final , the route lies within Plymouth County .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "time",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It 's about punishment .",
+        "coarse_types": [
+            "science",
+            "time",
+            "event",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The law claims that the basis of nutrition is the exchange of energy , and was applied to the study of obesity in the early 1900 s by Carl von Noorden .",
+        "coarse_types": [
+            "vehicle information",
+            "politics",
+            "person"
+        ],
+        "entities": [
+            {
+                "name": "Carl von Noorden",
+                "coarse_type": "person",
+                "fine_type": "physician"
+            },
+            {
+                "name": "Carl von Noorden",
+                "coarse_type": "medicine",
+                "fine_type": "physician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Near the container dock which was built on Ganjiang port , units such as Nanchang Customs , provincial sanitation inspection , commodity inspection , animal and plant quarantine , etc. established the  freight management area for the Nanchang port of the Nanchang freight port  .",
+        "coarse_types": [
+            "event",
+            "science",
+            "product",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , recent experimental studies of laboratory - synthesized and alkali - activated slag ( AAS ) binders have indicated that the calcium - sodium aluminosilicate hydrate [ C - ( N ) - A - S - H ] gel formed in these systems can be significantly cross - linked .",
+        "coarse_types": [
+            "literature",
+            "time",
+            "science",
+            "computer science",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "calcium - sodium aluminosilicate hydrate",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            },
+            {
+                "name": "C - ( N ) - A - S - H",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The idea of music as hypnosis developed from the work of Franz Mesmer .",
+        "coarse_types": [
+            "person",
+            "organization",
+            "time",
+            "biology",
+            "restaurant information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Franz Mesmer",
+                "coarse_type": "person",
+                "fine_type": "physician"
+            },
+            {
+                "name": "Franz Mesmer",
+                "coarse_type": "medicine",
+                "fine_type": "physician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Let the clever boy help find out the white Ferrari Four zero zero and deep orange BMW Four three zero i xDrive",
+        "coarse_types": [
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new WHITE BMW 320/6 appears in the BOTTOM LEFT of the screen at a speed of 97 kilometers per hour",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "computer science",
+            "science",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "97 kilometers per hour",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle velocity"
+            },
+            {
+                "name": "BOTTOM LEFT",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            },
+            {
+                "name": "320/6",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "WHITE",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "She then lost in the first round of the Qatar Total Open to Sorana Cîrstea .",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "science",
+            "restaurant information",
+            "event",
+            "music",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Qatar Total Open",
+                "coarse_type": "event",
+                "fine_type": "activity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "This study focuses on understanding the various influences of sandwich structures considering the following parameters : ( i ) nature of core shape , ( ii ) number of infill shapes , and ( iii ) orientation of cores , which affect the dynamic behavior of sandwich structures .",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "science",
+            "restaurant information",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "infill",
+                "coarse_type": "science",
+                "fine_type": "process parameter"
+            },
+            {
+                "name": "sandwich structures",
+                "coarse_type": "science",
+                "fine_type": "engineering feature"
+            },
+            {
+                "name": "parameters",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            },
+            {
+                "name": "orientation",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            },
+            {
+                "name": "dynamic",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Cupressus lusitanica  is an evergreen conifer tree with a conic to ovoid-conic crown , growing to 40 m tall .",
+        "coarse_types": [
+            "biology",
+            "literature",
+            "science",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "who stars in the movie profondo rosso",
+        "coarse_types": [
+            "person",
+            "time",
+            "film information"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , the higher concentrations ( 10 ( - 10 ) - 10 ( - 9 ) M ) of NP increased the amplitudes of IKv and inhibited ICa - L by reducing the peak values of ICa - L .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "But this decorative effect , thinks Cheng , was probably secondary to the functional purpose of compacting the clay .",
+        "coarse_types": [
+            "science",
+            "finance",
+            "time",
+            "event",
+            "literature"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "10- stealing the tires of one of the neighbors ,",
+        "coarse_types": [
+            "science",
+            "location",
+            "time",
+            "event",
+            "politics",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Human synovial fluid : detection of a new component .",
+        "coarse_types": [
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a SILVER Haima M8 driving Left with 163 km/h and a grass green BMW 545i",
+        "coarse_types": [
+            "vehicle information",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Is n't that bizarre ?",
+        "coarse_types": [
+            "finance",
+            "person",
+            "time",
+            "event",
+            "literature",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He later moved to France and then on to the Netherlands .",
+        "coarse_types": [
+            "biology",
+            "organization"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a Black Peugeot 807 driving this-way with 158 km/h and a prussian blue Chevrolet Chevette driving right at a speed of 62 kilometers per hour",
+        "coarse_types": [
+            "vehicle information",
+            "science",
+            "computer science",
+            "food",
+            "film information",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "807",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "Chevette",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "Black",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "prussian blue",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "this-way",
+                "coarse_type": "vehicle information",
+                "fine_type": "orientation of vehicle"
+            },
+            {
+                "name": "right",
+                "coarse_type": "vehicle information",
+                "fine_type": "orientation of vehicle"
+            },
+            {
+                "name": "Peugeot",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Chevrolet",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The patient was successfully treated with a graft stent .",
+        "coarse_types": [
+            "medicine",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Mayaw Biho , who calls himself half Amis , grew up in the Amis village of Cero ( Chunjih ) in Hualien County .",
+        "coarse_types": [
+            "literature",
+            "biology",
+            "film information",
+            "restaurant information",
+            "location",
+            "event",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Cero",
+                "coarse_type": "location",
+                "fine_type": "village"
+            },
+            {
+                "name": "Chunjih",
+                "coarse_type": "location",
+                "fine_type": "village"
+            },
+            {
+                "name": "Hualien County",
+                "coarse_type": "location",
+                "fine_type": "city"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the Blue Honda Brio on the TOP-RIGHT of the image and the dark grey Alfa Romeo Mille on the lower part",
+        "coarse_types": [
+            "politics",
+            "vehicle information",
+            "food"
+        ],
+        "entities": [
+            {
+                "name": "Honda",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Alfa Romeo",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Blue",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "dark grey",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Then , it continues to the southeast and curves to the east-northeast , to enter Americus .",
+        "coarse_types": [
+            "medicine",
+            "science",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "For sure I 'm not resigning .",
+        "coarse_types": [
+            "product",
+            "organization",
+            "science",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , in recent years , the development of novel ionizable cationic lipid formulations in conjunction with sophisticated procedures to carefully control the size of the nanoparticles has rapidly advanced options for a successful therapeutic application .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , a feature of chapbooks is the proliferation of provincial printers , especially in Scotland and Newcastle upon Tyne .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "what is it ?",
+        "coarse_types": [
+            "science",
+            "finance",
+            "time",
+            "literature",
+            "politics"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A cry from the heart from one of Iraq 's archaeologists .",
+        "coarse_types": [
+            "science",
+            "location",
+            "literature",
+            "politics",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Thirdly , according to a 1998 audit report , when Shandong Luneng Group was first established in 1995 , it had 150 million yuan in registered capital , and operational assets of 2.6 billion yuan .",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "organization",
+            "science",
+            "film information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Shandong",
+                "coarse_type": "location",
+                "fine_type": "province"
+            },
+            {
+                "name": "Thirdly",
+                "coarse_type": "science",
+                "fine_type": "ordinal"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "On 11 January 2018 , after twelve and a half years abroad , he returned home and became a Videoton FC player .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "restaurant information",
+            "location",
+            "event",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Videoton FC",
+                "coarse_type": "organization",
+                "fine_type": "club"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Şöbiyet  is a variation that includes fresh cream in the filling , in addition to the traditional nuts .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "event",
+            "literature",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Jeffery Cooover says he is now testing ways of regulating gene delivery in monkeys .",
+        "coarse_types": [
+            "politics",
+            "location",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Psychological effects include severe changes in body image , loss of ego boundaries , paranoia , and depersonalization .",
+        "coarse_types": [
+            "music",
+            "time",
+            "medicine",
+            "biology"
+        ],
+        "entities": [
+            {
+                "name": "paranoia",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "depersonalization",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "When informed by the blind prophet Tiresias that religious forces are against him , each king claims that the priest has been corrupted .",
+        "coarse_types": [
+            "science",
+            "time",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Overall the sheet-TPMS based cellular structures showed superior mechanical properties among all the tested structures .",
+        "coarse_types": [
+            "product",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "As for the nuclear program which the Gulf Cooperation Council has approved , I believe that among the most important reasons on which the Council agreed in this framework is to enter in this important industry , the importance of which not only includes a military aspect , but also a peaceful aspect , in order to establish an industry subject to strict controls that can not be violated , in order to guarantee its peaceful direction .",
+        "coarse_types": [
+            "event",
+            "politics",
+            "science",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "For example , Oscar K. Allen was widely recognized to be Huey Long 's puppet while serving as governor of Louisiana .",
+        "coarse_types": [
+            "person",
+            "organization",
+            "medicine",
+            "science",
+            "restaurant information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Oscar K. Allen",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Oscar K. Allen",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Huey Long",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Huey Long",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The national  flag of Bangladesh  ( , ) was adopted officially on 17 January 1972 .",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "science",
+            "film information",
+            "location",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Bangladesh",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The World Coal Association has pointed out that divesting from the fossil fuel industry does not necessarily result in a reduction of demand for fossil fuels , rather it would result in environmentally conscious investors losing influence over the operation of those companies .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "event",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In 1862 , paper money was issued without the backing of precious metals , due to the Civil War .",
+        "coarse_types": [
+            "literature",
+            "computer science",
+            "food",
+            "event",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Civil War",
+                "coarse_type": "event",
+                "fine_type": "war"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Instead of cancer initiation , it is therefore likely that Tsg101 plays a more predominant role in the progression of a subset of spontaneously arising breast cancers .",
+        "coarse_types": [
+            "literature",
+            "medicine",
+            "biology",
+            "science",
+            "computer science",
+            "location",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "cancer",
+                "coarse_type": "biology",
+                "fine_type": "anatomy"
+            },
+            {
+                "name": "breast cancers",
+                "coarse_type": "biology",
+                "fine_type": "anatomy"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Alcatra  , beef marinated in red wine , garlic and spices like cloves and whole allspice , then roasted in a clay pot , is a tradition of Terceira Island in the Azores .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "medicine",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He attended the University of New Orleans ( 1976 – 1979 ) .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "time",
+            "science",
+            "computer science",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "University of New Orleans",
+                "coarse_type": "organization",
+                "fine_type": "university"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "This fish is found in South and Southeast Asia in India , Andaman Islands , Malaysia , Thailand , and Indonesia .",
+        "coarse_types": [
+            "medicine",
+            "film information",
+            "restaurant information",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "South",
+                "coarse_type": "location",
+                "fine_type": "city"
+            },
+            {
+                "name": "Southeast Asia",
+                "coarse_type": "location",
+                "fine_type": "city"
+            },
+            {
+                "name": "India",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Andaman Islands",
+                "coarse_type": "location",
+                "fine_type": "island"
+            },
+            {
+                "name": "Malaysia",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Thailand",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Indonesia",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "As erotica was a form of social protest against the values of the culture at the time , as was with the famous book  The Romance of Lust  , written as a few volumes between 1873 – 1876 .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "medicine",
+            "food",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "The Romance of Lust",
+                "coarse_type": "organization",
+                "fine_type": "media"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the Black ZOTYE T three zero zero on the Upper-part of the image and the soft-red Audi A6 allroad quattro",
+        "coarse_types": [
+            "person",
+            "biology",
+            "computer science",
+            "film information",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "ZOTYE T three zero zero",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Joining the directorial staff in the first edition was liberal pastor-politician Friedrich Naumann ( its political director to 1913 ) , who shared editorial oversight with painter Hans Thoma and composer Hans Pfitzner .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "medicine",
+            "computer science",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Friedrich Naumann",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Friedrich Naumann",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Hans Thoma",
+                "coarse_type": "person",
+                "fine_type": "artist"
+            },
+            {
+                "name": "Hans Pfitzner",
+                "coarse_type": "person",
+                "fine_type": "musician"
+            },
+            {
+                "name": "Hans Pfitzner",
+                "coarse_type": "music",
+                "fine_type": "musician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The mortality rate for caged Rex is 10 – 15 % , mostly from respiratory disease .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The exchange argues that the product , which the SEC temporarily approved yesterday , will help ease rather than worsen any volatility in the stock market .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "person",
+            "time",
+            "computer science",
+            "event",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "yesterday",
+                "coarse_type": "time",
+                "fine_type": "date"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "0 and 6 .",
+        "coarse_types": [
+            "medicine"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "This marine species occurs off Norfolk Island at a depth of 230 m .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "food",
+            "medicine"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Let the clever boy help find out the SILVER Dodge D7 and black Bugatti Type 57S in the Top Left",
+        "coarse_types": [
+            "food",
+            "music",
+            "vehicle information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "D7",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "Type 57S",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Maple butter  , also known as  maple cream  or  maple spread  , is a confection made from maple syrup , by heating the syrup to approximately , cooling it to around , and beating it until it reaches a smooth consistency .",
+        "coarse_types": [
+            "science",
+            "location",
+            "biology",
+            "medicine",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Chien - lo began to realize that selling his manual labor was not a viable long - term option .",
+        "coarse_types": [
+            "event",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A woman in The Netherlands who uses her dogs to hunt in Austria has decided to give her dogs a new kind of treat : beer .",
+        "coarse_types": [
+            "person",
+            "biology",
+            "food",
+            "location",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "The Netherlands",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Austria",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The film premiered at the Fantasia International Film Festival on July 14 , 2016 .",
+        "coarse_types": [
+            "science",
+            "computer science",
+            "politics",
+            "event",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Fantasia International Film Festival",
+                "coarse_type": "event",
+                "fine_type": "activity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the lemon yellow Suzuki Intruder 1500 on the lower part of the image and the rose madder Dodge Kingsway on the bottom-right",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "organization",
+            "computer science",
+            "food",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Suzuki",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Dodge",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Intruder 1500",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "Kingsway",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "lemon yellow",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "rose madder",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Clinton adviser Morris announces resignation .",
+        "coarse_types": [
+            "person",
+            "organization",
+            "computer science",
+            "food",
+            "film information",
+            "restaurant information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Clinton",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Clinton",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Morris",
+                "coarse_type": "person",
+                "fine_type": "adviser"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "I think that Wal - Mart today as we speak is attempting to change uh health care for the American worker to the worse .",
+        "coarse_types": [
+            "biology",
+            "medicine",
+            "computer science",
+            "food",
+            "location",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "American",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Major depressive disorder , also known as unipolar depression or MDD , is twice as common in women .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "time",
+            "medicine",
+            "film information",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Major depressive disorder",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Two attempts by Mike Cumberlege to make the Corinth Canal unnavigable ended in failure .",
+        "coarse_types": [
+            "person",
+            "vehicle information",
+            "organization",
+            "food",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Mike Cumberlege",
+                "coarse_type": "person",
+                "fine_type": "civilian"
+            },
+            {
+                "name": "Corinth Canal",
+                "coarse_type": "location",
+                "fine_type": "facility"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Part of the border between Brazil and Peru is defined by the parallel .",
+        "coarse_types": [
+            "product",
+            "science",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "what was the best movie wes anderson directed",
+        "coarse_types": [
+            "person",
+            "organization",
+            "medicine",
+            "biology",
+            "restaurant information",
+            "politics",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "wes anderson",
+                "coarse_type": "person",
+                "fine_type": "director"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The type species is the laughing kookaburra .",
+        "coarse_types": [
+            "event",
+            "medicine",
+            "organization",
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The competitor who is temporarily in second place is the German athlete Bao Lizuo , with a total score of 355.02 points , slightly lower than Wei Lan .",
+        "coarse_types": [
+            "science",
+            "food",
+            "location",
+            "politics",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "second",
+                "coarse_type": "science",
+                "fine_type": "ordinal"
+            },
+            {
+                "name": "German",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A correlation has been demonstrated between the increase in the repeat number of this sequence and the severity of the disease .",
+        "coarse_types": [
+            "medicine"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "These properties , that is , well - controlled quantity and activity of conjugated biomolecules and specificity of interaction with target biomolecules may be exploited for the improvement of signal - to - noise ratio in sensor applications .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In August 2011 he signed for Tamworth .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "time",
+            "computer science",
+            "food",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Tamworth",
+                "coarse_type": "organization",
+                "fine_type": "club"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Our results suggest that the induction of STAT1 and STAT5 by Tax enhances cytokine -induced functions of virus-infected T-cells , hence the induction may play a role in IL-2 -dependent transformation steps of T-cells by HTLV-1 .",
+        "coarse_types": [
+            "restaurant information",
+            "time",
+            "biology"
+        ],
+        "entities": [
+            {
+                "name": "T-cells",
+                "coarse_type": "biology",
+                "fine_type": "cell type"
+            },
+            {
+                "name": "STAT1",
+                "coarse_type": "biology",
+                "fine_type": "protein"
+            },
+            {
+                "name": "STAT5",
+                "coarse_type": "biology",
+                "fine_type": "protein"
+            },
+            {
+                "name": "Tax",
+                "coarse_type": "biology",
+                "fine_type": "protein"
+            },
+            {
+                "name": "cytokine",
+                "coarse_type": "biology",
+                "fine_type": "protein"
+            },
+            {
+                "name": "IL-2",
+                "coarse_type": "biology",
+                "fine_type": "protein"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The larvae feed on various asters including  Symphyotrichum laeve  , and  Symphyotrichum oblongifolium  .",
+        "coarse_types": [
+            "time",
+            "medicine",
+            "biology",
+            "science",
+            "film information",
+            "event",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Symphyotrichum laeve",
+                "coarse_type": "biology",
+                "fine_type": "plant"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Atorvastatin was the most cost - effective HMG - CoA reductase inhibitor .",
+        "coarse_types": [
+            "person",
+            "biology",
+            "film information",
+            "restaurant information",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "HMG - CoA reductase",
+                "coarse_type": "biology",
+                "fine_type": "gene"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "after several miles and taking its more firmly northeast bearing to eventually run along the Delaware River shortly after entering Pike County , its last in the state .",
+        "coarse_types": [
+            "biology",
+            "medicine"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Notable visitors included Charles Dickens and Alexis de Tocqueville while notable inmates included Willie Sutton and Al Capone in 1929 .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "organization",
+            "time",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Charles Dickens",
+                "coarse_type": "person",
+                "fine_type": "writer"
+            },
+            {
+                "name": "Charles Dickens",
+                "coarse_type": "literature",
+                "fine_type": "writer"
+            },
+            {
+                "name": "Alexis de Tocqueville",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Alexis de Tocqueville",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Willie Sutton",
+                "coarse_type": "person",
+                "fine_type": "criminal"
+            },
+            {
+                "name": "Willie Sutton",
+                "coarse_type": "politics",
+                "fine_type": "criminal"
+            },
+            {
+                "name": "Al Capone",
+                "coarse_type": "person",
+                "fine_type": "gangster"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Friedrich Nietzsche argued that a fusion of the two was most desirable .",
+        "coarse_types": [
+            "person",
+            "time",
+            "computer science",
+            "food",
+            "film information",
+            "event",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Friedrich Nietzsche",
+                "coarse_type": "person",
+                "fine_type": "philosopher"
+            },
+            {
+                "name": "Friedrich Nietzsche",
+                "coarse_type": "science",
+                "fine_type": "philosopher"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Let the clever boy help find out the Yellow Mazda Mazda three and purple Chery A three hatchback",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "medicine",
+            "event",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Mazda Mazda three",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "We therefore used selective laser melting ( SLM ) to fabricate porous magnesium alloy ( WE43 ) scaffolds based on diamond unit cells .",
+        "coarse_types": [
+            "product",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Effects of tetrandrine and fangchinoline on experimental thrombosis in mice and human platelet aggregation .",
+        "coarse_types": [
+            "science",
+            "music",
+            "medicine",
+            "biology"
+        ],
+        "entities": [
+            {
+                "name": "thrombosis",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "platelet aggregation",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "tetrandrine",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            },
+            {
+                "name": "fangchinoline",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "With a maximum elevation of , it is the lowest of three mountain ranges on the Chilcotin Plateau extending east from the Coast Mountains .",
+        "coarse_types": [
+            "food",
+            "organization",
+            "restaurant information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Chilcotin Plateau",
+                "coarse_type": "location",
+                "fine_type": "plateau"
+            },
+            {
+                "name": "Coast Mountains",
+                "coarse_type": "location",
+                "fine_type": "mountain"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Celebrity blogging have also spawned stars such as Perez Hilton who is well known for not only blogging but also outing celebrities .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "medicine",
+            "biology",
+            "food",
+            "film information"
+        ],
+        "entities": [
+            {
+                "name": "Perez Hilton",
+                "coarse_type": "person",
+                "fine_type": "celebrity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In the valleys of Rangeet , Teesta , and Chumbi most precipitation during winter takes the form of snowfall .",
+        "coarse_types": [
+            "biology",
+            "food",
+            "restaurant information",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Rangeet",
+                "coarse_type": "location",
+                "fine_type": "river"
+            },
+            {
+                "name": "Teesta",
+                "coarse_type": "location",
+                "fine_type": "river"
+            },
+            {
+                "name": "Chumbi",
+                "coarse_type": "location",
+                "fine_type": "village"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Let the clever boy help find out the Multi-color Honda CBX250RS and caramel Ferrari 328 in the BOTTOM LEFT",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "computer science",
+            "film information",
+            "event",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Multi-color",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "caramel",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "CBX250RS",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "328",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "These are : Banja Luka , Mostar , Sarajevo , and East Sarajevo .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "event"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "and ah kind of stupidly so .",
+        "coarse_types": [
+            "science",
+            "organization",
+            "event",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Due to the limited supply of Hu BChE , strategies aimed at reducing the dose of enzyme are being explored .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Your email MSNBC dot com .",
+        "coarse_types": [
+            "politics",
+            "product",
+            "finance",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the Black Lexus RC three zero zero h on the Top of the image and the rose madder BMW 328",
+        "coarse_types": [
+            "vehicle information",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Some sources incorrectly show the highway extending west to Wiluna .",
+        "coarse_types": [
+            "event",
+            "organization",
+            "person",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "High entropy alloy AlCoCrFeNi was obtained by selective electron beam melting ( SEBM ) .",
+        "coarse_types": [
+            "organization",
+            "medicine",
+            "science",
+            "computer science",
+            "film information",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "alloy",
+                "coarse_type": "product",
+                "fine_type": "material"
+            },
+            {
+                "name": "selective electron beam melting",
+                "coarse_type": "science",
+                "fine_type": "manufacturing process"
+            },
+            {
+                "name": "SEBM",
+                "coarse_type": "science",
+                "fine_type": "manufacturing process"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "i am looking for a drama about cancer from the 2000s",
+        "coarse_types": [
+            "event",
+            "time",
+            "biology",
+            "computer science"
+        ],
+        "entities": [
+            {
+                "name": "2000s",
+                "coarse_type": "time",
+                "fine_type": "year"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "what is the movie dead by dawn about",
+        "coarse_types": [
+            "person",
+            "time",
+            "film information"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "what hours are the olive garden open",
+        "coarse_types": [
+            "person",
+            "restaurant information",
+            "time"
+        ],
+        "entities": [
+            {
+                "name": "olive garden",
+                "coarse_type": "restaurant information",
+                "fine_type": "restaurant name"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "-DOCSTART- 2 . Rain continues to fall , but not as intensely as Saturday night , and beginning to move off to the east . https://t.co/iMz4KtffB3",
+        "coarse_types": [
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Of the more than 420 Taiwanese - capital corporations that started operation last year , for the period from January to November , sales revenues reached 6.7 billion yuan RMB , with corporation profits of 200 million yuan RMB and exports of 150 million US dollars .",
+        "coarse_types": [
+            "time",
+            "medicine",
+            "biology",
+            "computer science",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "last year",
+                "coarse_type": "time",
+                "fine_type": "date"
+            },
+            {
+                "name": "the period from January to November",
+                "coarse_type": "time",
+                "fine_type": "date"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Tensile test samples fabricated with CFF polymer composite and unfilled polymer were printed and then tested following ASTM D3039M .",
+        "coarse_types": [
+            "science",
+            "politics",
+            "film information",
+            "restaurant information"
+        ],
+        "entities": [
+            {
+                "name": "Tensile test",
+                "coarse_type": "science",
+                "fine_type": "process characterization"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He became a free agent after the club 's last game of the season against Crystal Palace .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The eldest surviving son of 12 children , he made his way onto the stage in 1905 at West Hartlepool .",
+        "coarse_types": [
+            "biology",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "( photo by Diago Chiu )",
+        "coarse_types": [
+            "literature",
+            "product",
+            "science",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He made his debut for the club on 3 August 2009 against Beitar Jerusalem .",
+        "coarse_types": [
+            "biology",
+            "location",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It is made of wheat grains , fava beans , green peas , chickpeas and dry beans .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "medicine",
+            "time",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "United States officials have said that they believe all injuries resulted from  saboteurs  acting from inside the crowd .",
+        "coarse_types": [
+            "organization",
+            "computer science",
+            "food",
+            "film information",
+            "location",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "United States",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "But the message clearly is that the ethical problems in Columbus the ties of this candidate that barely squeaked through this election when George Bush carried that district two to one and the former congressman carried it almost three to one the ties she had to Secretary Blackwell to Governor Taft to President Bush /-",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "science",
+            "film information",
+            "location",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "two",
+                "coarse_type": "science",
+                "fine_type": "cardinal"
+            },
+            {
+                "name": "one",
+                "coarse_type": "science",
+                "fine_type": "cardinal"
+            },
+            {
+                "name": "three",
+                "coarse_type": "science",
+                "fine_type": "cardinal"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new black Tesla Roadster appears in the BOTTOM-LEFT of the screen at a speed of 153 kilometers per hour",
+        "coarse_types": [
+            "computer science",
+            "vehicle information",
+            "person"
+        ],
+        "entities": [
+            {
+                "name": "Tesla",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "black",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "BOTTOM-LEFT",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In the Caribbean , the term generally refers to the sugar cane harvest .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new SILVER Bugatti Type five seven S appears in the bottom of the screen at a speed of 116 kilometers per hour",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "restaurant information",
+            "organization"
+        ],
+        "entities": [
+            {
+                "name": "bottom",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            },
+            {
+                "name": "Type five seven S",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Selections have also been edited by Harry Lushington Stephen and others .",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "time",
+            "organization",
+            "biology",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Harry Lushington Stephen",
+                "coarse_type": "person",
+                "fine_type": "editor"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "OBJECTIVES : The aim of the present research was to determine if amphetamine - abstinent ecstasy users have changes in occipital lobe functioning , as revealed by two studies : a masking study that directly measured the width of orientation tuning bandwidths and a contour integration task that measured the strength of long - range connections in the visual cortex of drug users compared to controls .",
+        "coarse_types": [
+            "organization",
+            "biology",
+            "science",
+            "food",
+            "film information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "amphetamine",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            },
+            {
+                "name": "ecstasy",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The semiotics of acting plays a far more central role in Bertolt Brecht 's epic theatre , in which an actor is concerned to bring out clearly the sociohistorical significance of behaviour and action by means of specific performance choices - a process that he describes as establishing the  not / but  element in a performed physical   gestus   within context of the play 's overal   Fabel   .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "medicine",
+            "computer science",
+            "film information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Bertolt Brecht",
+                "coarse_type": "person",
+                "fine_type": "writer"
+            },
+            {
+                "name": "Bertolt Brecht",
+                "coarse_type": "literature",
+                "fine_type": "writer"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The results seem to be very premature , said Mitsuru Miyata , editor of Nikkei Biotechnology , a leading Japanese industry newsletter .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "medicine",
+            "science",
+            "politics",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Nikkei Biotechnology",
+                "coarse_type": "organization",
+                "fine_type": "company"
+            },
+            {
+                "name": "Mitsuru Miyata",
+                "coarse_type": "person",
+                "fine_type": "editor"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He was expelled shortly afterwards by the student  procurator  , Guillaume Rondelet , when it was discovered that he had been an apothecary , a  manual trade  expressly banned by the university statutes , and had been slandering doctors .",
+        "coarse_types": [
+            "person",
+            "science",
+            "food",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Guillaume Rondelet",
+                "coarse_type": "person",
+                "fine_type": "apothecary"
+            },
+            {
+                "name": "Guillaume Rondelet",
+                "coarse_type": "medicine",
+                "fine_type": "apothecary"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Here , Brigadier General William Irvine established headquarters of the forward defense line on January 1 , 1780 .",
+        "coarse_types": [
+            "computer science",
+            "person",
+            "vehicle information",
+            "food"
+        ],
+        "entities": [
+            {
+                "name": "William Irvine",
+                "coarse_type": "person",
+                "fine_type": "officer"
+            },
+            {
+                "name": "William Irvine",
+                "coarse_type": "politics",
+                "fine_type": "officer"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Giving all that money to Uncle Sam to earn his 2 % on it or me turning around making 27 % or 30 % on it , I 'd have to go that way .",
+        "coarse_types": [
+            "science",
+            "film information",
+            "finance",
+            "time"
+        ],
+        "entities": [
+            {
+                "name": "2 %",
+                "coarse_type": "science",
+                "fine_type": "percent"
+            },
+            {
+                "name": "27 %",
+                "coarse_type": "science",
+                "fine_type": "percent"
+            },
+            {
+                "name": "30 %",
+                "coarse_type": "science",
+                "fine_type": "percent"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The 11-episode first season was released by Warner Home Video on DVD ( 2-disc set ) and Blu-ray ( single BD-50 disc ) on October 7 , 2014 .",
+        "coarse_types": [
+            "event",
+            "music",
+            "organization",
+            "biology"
+        ],
+        "entities": [
+            {
+                "name": "Warner Home Video",
+                "coarse_type": "organization",
+                "fine_type": "company"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "But I 'm also very realistic in understanding that there 's a lot of violence ahead especially as we move through the political process and the insurgence will try to challenge the government and the Iraqi security forces and American forces in an effort to break our will and they do this by grabbing headlines .",
+        "coarse_types": [
+            "person",
+            "organization",
+            "medicine",
+            "science",
+            "location",
+            "politics",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Iraqi",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "American",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Yet during winter convective mixing , nutrients penetrate the euphotic zone , causing a short-lived phytoplankton bloom in the spring .",
+        "coarse_types": [
+            "science",
+            "location",
+            "biology",
+            "organization",
+            "medicine"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The company acknowledged it was moving the plant 's operations to Honduras to reduce production costs .",
+        "coarse_types": [
+            "biology",
+            "person",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , today , it appears to remain available only in a few countries , including Bangladesh , Egypt , India , Oman , and Tunisia .",
+        "coarse_types": [
+            "biology",
+            "literature",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The larvae feed on  Gentiana lutea  .",
+        "coarse_types": [
+            "person",
+            "organization",
+            "vehicle information",
+            "biology",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Gentiana lutea",
+                "coarse_type": "biology",
+                "fine_type": "plant"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new black Ferrari Ferrari two two five Inter",
+        "coarse_types": [
+            "medicine",
+            "food",
+            "film information",
+            "restaurant information",
+            "location",
+            "music",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Ferrari Ferrari two two five Inter",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a Black Suzuki DR-Z400 driving THIS-WAY with 124 km/h and a gold Geely Myboat",
+        "coarse_types": [
+            "time",
+            "medicine",
+            "biology",
+            "science",
+            "restaurant information",
+            "event",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Suzuki DR-Z400",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He was the oldest son of Shi Siming , and he overthrew and then killed his father in a coup in 761 and took over as emperor .",
+        "coarse_types": [
+            "person",
+            "time",
+            "biology",
+            "film information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Shi Siming",
+                "coarse_type": "person",
+                "fine_type": "king"
+            },
+            {
+                "name": "Shi Siming",
+                "coarse_type": "politics",
+                "fine_type": "king"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "I do n't know what to do .",
+        "coarse_types": [
+            "science",
+            "location",
+            "time",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Currently , this city has already established a relevant database to provide investment partners and projects through Chinese embassies and institutions in foreign countries , and foreign embassies and institutions in China .",
+        "coarse_types": [
+            "finance",
+            "oranization",
+            "biology",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "China",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Chinese",
+                "coarse_type": "organization",
+                "fine_type": "ethnicity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He was replaced by former player Lee Bowyer as caretaker manager who guided them to a 6th - place finish , but lost in the play-off semi-final .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "organization",
+            "science",
+            "food",
+            "film information",
+            "restaurant information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Lee Bowyer",
+                "coarse_type": "person",
+                "fine_type": "manager"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "david sidoni starring in mockumentary that was liked a lot",
+        "coarse_types": [
+            "person",
+            "medicine",
+            "science",
+            "film information",
+            "location",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "david sidoni",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            },
+            {
+                "name": "mockumentary",
+                "coarse_type": "film information",
+                "fine_type": "genre"
+            },
+            {
+                "name": "was liked a lot",
+                "coarse_type": "film information",
+                "fine_type": "average ratings"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "can you find me a place to eat",
+        "coarse_types": [
+            "location",
+            "food",
+            "time",
+            "restaurant information",
+            "film information"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Overexpression of Sed5p allowed growth in the absence of Vti1p .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "biology",
+            "science",
+            "film information",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Sed5p",
+                "coarse_type": "biology",
+                "fine_type": "gene"
+            },
+            {
+                "name": "Vti1p",
+                "coarse_type": "biology",
+                "fine_type": "gene"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It is the capital city of Batroun District .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "science",
+            "food",
+            "film information",
+            "restaurant information",
+            "location",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Batroun District",
+                "coarse_type": "location",
+                "fine_type": "district"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In conclusion , the fact that plasma CGRP concentration correlates with the timing and severity of a migraine headache suggests a direct relationship between CGRP and migraine .",
+        "coarse_types": [
+            "medicine",
+            "biology",
+            "science",
+            "event",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "migraine",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "headache",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "CGRP",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In the mid-17 th century , a vogue for magical tales emerged among the intellectuals who frequented the salons of Paris .",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "biology",
+            "restaurant information",
+            "location",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Paris",
+                "coarse_type": "location",
+                "fine_type": "city"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "You owe us a nice dinner .",
+        "coarse_types": [
+            "finance",
+            "politics",
+            "science",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Let the clever boy help find out the BEIGE Lexus SC 430 and aqua green Dongfeng Aeolus ex1 in the upper part",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "biology",
+            "science",
+            "computer science",
+            "food",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "upper part",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            },
+            {
+                "name": "SC 430",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "Aeolus ex1",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He succeeded Jim Tomsula , who was interim head coach for only the last game of the preceding season after succeeding the fired Mike Singletary .",
+        "coarse_types": [
+            "computer science",
+            "music",
+            "person",
+            "food"
+        ],
+        "entities": [
+            {
+                "name": "Jim Tomsula",
+                "coarse_type": "person",
+                "fine_type": "coach"
+            },
+            {
+                "name": "Mike Singletary",
+                "coarse_type": "person",
+                "fine_type": "coach"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A snippet of the track appeared in the official trailer for the film and played during the scene where the characters portrayed by Leonardo DiCaprio and Carey Mulligan express their romantic feelings for one another .",
+        "coarse_types": [
+            "event",
+            "person",
+            "restaurant information",
+            "organization"
+        ],
+        "entities": [
+            {
+                "name": "Leonardo DiCaprio",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            },
+            {
+                "name": "Carey Mulligan",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a BLUE BMW 725 driving Left with 171 km/h and a auburn Geely Englon tx four driving away at a speed of 26 kilometers per hour",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "biology",
+            "computer science",
+            "food",
+            "location",
+            "politics",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "171",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle velocity"
+            },
+            {
+                "name": "26 kilometers per hour",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle velocity"
+            },
+            {
+                "name": "BMW",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Geely",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "show me the musical with gene kelley and debbie reynolds",
+        "coarse_types": [
+            "literature",
+            "person",
+            "biology",
+            "science",
+            "film information",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "gene kelley",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            },
+            {
+                "name": "debbie reynolds",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Next month , talks will begin on two coveted CBS contracts , for the pro and college basketball finals .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "computer science",
+            "film information",
+            "restaurant information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "CBS",
+                "coarse_type": "organization",
+                "fine_type": "company"
+            },
+            {
+                "name": "Next month",
+                "coarse_type": "time",
+                "fine_type": "date"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , Putin responded only with a congratulatory telegram , with no mention of his visit to Japan .",
+        "coarse_types": [
+            "person",
+            "vehicle information",
+            "computer science",
+            "food",
+            "film information",
+            "politics",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Japan",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Putin",
+                "coarse_type": "person",
+                "fine_type": "leader"
+            },
+            {
+                "name": "Putin",
+                "coarse_type": "politics",
+                "fine_type": "leader"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In March 1996 Jimmy Case took him on loan to Brighton & Hove Albion , before making the move permanent .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "time",
+            "biology",
+            "food",
+            "restaurant information",
+            "politics",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Brighton & Hove Albion",
+                "coarse_type": "organization",
+                "fine_type": "club"
+            },
+            {
+                "name": "Jimmy Case",
+                "coarse_type": "person",
+                "fine_type": "athlete"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "On 20 June 2018 , he returned to FC Rostov , signing a 3-year contract .",
+        "coarse_types": [
+            "biology",
+            "medicine",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Mr. Barre 's rule is crumbling fast .",
+        "coarse_types": [
+            "person",
+            "science",
+            "food",
+            "film information",
+            "politics",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Barre",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Barre",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In his recording studio in Madrid , he experiments with a diversity of instruments , resulting in an enriching combination between electronic and acoustic sounds .",
+        "coarse_types": [
+            "science",
+            "biology",
+            "organization",
+            "time",
+            "event"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The SIG is headquartered in Kirkland , Washington .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Coumarin is a colorless crystalline solid with a sweet odor resembling the scent of vanilla and a bitter taste .",
+        "coarse_types": [
+            "location",
+            "product",
+            "time",
+            "literature",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "in search of a pg 13 military movie that was liked a lot and released last year starring gabriel damon it deals with infantry",
+        "coarse_types": [
+            "person",
+            "time",
+            "medicine",
+            "film information",
+            "politics",
+            "event",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "last year",
+                "coarse_type": "time",
+                "fine_type": "year"
+            },
+            {
+                "name": "infantry",
+                "coarse_type": "film information",
+                "fine_type": "plot"
+            },
+            {
+                "name": "was liked a lot",
+                "coarse_type": "film information",
+                "fine_type": "average ratings"
+            },
+            {
+                "name": "gabriel damon",
+                "coarse_type": "person",
+                "fine_type": "actor"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The city is also famous for its urban planning and layout by Joseph Ellicott , an extensive system of parks designed by Frederick Law Olmsted , as well as significant architectural works .",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "time",
+            "medicine",
+            "computer science",
+            "film information",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Joseph Ellicott",
+                "coarse_type": "person",
+                "fine_type": "planner"
+            },
+            {
+                "name": "Frederick Law Olmsted",
+                "coarse_type": "person",
+                "fine_type": "architect"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new black Dodge Stealth appears in the Top Right of the screen at a speed of 91 kilometers per hour",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "medicine",
+            "science",
+            "computer science",
+            "food",
+            "restaurant information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "black",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "Dodge",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "91 kilometers per hour",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle velocity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A blue lavalava is the official skirt for the police officers uniform of Samoa .",
+        "coarse_types": [
+            "biology",
+            "medicine",
+            "product",
+            "time"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new Beige BMW Six four zero i appears in the Bottom-left of the screen at a speed of 111 kilometers per hour",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "time",
+            "computer science",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Beige",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "111 kilometers per hour",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle velocity"
+            },
+            {
+                "name": "Six four zero i",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "As of 2012 , Image Entertainment have acquired the rights to the series .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "time",
+            "computer science",
+            "food",
+            "event",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Image Entertainment",
+                "coarse_type": "organization",
+                "fine_type": "company"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "And I 'm like Kate are calling to make this really hard on me",
+        "coarse_types": [
+            "literature",
+            "person",
+            "vehicle information",
+            "biology",
+            "science",
+            "computer science"
+        ],
+        "entities": [
+            {
+                "name": "Kate",
+                "coarse_type": "person",
+                "fine_type": "civilian"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new Black GMC Seven five zero zero appears in the Upper Part of the screen at a speed of 56 kilometers per hour",
+        "coarse_types": [
+            "vehicle information",
+            "restaurant information",
+            "time",
+            "medicine"
+        ],
+        "entities": [
+            {
+                "name": "Seven five zero zero",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "GMC",
+                "coarse_type": "vehicle information",
+                "fine_type": "brand of vehicle"
+            },
+            {
+                "name": "Upper Part",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Well Jody might have a job offer in Budapest .",
+        "coarse_types": [
+            "science",
+            "location",
+            "finance",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new BLACK Toyota Mr2 appears in the Bottom of the screen at a speed of 5 kilometers per hour",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "computer science",
+            "film information",
+            "restaurant information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Bottom",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "PAPERS :",
+        "coarse_types": [
+            "location",
+            "science",
+            "time",
+            "event",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "On February 9 , 2015 , IM Global closed a deal to finance the film , and also sold the film into the international markets .",
+        "coarse_types": [
+            "science",
+            "politics",
+            "organization",
+            "vehicle information"
+        ],
+        "entities": [
+            {
+                "name": "IM Global",
+                "coarse_type": "organization",
+                "fine_type": "company"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In 1897 , doctoral student Ernest Duchesne submitted a dissertation ,   ( Contribution to the study of vital competition in micro-organisms : antagonism between molds and microbes ) , the first known scholarly work to consider the therapeutic capabilities of molds resulting from their anti-microbial activity .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "time",
+            "organization"
+        ],
+        "entities": [
+            {
+                "name": "Ernest Duchesne",
+                "coarse_type": "person",
+                "fine_type": "researcher"
+            },
+            {
+                "name": "Ernest Duchesne",
+                "coarse_type": "science",
+                "fine_type": "researcher"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Infection of thymocytes was accompanied by the appearance of linear EBV genome within 8 hr of infection.",
+        "coarse_types": [
+            "event",
+            "medicine",
+            "finance",
+            "biology"
+        ],
+        "entities": [
+            {
+                "name": "linear EBV genome",
+                "coarse_type": "biology",
+                "fine_type": "DNA"
+            },
+            {
+                "name": "thymocytes",
+                "coarse_type": "biology",
+                "fine_type": "cell type"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Having started his professional career at Rotherham United in 1996 , he first made a name for himself as Blackpool 's first choice goalkeeper from 1997 to 2004 .",
+        "coarse_types": [
+            "event",
+            "literature",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "i need to find the closest restaurant with a drive thru",
+        "coarse_types": [
+            "person",
+            "vehicle information",
+            "location",
+            "politics",
+            "product",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "drive thru",
+                "coarse_type": "location",
+                "fine_type": "amenity"
+            },
+            {
+                "name": "closest",
+                "coarse_type": "location",
+                "fine_type": "concept"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "We wo n't get it .",
+        "coarse_types": [
+            "science",
+            "location",
+            "organization",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The action ends eight years of isolation of Yugoslavia at the United Nations .",
+        "coarse_types": [
+            "literature",
+            "science",
+            "product",
+            "time"
+        ],
+        "entities": [
+            {
+                "name": "eight years",
+                "coarse_type": "time",
+                "fine_type": "date"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "They always say that g-",
+        "coarse_types": [
+            "science",
+            "location",
+            "organization",
+            "person",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The Iraqi government reports 1252 civilians have been killed in the war .",
+        "coarse_types": [
+            "organization",
+            "biology",
+            "food",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Iraqi",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Some organisms experience negligible senescence , even exhibiting biological immortality .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "biology",
+            "film information",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "biological immortality",
+                "coarse_type": "time",
+                "fine_type": "concept"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Further , new duties and authorities were given to the National Assembly in order to achieve successive constitutional revisions .",
+        "coarse_types": [
+            "food",
+            "organization",
+            "science",
+            "person"
+        ],
+        "entities": [
+            {
+                "name": "the National Assembly",
+                "coarse_type": "organization",
+                "fine_type": "government"
+            },
+            {
+                "name": "the National Assembly",
+                "coarse_type": "politics",
+                "fine_type": "government"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "-DOCSTART- RT @RayRy2019 : @LindseyFOX26 @Fox26Houston Thank you for the updates and continuous info , please continue to be safe out there @LindseyFOX26 @Fox26Houston",
+        "coarse_types": [
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the black Audi Q five e-tron on the lower part of the image and the pink Infiniti J-series on the bottom right",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "science",
+            "computer science",
+            "food",
+            "restaurant information",
+            "event",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Q five e-tron",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            },
+            {
+                "name": "J-series",
+                "coarse_type": "vehicle information",
+                "fine_type": "vehicle model"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Yuan Chen also pointed out that what causes worry is that some industrial countries take labor standards , environment and human rights , etc. , as excuses to frequently adopt trade protection measures .",
+        "coarse_types": [
+            "person",
+            "vehicle information",
+            "computer science",
+            "music",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Yuan Chen",
+                "coarse_type": "person",
+                "fine_type": "economist"
+            },
+            {
+                "name": "Yuan Chen",
+                "coarse_type": "finance",
+                "fine_type": "economist"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The first prototype , powered by a 447  kW ( 600  hp ) Nakajima Kotobuki 5 radial engine , flew on 4 February 1935 .",
+        "coarse_types": [
+            "biology",
+            "organization",
+            "product",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Lagoons with little or no interchange with the open ocean , little or no inflow of fresh water , and high evaporation rates , such as Lake St. Lucia , in South Africa , may become highly saline .",
+        "coarse_types": [
+            "biology",
+            "product",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The presidency passed to the sitting vice-president , Quett Masire , who was elected in his own right in 1984 and re-elected in 1989 and 1994 .",
+        "coarse_types": [
+            "vehicle information",
+            "person",
+            "medicine",
+            "science",
+            "politics",
+            "product",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Quett Masire",
+                "coarse_type": "person",
+                "fine_type": "politician"
+            },
+            {
+                "name": "Quett Masire",
+                "coarse_type": "politics",
+                "fine_type": "politician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Ever since Liu Mingchuan founded Taipei in the late Qing dynasty , rule over Taiwan has switched from nation to nation .",
+        "coarse_types": [
+            "science",
+            "finance",
+            "event",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The longer range has been used by some airlines to bypass traditional fuel stops , such as Anchorage .",
+        "coarse_types": [
+            "computer science",
+            "person",
+            "product",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Anchorage",
+                "coarse_type": "location",
+                "fine_type": "city"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "and you know who knows if they found someone",
+        "coarse_types": [
+            "science",
+            "product",
+            "organization",
+            "location"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Highly influential until the end of World War II , social Darwinism was eventually banished from human sciences , leading to a strict separation of natural and sociocultural studies .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "vehicle information",
+            "time",
+            "medicine",
+            "science",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "World War II",
+                "coarse_type": "event",
+                "fine_type": "war"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new black Dongfeng Just for e one seven",
+        "coarse_types": [
+            "music",
+            "product",
+            "time",
+            "person"
+        ],
+        "entities": [
+            {
+                "name": "Dongfeng Just for e one seven",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He also read the autobiography of deaf-mute pianist Geraldine Lawhorn for ideas .",
+        "coarse_types": [
+            "literature",
+            "person",
+            "vehicle information",
+            "time",
+            "food",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Geraldine Lawhorn",
+                "coarse_type": "person",
+                "fine_type": "musician"
+            },
+            {
+                "name": "Geraldine Lawhorn",
+                "coarse_type": "music",
+                "fine_type": "musician"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The mechanical and tribological properties were examined in relation to the manufacturing technique and the subsequent heat treatment .",
+        "coarse_types": [
+            "organization",
+            "vehicle information",
+            "medicine",
+            "science",
+            "film information"
+        ],
+        "entities": [
+            {
+                "name": "mechanical",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            },
+            {
+                "name": "manufacturing",
+                "coarse_type": "science",
+                "fine_type": "manufacturing process"
+            },
+            {
+                "name": "heat treatment",
+                "coarse_type": "science",
+                "fine_type": "manufacturing process"
+            },
+            {
+                "name": "tribological properties",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Australia 's Royal National Park , established in 1879 , was the world 's second officially established national park .",
+        "coarse_types": [
+            "organization",
+            "product",
+            "time",
+            "literature",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In 1994 he became caretaker manager following the resignation of Alan Buckley who had joined West Bromwich Albion .",
+        "coarse_types": [
+            "organization",
+            "computer science",
+            "food",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "West Bromwich Albion",
+                "coarse_type": "organization",
+                "fine_type": "club"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "which pizza place nearest to our hotel has the best ratings for their delivery service",
+        "coarse_types": [
+            "time",
+            "medicine",
+            "food",
+            "film information",
+            "restaurant information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "delivery service",
+                "coarse_type": "location",
+                "fine_type": "amenity"
+            },
+            {
+                "name": "best ratings",
+                "coarse_type": "film information",
+                "fine_type": "rating"
+            },
+            {
+                "name": "place nearest",
+                "coarse_type": "location",
+                "fine_type": "concept"
+            },
+            {
+                "name": "hotel",
+                "coarse_type": "restaurant information",
+                "fine_type": "restaurant name"
+            },
+            {
+                "name": "pizza",
+                "coarse_type": "food",
+                "fine_type": "cuisine"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It is native to coastal mountains and canyons of southern California and Baja California , where it is a member of the chaparral plant community , including recently burned areas .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "food",
+            "restaurant information",
+            "location",
+            "politics",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "California",
+                "coarse_type": "location",
+                "fine_type": "state"
+            },
+            {
+                "name": "Baja California",
+                "coarse_type": "location",
+                "fine_type": "state"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Saudi riyal rates steady in quiet summer trade .",
+        "coarse_types": [
+            "politics",
+            "vehicle information",
+            "finance",
+            "food"
+        ],
+        "entities": [
+            {
+                "name": "Saudi",
+                "coarse_type": "finance",
+                "fine_type": "money"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In July 2014 a smart technology footwear was introduced in Hyderabad , India .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "medicine",
+            "science",
+            "restaurant information",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Hyderabad",
+                "coarse_type": "location",
+                "fine_type": "city"
+            },
+            {
+                "name": "India",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Archeological finds around the city indicate that humans have inhabited the area since neolithic times .",
+        "coarse_types": [
+            "event",
+            "product",
+            "food"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Thus , VEGF , Ang - 1 and - 2 may play complementary and coordinated roles in airway angiogenesis and microvascular remodeling , and these structural changes are potentially reversible by therapeutic intervention .",
+        "coarse_types": [
+            "literature",
+            "vehicle information",
+            "person",
+            "biology",
+            "science",
+            "event",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "airway",
+                "coarse_type": "biology",
+                "fine_type": "anatomy"
+            },
+            {
+                "name": "microvascular",
+                "coarse_type": "biology",
+                "fine_type": "anatomy"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He 's trying to become first person to climb all the Colorado mountains higher than 14,000 feet , and , Wolf , he wants to do this alone .",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "science",
+            "computer science",
+            "politics",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "higher than 14,000 feet",
+                "coarse_type": "science",
+                "fine_type": "quantity"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "After making five league appearances for the club , he was signed by his hometown club Burnley in the summer of 1922 .",
+        "coarse_types": [
+            "product",
+            "person",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "However , with the aid of several modern digital studios in Los Angeles the film was completely restored and remastered for modern cinema .",
+        "coarse_types": [
+            "medicine",
+            "person",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The film held a 72 % approval rating on Rotten Tomatoes based on 53 reviews , with a weighted average of 6.18 / 10 .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "medicine",
+            "science",
+            "computer science",
+            "location",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Rotten Tomatoes",
+                "coarse_type": "organization",
+                "fine_type": "media"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "What are they hoping to achieve ?",
+        "coarse_types": [
+            "science",
+            "location",
+            "time",
+            "event",
+            "politics"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Police said the man had recently been spotted cruising red-light areas in this northern Italian city , hurling abuse at prostitutes and firing blank shots at them .",
+        "coarse_types": [
+            "time",
+            "biology",
+            "science",
+            "food",
+            "film information",
+            "location",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Italian",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Phytochemical analysis showed the presence of common plant chemical constituents which varied with respect to species .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He singled off Gio González in his first at bat .",
+        "coarse_types": [
+            "person",
+            "time",
+            "medicine",
+            "biology",
+            "computer science",
+            "food",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Gio González",
+                "coarse_type": "person",
+                "fine_type": "athlete"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the Silver Honda AC one five on the bottom left of the image and the pitch dark Honda CD one seven five",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "time",
+            "medicine",
+            "computer science",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Honda AC one five",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            },
+            {
+                "name": "Honda CD one seven five",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Oxidative stress involvement in manganese - induced alpha - synuclein oligomerization in organotypic brain slice cultures .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "time",
+            "medicine",
+            "science",
+            "film information"
+        ],
+        "entities": [
+            {
+                "name": "manganese",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "EEG theta waves and psychological phenomena : a review and analysis .",
+        "coarse_types": [
+            "biology"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Let the clever boy help find out the white Alfa Romeo Dauphine and grass-green Audi S four B seven in the bottom-left",
+        "coarse_types": [
+            "vehicle information",
+            "organization",
+            "science",
+            "politics",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "white",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "grass-green",
+                "coarse_type": "vehicle information",
+                "fine_type": "color of vehicle"
+            },
+            {
+                "name": "bottom-left",
+                "coarse_type": "vehicle information",
+                "fine_type": "position of vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Dayton Miller continued with experiments , conducting thousands of measurements and eventually developing the most accurate interferometer in the world at that time .",
+        "coarse_types": [
+            "person",
+            "time",
+            "computer science",
+            "event",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Dayton Miller",
+                "coarse_type": "person",
+                "fine_type": "scientist"
+            },
+            {
+                "name": "Dayton Miller",
+                "coarse_type": "science",
+                "fine_type": "scientist"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "where can i get african food at a really good price",
+        "coarse_types": [
+            "food",
+            "restaurant information",
+            "politics",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "really good",
+                "coarse_type": "restaurant information",
+                "fine_type": "price"
+            },
+            {
+                "name": "african",
+                "coarse_type": "food",
+                "fine_type": "cuisine"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Were you far from Atlanta ?",
+        "coarse_types": [
+            "organization",
+            "time",
+            "location",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Atlanta",
+                "coarse_type": "location",
+                "fine_type": "city"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The basalt cliffs are the product of several massive lava flows hundreds of feet deep that welled up in faults created by the rifting apart of North America from Eurasia and Africa .",
+        "coarse_types": [
+            "science",
+            "film information",
+            "finance",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "North America",
+                "coarse_type": "location",
+                "fine_type": "continent"
+            },
+            {
+                "name": "Eurasia",
+                "coarse_type": "location",
+                "fine_type": "continent"
+            },
+            {
+                "name": "Africa",
+                "coarse_type": "location",
+                "fine_type": "continent"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In this work , a mesh coarsening strategy is evaluated for predicting temperature , distortion , and residual stress in additive manufacturing , aiming to achieve feasible run times with reasonable accuracy on large builds .",
+        "coarse_types": [
+            "literature",
+            "organization",
+            "science",
+            "computer science",
+            "food",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "distortion",
+                "coarse_type": "science",
+                "fine_type": "concept or principle"
+            },
+            {
+                "name": "residual stress",
+                "coarse_type": "science",
+                "fine_type": "machanical property"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The road is resumed at an access point from the north in Manix Wash .",
+        "coarse_types": [
+            "organization",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "This hypothesis has gained support from studies showing that reduced ocular perfusion pressure is a risk factor for the disease .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "No hepatic preneoplastic nodules or hepatocellular carcinomas developed in rats fed the plain choline - supplemented diet , while one preneoplastic nodule and one hepatocellular carcinoma developed in two rats fed the same diet containing phenobarbital .",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "science",
+            "food",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "hepatocellular carcinomas",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "hepatocellular carcinoma",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            },
+            {
+                "name": "choline",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            },
+            {
+                "name": "phenobarbital",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "All of a sudden , a brand-new BLACK Ferrari 250 GT California Spyder",
+        "coarse_types": [
+            "vehicle information",
+            "product",
+            "finance",
+            "organization"
+        ],
+        "entities": [
+            {
+                "name": "Ferrari 250 GT California Spyder",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": " Lymantria concolor  is a moth of the family Erebidae first described by Francis Walker in 1855 .",
+        "coarse_types": [
+            "science",
+            "location",
+            "biology",
+            "organization",
+            "event",
+            "literature"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "A single episode of this series is held by the Paley Center for Media , listed as having aired August 29 , 1948 .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "restaurant information",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Paley Center for Media",
+                "coarse_type": "organization",
+                "fine_type": "media"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "An association exists between paracetamol use and asthma , but whether this association is causal is still debated .",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "food",
+            "restaurant information",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "asthma",
+                "coarse_type": "medicine",
+                "fine_type": "disease"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It is endemic to the Philippines , where it is found throughout the archipelago , including Palawan .",
+        "coarse_types": [
+            "vehicle information",
+            "time",
+            "medicine",
+            "science",
+            "food",
+            "film information",
+            "location"
+        ],
+        "entities": [
+            {
+                "name": "Philippines",
+                "coarse_type": "location",
+                "fine_type": "country"
+            },
+            {
+                "name": "Palawan",
+                "coarse_type": "location",
+                "fine_type": "island"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "I regret doing that .",
+        "coarse_types": [
+            "finance",
+            "time",
+            "literature",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "These data provide new evidence in favor of the hypothesis that modifications in BDNF and related proteins in the hippocampus contribute to the pro - cognitive effects of caffeine on age - associated losses in memory encoding .",
+        "coarse_types": [
+            "vehicle information",
+            "medicine",
+            "biology",
+            "science",
+            "computer science",
+            "politics",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "caffeine",
+                "coarse_type": "science",
+                "fine_type": "chemical"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It is the only comedy among his mature operas ( he had come to reject his early  Das Liebesverbot  ) and is also unusual among his works in being set in a historically well-defined time and place rather than in a mythical or legendary setting .",
+        "coarse_types": [
+            "organization",
+            "person",
+            "time",
+            "restaurant information",
+            "music"
+        ],
+        "entities": [
+            {
+                "name": "Das Liebesverbot",
+                "coarse_type": "organization",
+                "fine_type": "media"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In addition , he says , `` longer maturities on automobile and other forms of installment credit boost the stock of debt faster than the flow of repayments and the accompanying payment burden . ''",
+        "coarse_types": [
+            "location",
+            "science",
+            "finance",
+            "event",
+            "literature",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Data give variation in employed persons , in thousands .",
+        "coarse_types": [
+            "organization",
+            "location",
+            "person"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "There are so many cars on the highway that I cannot recognize but I think there is a black Nissan Qashqai driving Right with 77 km/h and a ponceau Alfa Romeo 50",
+        "coarse_types": [
+            "vehicle information",
+            "time",
+            "medicine",
+            "computer science",
+            "science",
+            "location",
+            "music",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Nissan Qashqai",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The huge money that were promised to families avail , receive ten times more than families of soldiers who were killed in Chechnya .",
+        "coarse_types": [
+            "science",
+            "organization",
+            "finance",
+            "politics",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The newly accredited Southeast Arkansas College features technical career programs as well as a 2-year college curriculum .",
+        "coarse_types": [
+            "biology",
+            "person",
+            "product"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "The narrow Kyrenia Range extends along the northern coastline .",
+        "coarse_types": [
+            "vehicle information",
+            "time",
+            "computer science",
+            "restaurant information",
+            "location",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Kyrenia Range",
+                "coarse_type": "location",
+                "fine_type": "mountain"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "He was claimed off waivers again on January 10 , this time by the Chicago Cubs .",
+        "coarse_types": [
+            "organization",
+            "time",
+            "biology",
+            "science",
+            "film information",
+            "politics",
+            "event"
+        ],
+        "entities": [
+            {
+                "name": "Chicago Cubs",
+                "coarse_type": "organization",
+                "fine_type": "team"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "It is off the Pacific Highway , close to Byron Bay , Ocean Shores , Billinudgel and the Queensland border .",
+        "coarse_types": [
+            "literature",
+            "time",
+            "biology",
+            "location",
+            "politics"
+        ],
+        "entities": [
+            {
+                "name": "Pacific Highway",
+                "coarse_type": "location",
+                "fine_type": "facility"
+            },
+            {
+                "name": "Byron Bay",
+                "coarse_type": "location",
+                "fine_type": "town"
+            },
+            {
+                "name": "Ocean Shores",
+                "coarse_type": "location",
+                "fine_type": "city"
+            },
+            {
+                "name": "Billinudgel",
+                "coarse_type": "location",
+                "fine_type": "village"
+            },
+            {
+                "name": "Queensland",
+                "coarse_type": "location",
+                "fine_type": "state"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "In Poland lard mixed with fruit , usually chopped apple , and spread on thick slices of bread , is often served as a starter .",
+        "coarse_types": [
+            "vehicle information",
+            "science",
+            "computer science",
+            "film information",
+            "location",
+            "product",
+            "finance"
+        ],
+        "entities": [
+            {
+                "name": "Poland",
+                "coarse_type": "location",
+                "fine_type": "country"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "To a certain extent , emotional security is a function of brain chemistry : some people are naturally predisposed to feel less happy , and to be more adversely affected by natural events , for example in the case of hypothyroidism .",
+        "coarse_types": [
+            "biology",
+            "product",
+            "science"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Please help me find the Black Chrysler Chrysler Ypsilon on the BOTTOM of the image and the pure white Lexus LX",
+        "coarse_types": [
+            "person",
+            "time",
+            "medicine",
+            "science",
+            "location",
+            "event",
+            "product"
+        ],
+        "entities": [
+            {
+                "name": "Lexus LX",
+                "coarse_type": "product",
+                "fine_type": "vehicle"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "Across substrates , substrate orthologs and conserved sequence stretches can also be shown , with iceLogo visualization provided for the latter .",
+        "coarse_types": [
+            "science"
+        ],
+        "entities": []
+    }
+]

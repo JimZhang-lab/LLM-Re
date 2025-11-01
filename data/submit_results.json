@@ -1,0 +1,72 @@
+[
+  {
+    "sentence": "After renewing the cylinder assembly , it was tested around Brighton and Eastleigh using an LNER Dynamometer car , where good running was experienced at high costs in fuel and effort on the part of the fireman .",
+    "entities": [
+      {
+        "name": "Cylinder Assembly",
+        "coarse_type": "organization",
+        "fine_type": "equipment unit"
+      },
+      {
+        "name": "Brighton",
+        "coarse_type": "organization",
+        "fine_type": "city"
+      },
+      {
+        "name": "Eastleigh",
+        "coarse_type": "organization",
+        "fine_type": "city"
+      },
+      {
+        "name": "LNER Dynamometer Car",
+        "coarse_type": "organization",
+        "fine_type": "equipment unit"
+      },
+      {
+        "name": "Fireman",
+        "coarse_type": "politics",
+        "fine_type": "officer"
+      }
+    ]
+  },
+  {
+    "sentence": "The alterations of 5 - HT and 5 - HIAA levels in several regions of the brain under the conditions examined may indicate that IDPN ' s neurotoxicity primarily affects 5 - HT - containing neurones .",
+    "entities": [
+      {
+        "name": "5-HT",
+        "coarse_type": "biology",
+        "fine_type": "concept"
+      },
+      {
+        "name": "5-HIAA",
+        "coarse_type": "biology",
+        "fine_type": "concept"
+      },
+      {
+        "name": "IDPN",
+        "coarse_type": "biology",
+        "fine_type": "concept"
+      },
+      {
+        "name": "Neurotoxicity",
+        "coarse_type": "biology",
+        "fine_type": "concept"
+      },
+      {
+        "name": "5-HT-containing Neurones",
+        "coarse_type": "biology",
+        "fine_type": "concept"
+      }
+    ]
+  },
+  {
+    "sentence": "A leading role has also occasionally been suggested for the Bank for International Settlements .",
+    "entities": [
+      {
+        "name": "Bank for International Settlements",
+        "coarse_type": "organization",
+        "fine_type": "international organization"
+      }
+    ]
+  }
+]

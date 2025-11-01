@@ -1,0 +1,13 @@
+# RE Module Requirements
+
+# Core dependencies
+openai>=1.0.0
+pydantic>=2.0.0
+
+# Optional dependencies for storage
+nano_vectordb>=0.1.0  # For vector storage
+networkx>=3.0.0       # For graph storage
+numpy>=1.24.0         # For embeddings
+
+# Optional: for better tokenization
+# tiktoken>=0.5.0

@@ -1,0 +1,5029 @@
+[
+    {
+        "source": "FabNER",
+        "sentence": "《黑暗之塔》改编游戏将在2013年5月随电影版同步上市。",
+        "coarse_types": [
+            "组织机构",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "1966年出生，本科学历，自动化仪表高级工程师。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "本科学历",
+                "coarse_type": "科学",
+                "fine_type": "学历"
+            },
+            {
+                "name": "自动化仪表高级工程师",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "解决三桥村农民负担重的问题，不仅要废除少数人订的“土政策”，对有关人进行严肃处理，还要查一查他们搜刮民财得来的钱是怎么花的，花到哪里去了！",
+        "coarse_types": [
+            "科学",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "三桥村",
+                "coarse_type": "位置",
+                "fine_type": "村庄"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "另外，非洲有５０多个国家，６．８亿人口，是世界上消费层次多样化的一个地区，目前全洲年贸易额约２５００亿美元，据估计到２０２５年非洲仅进口额就将达到４８００亿美元。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "非洲",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这也为现在不景气的war3重新注入了激情。今天这场战报就是来自于Soju在VS上的路人战，",
+        "coarse_types": [
+            "生物",
+            "产品",
+            "事件",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "war3",
+                "coarse_type": "产品",
+                "fine_type": "软件"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "他感到由衷的高兴，对祖国未来充满信心。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "卡迪尔加马尔说，斯里兰卡对南亚地区出现的新局势表示关切。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "卡迪尔加马尔",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "卡迪尔加马尔",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "斯里兰卡",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "南亚",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "五大防护林生态工程建设（“三北”防护林、长江中下游防护林、沿海防护林、平原绿化工程、太行山绿化工程）共完成造林面积２０６．９万公顷，其中，人工造林１６８．６万公顷。",
+        "coarse_types": [
+            "科学",
+            "学历",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "长江",
+                "coarse_type": "位置",
+                "fine_type": "河"
+            },
+            {
+                "name": "太行山",
+                "coarse_type": "位置",
+                "fine_type": "山"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "要拨打发卡银行的全国统一客服热线及时与发卡银行取得联系。使用网上支付及网上银行时，",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "客服",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2009年东京电玩展预定9月24日～27日在日本千叶幕张国际展场举办，展出为期4天，",
+        "coarse_types": [
+            "组织机构",
+            "文学",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "上海国家会计学院这位老师愤愤不平地说道,并认为按中国的人均收入,和人民币实际购买力,",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "老师",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "上海国家会计学院",
+                "coarse_type": "组织机构",
+                "fine_type": "学院"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "还有的传销公司进行邪教、帮会和迷信、流氓等活动，比如，以传销培训为名，将传销人员组成“家庭”，指定“父”、“母”，群居群宿，进行所谓的“潜能”训练；传授“只有参加传销，才能发财致富”的谬论；以传销“上帝之水”为名，吸引大量盲从者参加，对非教徒进行非法的宗教培训。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "去年冬季附近村民投放鱼苗达９０万尾。",
+        "coarse_types": [
+            "组织机构",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "“法制”概念是静态的，是“法律制度”的简称，并不必然地与民主政治相关联，它在“有什么法”和“如何保证依法办事”上缺乏规定性的要求。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "１９９８年第一季度国家质量技术监督局的抽查结果不幸证实了这一点：防盗保险柜半数不合格。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "国家质量技术监督局",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "国家质量技术监督局",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "自去年夏季亚洲金融危机以来，迄今已近一年。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "亚洲",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "由于地力不肥，加上缺水，所以丰收得不到保证。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "急火攻心的金尼尔在上轮输给富勒姆之后，认定主裁判阿特金森（martinatkinson）是米老鼠，",
+        "coarse_types": [
+            "生物",
+            "位置",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "金尼尔",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "阿特金森",
+                "coarse_type": "人",
+                "fine_type": "裁判"
+            },
+            {
+                "name": "martinatkinson",
+                "coarse_type": "人",
+                "fine_type": "裁判"
+            },
+            {
+                "name": "米老鼠",
+                "coarse_type": "文学",
+                "fine_type": "角色"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "谈到ECL赛事在2011年以DOTA项目为主要项目的转变时，王治国介绍，",
+        "coarse_types": [
+            "学历",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "ECL",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "王治国",
+                "coarse_type": "人",
+                "fine_type": "研究者"
+            },
+            {
+                "name": "王治国",
+                "coarse_type": "科学",
+                "fine_type": "研究者"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "道理显而易见，我却依旧怅然若失。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "浙江金都实业有限责任公司任副总经理；",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "浙江金都实业有限责任公司",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "副总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "欧美奇幻RPG《神界2》官方网站上线",
+        "coarse_types": [
+            "职位",
+            "学历",
+            "产品",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "《神界2》",
+                "coarse_type": "产品",
+                "fine_type": "软件"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "也就应运而生了。“克莱登大学”原本是钱钟书先生小说《围城》里虚构的骗子学校，而如今却成了真实事件：",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "钱钟书",
+                "coarse_type": "人",
+                "fine_type": "作家"
+            },
+            {
+                "name": "钱钟书",
+                "coarse_type": "文学",
+                "fine_type": "作家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "令校长自豪的是，目前维也纳大学已经同北京大学建立了密切关系，同上海一些高等院校的合作事宜也正在进行中。",
+        "coarse_types": [
+            "文学",
+            "事件",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "维也纳大学",
+                "coarse_type": "组织机构",
+                "fine_type": "大学"
+            },
+            {
+                "name": "北京大学",
+                "coarse_type": "组织机构",
+                "fine_type": "大学"
+            },
+            {
+                "name": "上海",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "把自己融到这片洱海中。",
+        "coarse_types": [
+            "科学",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "洱海",
+                "coarse_type": "位置",
+                "fine_type": "景点"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "馆长田胜立介绍说，在中韩关于印刷术发明权之争中，该馆曾组织造诣深厚的专家撰写文章，据实驳斥，维护了民族的文化权益。",
+        "coarse_types": [
+            "生物",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "田胜立",
+                "coarse_type": "人",
+                "fine_type": "馆长"
+            },
+            {
+                "name": "中",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "韩",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "十年后辛亥革命的枪声首先在维新烈士流血牺牲的武昌打响，这不是历史的巧合，而恰好证明了改良与革命之间的历史联系。",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "武昌",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "先生离开我们已经五年了，先生生前拥护中国共产党、拥护改革开放。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "产品",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "中国共产党",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "中国共产党",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这些成就是两国领导人智慧的结晶。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "感谢您对《魔兽世界》一如既往的热情支持，期待着和您一起尽快返回艾泽拉斯大陆。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "职位"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "今年一季度，中保贸易额比去年同期增长１０７．４％。",
+        "coarse_types": [
+            "职位",
+            "学历",
+            "产品",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "保",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "被中国男队称为“三只虎”的欧洲名将萨姆索诺夫、普里莫拉茨、瓦尔德内尔这次没有报名参赛，但上个月刚夺得欧洲锦标赛男团冠军的法国队派出了全部主力，盖亭、希拉、勒古、埃洛瓦都将参加角逐。",
+        "coarse_types": [
+            "科学",
+            "位置",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "中国男队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "法国队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "欧洲",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            },
+            {
+                "name": "萨姆索诺夫",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "普里莫拉茨",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "瓦尔德内尔",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "盖亭",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "希拉",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "勒古",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "埃洛瓦",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "历任深圳经济特区证券公司罗湖营业部总经理，蔚深证券有限责任公司武汉营业部总经理，董事会秘书处副主任，国家开发银行中瑞创业投资基金管理有限公司总经理。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "董事会秘书处副主任",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这使意大利在走向欧元的道路上有了一个重要可靠的盟友。",
+        "coarse_types": [
+            "事件",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "意大利",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "与一些国际名牌饮料相比较，奥兰吉那的市场长期限于国内，只是从８０年代中期开始，产品才逐渐打进国际市场。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "奥兰吉那",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "禁毒展终将结束，但由它引起的社会对毒品问题的关注、对青少年吸毒现状的担忧和呼吁，绝不会随着禁毒展的结束而结束。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "可是最近他们队内的情况有些变化，头号射手洛伦特与乌拉圭主力中卫戈尔丁均在两周前恶斗马拉加一战中受伤，",
+        "coarse_types": [
+            "组织机构",
+            "产品",
+            "职位",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "选择莱州联社、邹平农合行和寿光农合行作为首批农村商业银行改革试点单位。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "莱州联社",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "邹平农合行",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "寿光农合行",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "农村商业银行",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "正是基于对健身的正确认识，沈阳军区下发文件推广了《连队健身锻炼法》。",
+        "coarse_types": [
+            "人",
+            "事件",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "沈阳军区",
+                "coarse_type": "组织机构",
+                "fine_type": "军队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "长江上的垃圾对航行、旅游、饮用水和葛洲坝发电等都造成很大的危害。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "长江",
+                "coarse_type": "位置",
+                "fine_type": "河"
+            },
+            {
+                "name": "葛洲坝",
+                "coarse_type": "位置",
+                "fine_type": "设施"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "中国政府一贯认真履行中美双边协议的规定，主张在平等互利的基础上发展中美双边贸易，以务实、谅解、合作协商的态度解决贸易争端。",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "美",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这个评价，深刻阐明了实践是检验真理唯一标准这场讨论的实质内容和重大意义。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "雷诺阿作于1890年的《梳理头发的浴者》此前在拍卖市场上从未曝光，系首次与藏家见面；夏卡尔的《花束》",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "雷诺阿",
+                "coarse_type": "人",
+                "fine_type": "画家"
+            },
+            {
+                "name": "雷诺阿",
+                "coarse_type": "文学",
+                "fine_type": "画家"
+            },
+            {
+                "name": "夏卡尔",
+                "coarse_type": "人",
+                "fine_type": "画家"
+            },
+            {
+                "name": "夏卡尔",
+                "coarse_type": "文学",
+                "fine_type": "画家"
+            },
+            {
+                "name": "《梳理头发的浴者》",
+                "coarse_type": "文学",
+                "fine_type": "画"
+            },
+            {
+                "name": "《花束》",
+                "coarse_type": "文学",
+                "fine_type": "画"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "画中八仙神游四方，灵泉小憩，对弈自娱，或坐或立，风采高古，意态潇洒，神情飘逸。",
+        "coarse_types": [
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "那么，参加此战的李雪梅等三位中国女将备战情况如何？",
+        "coarse_types": [
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "李雪梅",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "１９４２年至１９４５年８月在晋察冀分局社会部、冀东区社会部工作。",
+        "coarse_types": [
+            "产品",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "晋察冀分局社会部",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "晋察冀分局社会部",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "冀东区社会部",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "冀东区社会部",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "汤正琪的工作单位是离拉萨数百公里的山南地区措美县当巴区区公所，职务是文书兼区食堂伙食管理员。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "当巴区区公所",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "当巴区区公所",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "汤正琪",
+                "coarse_type": "人",
+                "fine_type": "官员"
+            },
+            {
+                "name": "汤正琪",
+                "coarse_type": "政治",
+                "fine_type": "官员"
+            },
+            {
+                "name": "拉萨",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "山南",
+                "coarse_type": "位置",
+                "fine_type": "地区"
+            },
+            {
+                "name": "措美县",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "早报记者官平",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "官平",
+                "coarse_type": "人",
+                "fine_type": "记者"
+            },
+            {
+                "name": "记者",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "根据这一建议，欧盟将重新允许英国的牛肉出口，但条件是牛肉必须是去骨牛肉，而且必须来自１９９６年８月１日以后出生的牛。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "欧盟",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "欧盟",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "英国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "●温家宝会见芬兰农林部长据新华社北京６月１０日电国务院副总理温家宝今天在京会见了来访的芬兰农林部长卡莱维·海米莱。",
+        "coarse_types": [
+            "学历",
+            "人",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "温家宝",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "温家宝",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "卡莱维·海米莱",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "卡莱维·海米莱",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "芬兰农林部",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "芬兰农林部",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "新华社",
+                "coarse_type": "组织机构",
+                "fine_type": "媒体"
+            },
+            {
+                "name": "国务院",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "国务院",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "北京",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "京",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "虽然前些年在中国统一办理身份证时，当地给他起了一个日本味很浓的名字“小门野郎”，然而，对于一个记忆力丧失，无法讲日语的日本老兵来说，这对证明他的身份毫无用处。",
+        "coarse_types": [
+            "职位",
+            "学历",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "日本",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "小门野郎",
+                "coarse_type": "人",
+                "fine_type": "名人"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2011年至2012年任职于中冶纸业集团担任贸易部副总经理。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "贸易部副总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "中冶纸业集团",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "意在排除桑普多客胜赔的可能；eurobet在提高赔付率时，同时抬高了主胜赔和客胜赔，平赔维持不变，",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "eurobet",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "任命周晓沛为中华人民共和国驻乌克兰特命全权大使。",
+        "coarse_types": [
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "周晓沛",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "周晓沛",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "中华人民共和国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "乌克兰",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "WCG在韩国一直是由OGN来举办的，但是现在《星际争霸》的知识产权问题依旧没能得到解决，",
+        "coarse_types": [
+            "文学",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "电视台不转播该场比赛。9.暴雪正式宣布，星际2将取消线下IPX互联模式。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "暴雪",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "星际2",
+                "coarse_type": "产品",
+                "fine_type": "软件"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "他料想前不久寄给温源宁先生的稿子不会立即刊登。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "温源宁",
+                "coarse_type": "人",
+                "fine_type": "作家"
+            },
+            {
+                "name": "温源宁",
+                "coarse_type": "文学",
+                "fine_type": "作家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "五四新文化运动，提出“科学”与“民主”，确实揭示了文化改造的主要任务。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "苏州吉美瑞医疗器械有限公司董事长；",
+        "coarse_types": [
+            "职位",
+            "位置",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "董事长",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "老汉手拄拐杖，目光混浊而呆滞，问他什么话都不答。",
+        "coarse_types": [
+            "组织机构",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "本场再败的话，将提前出局。莫斯巴主场与荷兰球队5胜2平，最近两场比赛均战成平局；",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "莫斯巴",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "荷兰球队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "日本经济走出低谷之前，日元贬值是大势所趋。",
+        "coarse_types": [
+            "文学",
+            "职位",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "日本",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "定林寺坐落在浮来山上，其主要古建筑只有大佛殿、校经楼和三教堂三处。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "学历",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "定林寺",
+                "coarse_type": "位置",
+                "fine_type": "景点"
+            },
+            {
+                "name": "浮来山",
+                "coarse_type": "位置",
+                "fine_type": "山"
+            },
+            {
+                "name": "大佛殿",
+                "coarse_type": "位置",
+                "fine_type": "设施"
+            },
+            {
+                "name": "校经楼",
+                "coarse_type": "位置",
+                "fine_type": "设施"
+            },
+            {
+                "name": "三教堂",
+                "coarse_type": "位置",
+                "fine_type": "设施"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "克林顿刚上任时，阿肯色州的经济水平和教育质量均在全国倒数第二。",
+        "coarse_types": [
+            "人",
+            "产品",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "克林顿",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "克林顿",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "阿肯色州",
+                "coarse_type": "位置",
+                "fine_type": "州"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "舒同同志是中国书法事业的继承者和开拓者。",
+        "coarse_types": [
+            "职位",
+            "位置",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "舒同",
+                "coarse_type": "人",
+                "fine_type": "艺术家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "１９９７年１２月的一天，来自河北贫困山区顺平县下叔村的孤儿王学强，从报纸上读到了保定玉兰香厨师技术学校招生的广告，抱着闯一闯、试一试的想法来到了保定。",
+        "coarse_types": [
+            "位置",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "河北",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "顺平县",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            },
+            {
+                "name": "下叔村",
+                "coarse_type": "位置",
+                "fine_type": "村庄"
+            },
+            {
+                "name": "保定",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "王学强",
+                "coarse_type": "人",
+                "fine_type": "学生"
+            },
+            {
+                "name": "保定玉兰香厨师技术学校",
+                "coarse_type": "组织机构",
+                "fine_type": "学校"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "曾任银龙股份（603969，上海）独立董事，现任国际医学（000516，深圳）、森源电气（602358，上海）、瑞贝卡（600439，上海）独立董事，现任西安宝德自动化股份有限公司第二届董事会独立董事。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "事件",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "银龙股份",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "国际医学",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "森源电气",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "瑞贝卡",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "独立董事",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "第二届董事会独立董事",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在当时十分错综复杂的形势下，邓小平同志运用马克思主义辩证法，在诸多复杂的矛盾中紧紧抓住主要矛盾，从解决主要矛盾入手解决全局问题。",
+        "coarse_types": [
+            "科学",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "邓小平",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "邓小平",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "马克思",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "杜少先，男，汉族，",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "杜少先",
+                "coarse_type": "人",
+                "fine_type": "研究者"
+            },
+            {
+                "name": "杜少先",
+                "coarse_type": "科学",
+                "fine_type": "研究者"
+            },
+            {
+                "name": "汉族",
+                "coarse_type": "组织机构",
+                "fine_type": "民族"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "６月１３日在成都，四川全兴队在第一回合落败的情况下以４∶０大获全胜，并以６∶４的总比分进入第二轮。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "产品",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "四川全兴队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "成都",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "清明上河新画卷———河南开封县创建文明县城记（附图片１张）此外，警务公开，改善了“门难进、脸难看、事难办”的问题；厂务公开，增加了工人的责任感；校务公开，制止了学校乱收费、变相加重农民负担等不良现象。",
+        "coarse_types": [
+            "生物",
+            "产品",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "河南",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "开封县",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "唐家璇外长代表中国政府对差猜逝世表示沉痛哀悼，并转达了对差猜家属的诚挚慰问。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "唐家璇",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "唐家璇",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "差猜",
+                "coarse_type": "人",
+                "fine_type": "平民"
+            },
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "而宝钢出现亏损的另一种可能则在期货市场。“买入一定的看空期权，本是对于期货市场上做多的一种‘",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "产品",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "宝钢",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "是否公开核武器储备在美国政府高层已争论数月。相关军事和情报机构反对解密核武器数据，",
+        "coarse_types": [
+            "组织机构",
+            "位置",
+            "职位",
+            "产品"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "从此，孙威锋天蒙蒙亮就得起床挑水洗衣、烧火做饭，做完家务活，再赶路去上学。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "孙威锋",
+                "coarse_type": "人",
+                "fine_type": "学生"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "历史研究应面对现实，反顾历史。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "要注意研究近代各种思潮的融会贯通，只有把戊戌维新放到历史发展的长河中去加以考察，才能对它进行正确的定位。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "沈美成认为，随着中国艺术品市场近年来迅猛发展，中国藏家的口味也开始多元化、国际化，",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "学历",
+            "产品",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "藏家",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "沈美成",
+                "coarse_type": "人",
+                "fine_type": "艺术家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "对这样的人，当然要依理从事，照规矩处置。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "陈平原：大家在谈到蔡元培的时候，常提到他的“循思想自由原则，取兼容并包主义”（１９１９年《致〈公言报〉函，并答林琴南函》）。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "陈平原",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "蔡元培",
+                "coarse_type": "人",
+                "fine_type": "教育家"
+            },
+            {
+                "name": "林琴南",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "公言报",
+                "coarse_type": "组织机构",
+                "fine_type": "媒体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "研究人员认为，这种烟草在沙漠中可存活１个月左右，这是由于过氧化氢酶分解活性氧的能力比烟草本身的分解酶强得多。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "”隆福广场商场冷冷清清只是北京大型商场的缩影，据统计，１９９７年，北京８８家重点零售企业中，销售额较１９９６年略有增长的仅有２８家，有１０家大商场在亏损的边缘苦苦支撑。",
+        "coarse_types": [
+            "事件",
+            "位置",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "隆福广场商场",
+                "coarse_type": "位置",
+                "fine_type": "设施"
+            },
+            {
+                "name": "北京",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "一位郑州学人说，越秀学术讲座对郑州学界而言堪称功德之举。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "郑州",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "越秀",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2012年12月至2013年6月，任华夏幸福副总裁，分管大厂大区；",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "产品",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "副总裁",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "谢谢你，魔兽争霸3！",
+        "coarse_types": [
+            "文学",
+            "位置",
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "她说：“捐一所‘希望小学’要好多好多万，我得打多少年工才能挣来这好多好多钱呀？",
+        "coarse_types": [
+            "组织机构",
+            "人"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "分散、流动和较低的组织化程度，使农民在激烈的市场竞争中，经常处于不利的地位，很难在市场上得到公平的回报。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "美国哥伦比亚大学国际工商研究院主任魏尚进和国际粮食政策研究所资深研究员张晓波一同进行的最新研究显示，",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "国际粮食政策研究所",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "国际粮食政策研究所",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "美国哥伦比亚大学国际工商研究院",
+                "coarse_type": "组织机构",
+                "fine_type": "研究机构"
+            },
+            {
+                "name": "美国哥伦比亚大学国际工商研究院",
+                "coarse_type": "科学",
+                "fine_type": "研究机构"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "否则你们一定可以包揽金银铜，到时候还可以出席颁奖晚会踩在红地毯上发表一下获奖感想：感谢cctv，",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "cctv",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "cctv",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "子君村一期共5300套经济适用房仅有2578户交了订金，其中签了购买合同的有2409户。",
+        "coarse_types": [
+            "组织机构",
+            "文学",
+            "职位",
+            "产品"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在换上郑海霞后，全队的速度放慢，被俄罗斯队连追１３分反超。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "俄罗斯队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "郑海霞",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "２、一些鄂西山区农户近来装上了一种小型地面卫星接收站。",
+        "coarse_types": [
+            "生物",
+            "学历",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "鄂",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "如何摆脱农民靠天收粮的束缚，县委、县政府在组织乡村集体兴修水利的同时，出台了一系列优惠政策，鼓励私人兴办水利工程。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "县委",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "县委",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "但运气不好的人总是有的。就在雷曼兄弟破产消息出台前，james（化名）决定跳槽，",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "james（化名）",
+                "coarse_type": "人",
+                "fine_type": "职工"
+            },
+            {
+                "name": "雷曼兄弟",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在综合性险种中，保户所交保费实际上分为两部分，一部分购买的是保障，这部分资金并不具有储蓄或增值意义，因而不受银行利率的影响，而与人的生死概率有关；另一部分用于储蓄的资金，其投资收益才会受利率变化的影响。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "８日，澳大利亚政府和澳海运工会正式摊牌，一年多来联邦政府极力推行的码头改革首次经受考验。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "澳海运工会",
+                "coarse_type": "组织机构",
+                "fine_type": "工会"
+            },
+            {
+                "name": "澳大利亚",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "印度财政部长辛哈说，美国的制裁措施只不过是印美贸易关系发展道路上的一个“小小绊脚石”，印度有能力克服任何困难。",
+        "coarse_types": [
+            "人",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "印度财政部",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "印度财政部",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "辛哈",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "辛哈",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "印",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "印度",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "美",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "美国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在香港政府还未介入社会福利事务之前，民间的福利工作是由一些热心公益的人士、社团或宗教团体本着慈善为怀的精神，出钱出力组成志愿机构，担当救灾济贫的道义责任。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "香港",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "张瑞敏查出了这批冰箱的生产人员，拿来一把重磅大锤，要生产者自己来砸。",
+        "coarse_types": [
+            "生物",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "张瑞敏",
+                "coarse_type": "人",
+                "fine_type": "企业家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "欧洲平均主胜赔率在1.98左右，周初有下调趋势。加拉塔萨雷主帅斯基贝和队内多名球员此次回祖国征战，",
+        "coarse_types": [
+            "文学",
+            "位置",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "斯基贝",
+                "coarse_type": "人",
+                "fine_type": "教练"
+            },
+            {
+                "name": "加拉塔萨雷",
+                "coarse_type": "组织机构",
+                "fine_type": "俱乐部"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "1976年1月出生，中共党员，",
+        "coarse_types": [
+            "职位",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中共党员",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "包括中国在内的近３０个国家的政府官员和经济专家参加了这次为期两天的研讨会。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "学历",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "经济相对较为发达地区，如何依靠科技创新改造传统产业、提高竞争能力？",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "应当承认，曹操烧的书并不是伪作，实是他多年征战的记录和心得。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "学历",
+            "产品",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "曹操",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "曹操",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "８日，澳大利亚政府和澳海运工会正式摊牌，一年多来联邦政府极力推行的码头改革首次经受考验。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "产品",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "澳海运工会",
+                "coarse_type": "组织机构",
+                "fine_type": "工会"
+            },
+            {
+                "name": "澳大利亚",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "但检查中也发现一些地方在贯彻执行《条例》方面存在的问题，主要是：对《条例》的学习、宣传不够，执行《条例》不严格、甚至有章不循，有的在提拔干部时没有经过民主推荐，有的没有经过党委认真充分的集体讨论，有的考察不认真；超编制、超职数配干部的现象在有的地方还比较突出，有的突击提干；干部任免审批材料和档案材料不规范、不齐全；在一些地方和部门，还不同程度地存在着用人上的不正之风和腐败现象，如跑官要官、买官卖官，乃至骗官等问题。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "1300多年以后”的《纳尔尼亚传奇2：凯斯宾王子》淘汰出局，但属于自己的又一个大卖形象新鲜出炉！",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "产品",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "报告回顾了亚太地区的宏观经济形势，并阐述了对外经济部门的管理、增长和均等以及最近本地区金融危机的状况和应对措施等内容。",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "亚太",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "舆论仍看好意大利队———Ｂ组出线形势简析（法兰西传真）终场前一分钟，奥地利队前锋１９号波尔斯特借一个角球机会，攻进一球把比分扳平。",
+        "coarse_types": [
+            "生物",
+            "组织机构",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "意大利队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "奥地利队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "法兰西",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "波尔斯特",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这一现象在汉族地区和非专门从事民族工作的部门更加明显。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "主持人：大家如果对英美留学方面有问题就可以问孙楠总监。等一下加欧留学中心总监刘诗民，",
+        "coarse_types": [
+            "生物",
+            "组织机构",
+            "学历",
+            "人",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "加欧留学中心",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "加欧留学中心",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "孙楠",
+                "coarse_type": "人",
+                "fine_type": "总监"
+            },
+            {
+                "name": "刘诗民",
+                "coarse_type": "人",
+                "fine_type": "总监"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "“为了明年的３月，为了永远拥有灿烂的阳春，‘紫禁城’加把劲！",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "学历",
+            "产品",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "紫禁城",
+                "coarse_type": "位置",
+                "fine_type": "景点"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "专家们认为，欧佩克对世界原油价格的影响力在不断减弱，没有欧佩克与非欧佩克产油国的协调行动，单方力量很难调控原油价格。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "欧佩克",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "欧佩克",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "自从日美修改防卫合作指针以来，日本当局在防卫范围问题上，向中方作出过许多解释，但就是不肯明确地作出不包括台湾的承诺。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "学历",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "日",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "美",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "日本",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "台湾",
+                "coarse_type": "位置",
+                "fine_type": "地区"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "宋权礼先生：汉族，本科学历。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "宋权礼",
+                "coarse_type": "人",
+                "fine_type": "研究者"
+            },
+            {
+                "name": "宋权礼",
+                "coarse_type": "科学",
+                "fine_type": "研究者"
+            },
+            {
+                "name": "本科学历",
+                "coarse_type": "科学",
+                "fine_type": "学历"
+            },
+            {
+                "name": "汉族",
+                "coarse_type": "组织机构",
+                "fine_type": "民族"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "校团委研究生会副主席李文忠认为江总书记的讲话中突出了爱国主义精神、科学精神、民主精神和文化精神，这些都是当代大学生应当具备的。",
+        "coarse_types": [
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "李文忠",
+                "coarse_type": "人",
+                "fine_type": "学生"
+            },
+            {
+                "name": "江",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "江",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "校团委研究生会",
+                "coarse_type": "组织机构",
+                "fine_type": "协会"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "坚决打击毒品犯罪是墨西哥政府的一贯政策，墨政府每年拿出１６亿美元的巨额资金，用于打击走私贩毒等犯罪活动，但要解决令人担忧的毒品问题已非一国政府力所能及，只有国际社会共同努力，加强合作才有望成功。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "墨西哥",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "墨",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "1905年1月生于奉天（今辽宁）省海城县唐王山后村一个贫苦农民家庭。8岁时在本村小学读书。",
+        "coarse_types": [
+            "文学",
+            "人",
+            "职位",
+            "位置",
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "４月８日下午，北京市崇文区定安里小学的操场上一片欢声笑语。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "北京市",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "崇文区",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            },
+            {
+                "name": "定安里小学",
+                "coarse_type": "组织机构",
+                "fine_type": "学校"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "其中，《中华学初论》一书提出，“中华学”是致力于中华民族自知自觉的学问，包括对中华自然、中华民族、中华文化的探究，并与国外中国学（汉学）等诸多学科接轨。",
+        "coarse_types": [
+            "职位",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中华",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在北京，许多横穿马路者从不走人行横道，而经过人行横道的车辆也不避让行人，都是疾驶冲过。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "北京",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在即将到来的G联赛2011第一赛季线下总决赛第二天中，DOTA决赛的LGD、",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "G联赛",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "LGD",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2012年7月至今任稽查部调研员。",
+        "coarse_types": [
+            "生物",
+            "学历",
+            "职位",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "稽查部调研员",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在下午率先进行的丹麦队与马来西亚队的比赛中，马来西亚队以３∶２的总比分力克丹麦队，率先获得汤杯决赛权；在今晚进行的中国队与印尼队的半决赛中，中国队以２∶３不敌印尼队，从而使印尼队也领得了本届汤杯决赛入场券。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "人",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "丹麦队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "马来西亚队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "中国队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "印尼队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "汤",
+                "coarse_type": "人",
+                "fine_type": "名人"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "５０年代中期，中国共产党在总结同各民主党派长期合作的成功经验基础上，提出了同各民主党派“长期共存，互相监督”的方针，为社会主义时期共产党领导的多党合作奠定了政策基础。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中国共产党",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "中国共产党",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "共产党",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "共产党",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2000年至2008年10月任国有企业监事会驻中航二集团公司监事，",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "监事",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "安然火线解盘：雷吉纳主场可博胆马竞客场需防冷",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "安然",
+                "coarse_type": "人",
+                "fine_type": "分析师"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "他尖锐地批评某些同志天天讲毛泽东思想，却忘记了从实际出发、理论联系实际的原则，实质上是主张只要照抄照搬马克思、列宁、毛泽东同志的原话就行了，要不然就说这是违反了马列主义、毛泽东思想。",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "毛泽东",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "马克思",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "马",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "列宁",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "列",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "”爵士队教练斯隆赛后羞愧地说：“我们输得无脸见人。",
+        "coarse_types": [
+            "生物",
+            "事件",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "斯隆",
+                "coarse_type": "人",
+                "fine_type": "教练"
+            },
+            {
+                "name": "爵士队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "另外有业内人士表示，工商银行新的计息方式更加合理和具有人性化，未来各家银行将会逐渐效仿，",
+        "coarse_types": [
+            "组织机构",
+            "文学",
+            "职位"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "李约瑟博士认为，大约在十五世纪，中国结束了科技领先于世界的局面。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "学历",
+            "产品",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "李约瑟",
+                "coarse_type": "人",
+                "fine_type": "思想家"
+            },
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "而在尚不富裕的山东省郓城县，就有一位着意为下岗工人营造再就业绿地的人。",
+        "coarse_types": [
+            "职位",
+            "学历",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "山东省",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "郓城县",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "戊戌维新与辛亥革命在促进中华民族觉醒的手段与内涵上有惊人的相似之处，他们都是以新学开民智，以学会团民力，以报刊鼓民气，以政党归民心，革命派高呼“唤起民众”的口号，维新派力言“开民智”、“鼓民力”、“新民德”的新潮，自由、平等、博爱之说成为各种文化现象的理论风骨，民主、民权、民生成为各种政治派别行动的指南。",
+        "coarse_types": [
+            "生物",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中华",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "３月２５日，欧盟委员会发表《欧盟１９９８年春季经济预测报告》，指出欧盟经济发展前景看好，预测１９９８年和１９９９年欧盟经济增长率将可分别达到２．８％和３％。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "欧盟",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "欧盟",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "欧盟委员会",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "欧盟委员会",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "熊必琳，男，汉族，",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "汉族",
+                "coarse_type": "组织机构",
+                "fine_type": "民族"
+            },
+            {
+                "name": "熊必琳",
+                "coarse_type": "人",
+                "fine_type": "平民"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "但有一点不可回避的是，在房价成本中占相当比例的征地费用由于土地获取渠道和方式的不同，这部分成本对于不同的项目、不同的开发商可能会有天壤之别，但反映到市场上，每一项目的售价却极具“市场可比性”。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "苏州新区以其优美的环境，创造了高新技术产业发展的更广阔的空间。",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "苏州新区",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "中国队在昨晚的比赛中排出以郑海霞为中锋的阵容，但她的表现显然不在状态，上场２１分钟仅得两分。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "郑海霞",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "中国队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "而位于玉双路的一家民间放贷机构则表示，只要抵押房产和成都市户口，",
+        "coarse_types": [
+            "文学",
+            "人",
+            "产品",
+            "职位",
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "集结号（）》获得最佳男主角与百家传媒年度致敬电影，而陈冲（blog）",
+        "coarse_types": [
+            "组织机构",
+            "位置",
+            "文学",
+            "产品"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "持这种观点的学者据此进一步认为，生产要素的重要性和稀缺性是一切社会所共有的，因而按生产要素分配，是自奴隶社会以来迄今为止一切社会所共有的分配规律。",
+        "coarse_types": [
+            "组织机构",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "浏阳市烟花爆竹总会一位工作人员无奈地说，“三湘烟花这次燃放并没有在我们这里备案。",
+        "coarse_types": [
+            "文学",
+            "人",
+            "职位",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2007年至今就职于中天发展控股集团有限公司，历任资产监管部总经理助理、资产监管部副总经理，现任资产监管部总经理。",
+        "coarse_types": [
+            "学历",
+            "职位",
+            "文学",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "中天发展控股集团有限公司",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "资产监管部总经理助理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "资产监管部总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "资产监管部副总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "电脑打出“祝贺你找到了石油”的字样，并将她列入１０名“最佳采油工”名单。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "胡锦涛副主席此次访韩将成为两国继续发展合作的契机。",
+        "coarse_types": [
+            "科学",
+            "位置",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "韩",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "胡锦涛",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "胡锦涛",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "新浪娱乐讯今日（7月30日）下午，08暑期爆笑电影《十全九美》在北京举行亚洲首映发布会。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "学历",
+            "产品",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "《十全九美》",
+                "coarse_type": "产品",
+                "fine_type": "电影"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "”我们在“黄河母亲”塑像旁照了张相，准备付车费。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "位置",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "黄河",
+                "coarse_type": "位置",
+                "fine_type": "河"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "了解和掌握连队生产情况和认亲户家庭情况。第二批次干部22人由副局长杨燕华和执法大队大队长方剑民带队,",
+        "coarse_types": [
+            "文学",
+            "职位",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "副局长",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "大队长",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "执法大队",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "执法大队",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "山西省公安队伍中，目前直接参与执法的临时执法人员达５３３３人。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "学历",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "山西省",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "成为了招行信用卡业务纵深推进的切入口。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "招行",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "其次，信息业已广泛渗透到旧货市场中。",
+        "coarse_types": [
+            "组织机构",
+            "人"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2000年9月至今任红珠山宾馆分公司办公室主任；",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "办公室主任",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "编写中学教科书是一项专门的学问，有很深造诣的专家学者，不见得能编出一套好的历史教科书来。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "１９９６年１２月３０日，我国批准了公约，并于１９９７年４月２５日交存了批准书，从而成为公约的原始缔约国。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "目前国内发卡量超过1000万张的银行有工商银行（601398.sh）、建设银行（601939.sh）",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "工商银行（601398.sh）",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "建设银行（601939.sh）",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "夏姿-陈的店铺开在名店林立的saint-honoré路，卢浮宫左近，是一栋门面狭窄、",
+        "coarse_types": [
+            "文学",
+            "人",
+            "产品",
+            "位置",
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "美国财政部负责国际事务的副部长萨默斯当天对新闻界表示，希望双方尽快达成协议，使俄罗斯能够得到基金组织的支援。",
+        "coarse_types": [
+            "科学",
+            "位置",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "美国财政部",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "美国财政部",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "基金组织",
+                "coarse_type": "组织机构",
+                "fine_type": "非盈利组织"
+            },
+            {
+                "name": "俄罗斯",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "萨默斯",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "萨默斯",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "发表于2010年《大众软件》11月中",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "《大众软件》",
+                "coarse_type": "组织机构",
+                "fine_type": "媒体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "要认识党虽然处在现阶段，但担负着领导社会主义初级阶段事业的重大责任。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "但是前线的4个BP已经被Ciwei变身后的TK瞬间拆完，变形金刚的拆建筑能力真是太强大了。",
+        "coarse_types": [
+            "文学",
+            "位置",
+            "产品"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "1996年到1997年任深圳市金三元实业有限公司法律部主任；",
+        "coarse_types": [
+            "学历",
+            "职位",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "法律部主任",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "监测的５０％的河段为超Ⅴ类水质。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "并且在综合援助金中专门设立了家庭津贴项目，政府每年为支持家庭所投入的经费在社会保障总支出中高达６０％左右。",
+        "coarse_types": [
+            "组织机构",
+            "人"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "———实行干群双向监督制度，增强了干部群众的自治能力。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "但下半场墨西哥人完全取得了主动，韩国队则判若两队。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "墨西哥",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "韩国队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "拉莫斯强调，菲方高度重视中国在维护地区稳定及经济发展方面发挥的重要作用，菲中两国之间的睦邻合作有着巨大的潜力。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "拉莫斯",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "拉莫斯",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "菲",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2006年7月22日，在顺义一牧草公司院内，周清来用塑料绳将生意伙伴董某勒死在车内，",
+        "coarse_types": [
+            "文学",
+            "产品",
+            "职位",
+            "位置",
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "雪后的美景吸引我驱车去“抢镜头”。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "同时，也说明领导干部廉洁自律问题影响大，时常产生“共振”和“互动”的现象。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "有的甚至可能出现零增长或负增长。记者从一家股份制银行获悉，2008年个人贷款增速在10%左右。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "股份制银行",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "当然，倒不是中国女排离开王怡就玩不转，关键是作为集训队员的王怡赴美留学，国家体育总局排球中心居然没有得到任何有关情况的通报，人们都被蒙在鼓里。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "美",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中国女排",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "国家体育总局排球中心",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "国家体育总局排球中心",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "王怡",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "巴乔倒也大度，赛后肯定皮埃罗“表现了自己的才能”。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "学历",
+            "产品",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "巴乔",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "皮埃罗",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "该省有４所高校，原计划修建或装修办公楼，有的取消了修建办公楼的计划，有的降低了办公楼装修标准，吉林工业大学仅基建一项为学校节约开支３００多万元。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "吉林工业大学",
+                "coarse_type": "组织机构",
+                "fine_type": "大学"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "８０年代以来，随着我国海洋开发利用活动日益增多和各项海洋产业的迅猛发展，海域使用呈现多样化、区域化。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "一打听茶钱，几十元一杯，最低消费也是十多元，喝了要成仙么？",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "确定赔款还是要看人保财险与业主单位所签合同对除外责任的约定和最终查勘定损的结果。”",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "人保财险",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "听到有人来，大孙女李果丽和她的妈妈也相继从屋里走出来与我们说话。",
+        "coarse_types": [
+            "产品",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "李果丽",
+                "coarse_type": "人",
+                "fine_type": "学生"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "到场的队员包括NirvanaDota战队分部，以及星际争霸2明星选手中国虫王F91。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "人",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "虫王F91",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "NirvanaDota战队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "明星选手",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这个决定在一定程度上意味着财政结构改革的倒退，也意味着日本政府从改革优先的立场上后退。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "日本",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "张涛告诉记者，针对这类案件中存在的一些问题，公安机关将采取扩大侦控范围，建立快速反应、",
+        "coarse_types": [
+            "职位",
+            "事件",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "记者",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "张涛",
+                "coarse_type": "人",
+                "fine_type": "企业家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "”沃尔教授在接受本社记者采访时说：“香港回归之顺利超出了人们的预料，香港特区政府一年来的运作，尤其是它在处理亚洲目前这场金融危机中所表现出来的胆识和能力，使人们原来对香港未来的担心消失了。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "学历",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "香港",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "香港特区",
+                "coarse_type": "位置",
+                "fine_type": "区域"
+            },
+            {
+                "name": "亚洲",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            },
+            {
+                "name": "沃尔",
+                "coarse_type": "人",
+                "fine_type": "教授"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "上述失窃的３幅珍贵油画，总计价值超过６００亿里拉。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "谈到布隆迪局势时，胡锦涛表示，相信在布隆迪政府和有关各方的共同努力下，布隆迪问题最终会得到妥善解决。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "胡锦涛",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "胡锦涛",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "布隆迪",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "泰国１９９８年度增长率从原来预定的负增长３％—３．５％调低为负增长４％—４．５％；出口增长率由原定的６．２％降低为１．４％（以美元计算）。",
+        "coarse_types": [
+            "科学",
+            "学历",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "泰国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "也有人会觉得海渔广场是不是卖跟渔具相关的东西。其实我们的海渔广场打造的是中国首席海洋文化城市综合体,",
+        "coarse_types": [
+            "文学",
+            "人",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "海渔广场",
+                "coarse_type": "位置",
+                "fine_type": "景点"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "”天津第一中级人民法院编辑的《审判管理规范》中也明确无误地规定：“公开审判的案件，允许公民旁听。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "天津第一中级人民法院",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "天津第一中级人民法院",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "申万秋，男，出生于1970年4月，毕业于清华大学经济管理学院，获工商管理硕士学位，入选清华MBA教育20年20人。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "申万秋",
+                "coarse_type": "人",
+                "fine_type": "企业家"
+            },
+            {
+                "name": "清华MBA教育20年20人",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "硕士学位",
+                "coarse_type": "科学",
+                "fine_type": "学历"
+            },
+            {
+                "name": "清华大学经济管理学院",
+                "coarse_type": "组织机构",
+                "fine_type": "大学"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "当时他痛不欲生，但当得知保险公司会给他巨额工伤事故赔偿时，他心里又宽慰了一些。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在今天的男女单打决赛中，新秀马林和张怡宁分别挫败赛前被看好的孔令辉和王辉，夺得男女单打冠军。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "马林",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "张怡宁",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "孔令辉",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            },
+            {
+                "name": "王辉",
+                "coarse_type": "人",
+                "fine_type": "运动员"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "有的长篇小说，率而操觚，敷衍成篇，文字拉杂，故事荒唐，放下拿起，总难读完。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "内塔尼亚胡指责莫迪凯对他施加压力，表示决不在压力下接受美国的和平方案，并说匆忙接受美国方案决不是和谈的适当途径。",
+        "coarse_types": [
+            "学历",
+            "事件",
+            "位置",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "美国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "内塔尼亚胡",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "内塔尼亚胡",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "莫迪凯",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "莫迪凯",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "冒牌天神2》、《奶爸别动队2》、《伊丽莎白女王传2：黄金时代》的全军覆没，让人不禁对年关把门的《",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "冒牌天神2》",
+                "coarse_type": "产品",
+                "fine_type": "电影"
+            },
+            {
+                "name": "《奶爸别动队2》",
+                "coarse_type": "产品",
+                "fine_type": "电影"
+            },
+            {
+                "name": "《伊丽莎白女王传2：黄金时代》",
+                "coarse_type": "产品",
+                "fine_type": "电影"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2001年9月至2003年11月任中国化工供销（集团）总公司副总会计师，",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "学历",
+            "人",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "副总会计师",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "民生银行个人业务部理财师陈女士介绍说，信用卡业务的赚钱无非是以下三种途径：第一，",
+        "coarse_types": [
+            "文学",
+            "组织机构",
+            "产品",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "１９９６年亚特兰大奥运会、１９９７年亚洲锦标赛，直到本届世锦赛前的热身赛，中国队同日本队交锋时总是输。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "亚特兰大",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "亚洲",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            },
+            {
+                "name": "中国队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "日本队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "其中会经过松恩峡湾的两条支流纳柔依峡湾和艾于兰峡湾，弗洛姆至米达尔的绿皮火车，",
+        "coarse_types": [
+            "文学",
+            "人",
+            "职位",
+            "组织机构"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "”著名表演艺术家李默然是鞍钢人非常熟悉的演员，当他再次踏上这块滚烫的热土时，激情油然而生。",
+        "coarse_types": [
+            "职位",
+            "事件",
+            "人",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "李默然",
+                "coarse_type": "人",
+                "fine_type": "演员"
+            },
+            {
+                "name": "鞍钢",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这就好比一台戏，公仆就是后台总管，主要任务是搭台，台搭好了，群众自会唱出好戏。",
+        "coarse_types": [
+            "组织机构",
+            "人"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "讲实惠不讲形象，就是只讲有利可图，惟利是图，就是不怕给共产党抹黑。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "共产党",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "共产党",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "反腐败要抓『源头』（人民论坛）中宣部、文化部、广电总局、新闻出版署负责同志在会上通报了情况。",
+        "coarse_types": [
+            "职位",
+            "组织机构",
+            "学历",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中宣部",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "中宣部",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "文化部",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "文化部",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "广电总局",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "广电总局",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            },
+            {
+                "name": "新闻出版署",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "新闻出版署",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "全省去年检查各类纳税人１３万户，追补税款１４．８亿多元。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "学生没有填写过申请材料，银行如何能获取学生的个人信息呢？不少学生直言，",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "学生",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "部分人大政协常委应邀座谈检察机关教育整顿工作通知要求，各地在高考期间和高考前半个月内，除按国家有关环境噪声标准对各类环境噪声源进行严格控制外，应采取以下强制性措施：本报讯为在高考期间保证学生有一个安静的学习和休息环境，防止和减少噪声扰民，近日国家环保总局发出加强环境监督的通知。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "人大",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "人大",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "政协",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "政协",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "国家环保总局",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "国家环保总局",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "果不其然，在去年世界通信公司以３７０亿美元的价格收购微波通信公司以后，花旗集团与旅行者两大金融公司的兼并案将把美国的兼并额推至登峰造极的地步。",
+        "coarse_types": [
+            "科学",
+            "事件",
+            "位置",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "世界通信公司",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "微波通信公司",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "花旗集团",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "旅行者",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            },
+            {
+                "name": "美国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "拆迁涉及的３００农户没有出现一个“钉子户”，也没有一人上访，为南京城市建设多年来所罕见。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "学历",
+            "产品",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "南京",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "在即将到来的G联赛2011第一赛季线下总决赛第二天中，DOTA决赛的LGD、",
+        "coarse_types": [
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "DOTA",
+                "coarse_type": "产品",
+                "fine_type": "软件"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "该校缓建教师办公大楼，卖掉仅有的一辆小轿车，两年来先后投入１６０余万元，对微机、机电、音美、财会等专业进行了“全副武装”，先后建成拥有微机７０余台、设备价值４０余万元的微机室，设备投资１９万元的电工室和总面积２３０余平方米的排练厅。",
+        "coarse_types": [
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "地点：博库书城芳汇广场店(上海市长寿路1118号芳汇广场内)",
+        "coarse_types": [
+            "组织机构",
+            "学历",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "博库书城芳汇广场店(上海市长寿路1118号芳汇广场内)",
+                "coarse_type": "位置",
+                "fine_type": "地址"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "此数据换算成亚洲盘那不勒斯客场平手低水。",
+        "coarse_types": [
+            "科学",
+            "事件",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "那不勒斯",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "目前，我国已经把海洋开发纳入跨世纪的国家发展战略。",
+        "coarse_types": [
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2012年4月至今兼任韶关钢铁党委副书记。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "学历",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "党委副书记",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "现担任杭州顺网科技股份有限公司监事兼综合部经理。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "产品",
+            "组织机构"
+        ],
+        "entities": [
+            {
+                "name": "监事",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "综合部经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "李保华申兴",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "学历",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "李保华",
+                "coarse_type": "人",
+                "fine_type": "企业家"
+            },
+            {
+                "name": "申兴",
+                "coarse_type": "人",
+                "fine_type": "企业家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "中组部和中宣部发出通知，对学习好邓小平党建理论提出了明确要求。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "文学",
+            "事件"
+        ],
+        "entities": [
+            {
+                "name": "邓小平",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "邓小平",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "中组部",
+                "coarse_type": "组织机构",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "中组部",
+                "coarse_type": "政治",
+                "fine_type": "政治团体"
+            },
+            {
+                "name": "中宣部",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "中宣部",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "这亦是历史研究表述中应取的手法。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "比利亚雷亚尔：曼联（1，0）：",
+        "coarse_types": [
+            "文学",
+            "职位",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "１９９２年１０月，岗南镇三角村传来的消息触动了县里的决策者们。",
+        "coarse_types": [
+            "学历",
+            "人",
+            "科学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "岗南镇",
+                "coarse_type": "位置",
+                "fine_type": "区"
+            },
+            {
+                "name": "三角村",
+                "coarse_type": "位置",
+                "fine_type": "村庄"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "二是要完善保险法规，使保险经营活动有法可依，保险市场竞争有序。",
+        "coarse_types": [
+            "组织机构",
+            "人"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "非洲在国际贸易舞台上的边缘化也使其经济在世界经济中日趋边缘化。",
+        "coarse_types": [
+            "职位",
+            "学历",
+            "产品",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "非洲",
+                "coarse_type": "位置",
+                "fine_type": "洲"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "一时间，万人大礼堂内掌声雷动。",
+        "coarse_types": [
+            "组织机构",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "作品所讲述的，也就是中国军人为“鸟瞰地球”的战略导弹“筑巢”的故事。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "中国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "地球",
+                "coarse_type": "科学",
+                "fine_type": "天体"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "文坛曾有“各领风骚三五天”的戏言，揶揄创作标新立异太快。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "列男女排后两名的北京、湖北和辽宁、福建四队惨遭降级，下赛季联赛，它们的位置将由获全国排球优胜赛男女排前两名的八一、成都部队男排和云南、南京军区女排四队取而代之。",
+        "coarse_types": [
+            "生物",
+            "科学",
+            "组织机构",
+            "产品",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "男女排",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "北京",
+                "coarse_type": "位置",
+                "fine_type": "城市"
+            },
+            {
+                "name": "湖北",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "辽宁",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "福建",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "八一",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "成都部队男排",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            },
+            {
+                "name": "云南",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            },
+            {
+                "name": "南京军区女排四队",
+                "coarse_type": "组织机构",
+                "fine_type": "团队"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "涨潮的季节－－－读亦秋《涨潮时分》随想也因了军人也是人的缘故，这部作品“如实写来”，不夸饰，不高调，不摆故作慷慨激昂之状，也没有把热血男儿都写成英雄好汉……“悲”与“壮”的结合，那种情真意切的描写，那种从真实揭示中产生的既属于军人也属于人的命运感，正是作品富有震撼力的重要原因。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "亦秋",
+                "coarse_type": "人",
+                "fine_type": "作家"
+            },
+            {
+                "name": "亦秋",
+                "coarse_type": "文学",
+                "fine_type": "作家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "县人大常委会领导也纷纷表示，坚决为法院撑腰，支持法院严格执法。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "人",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "县人大常委会",
+                "coarse_type": "组织机构",
+                "fine_type": "政府"
+            },
+            {
+                "name": "县人大常委会",
+                "coarse_type": "政治",
+                "fine_type": "政府"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "苏南，是我国乡镇企业的发源地。",
+        "coarse_types": [
+            "职位",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "苏",
+                "coarse_type": "位置",
+                "fine_type": "省"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "地方政府特别是财力较强，又多是粮食销区的地方应积极为国家分忧解难，承担起自己应有的责任，其他财力较弱的地区也需作出应有的贡献。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "实力的差距还可以用气势来弥补一些，要是连气势都不如对手就只有无可奈何。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "３月下旬，埃及一年一度的扫毒战役在西奈半岛全面展开。",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "埃及",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "西奈半岛",
+                "coarse_type": "位置",
+                "fine_type": "景点"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "陶正利，男，",
+        "coarse_types": [
+            "学历",
+            "职位",
+            "产品",
+            "人"
+        ],
+        "entities": [
+            {
+                "name": "陶正利",
+                "coarse_type": "人",
+                "fine_type": "平民"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "但罗马尼亚人似乎更老到，全队实力更均衡一些。",
+        "coarse_types": [
+            "科学",
+            "组织机构",
+            "人",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "罗马尼亚",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "2001年3月至2004年3月，历任招商局集团业务开发部总经理助理、副总经理，企业规划部副总经理；",
+        "coarse_types": [
+            "生物",
+            "职位",
+            "科学",
+            "组织机构",
+            "学历",
+            "产品",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "业务开发部总经理助理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "副总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            },
+            {
+                "name": "企业规划部副总经理",
+                "coarse_type": "职位",
+                "fine_type": "概念"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "该院院长王进章博士自豪地说：“作为我国股份制医院的‘试验田’，‘荣耀’走过了３年不平凡的历程。",
+        "coarse_types": [
+            "职位",
+            "科学",
+            "组织机构",
+            "产品",
+            "人",
+            "文学",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "王进章",
+                "coarse_type": "人",
+                "fine_type": "院长"
+            },
+            {
+                "name": "荣耀",
+                "coarse_type": "组织机构",
+                "fine_type": "公司"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "《最后的神迹》英文版已经在北美上市",
+        "coarse_types": [
+            "人",
+            "科学",
+            "事件",
+            "位置"
+        ],
+        "entities": [
+            {
+                "name": "北美",
+                "coarse_type": "位置",
+                "fine_type": "地址"
+            }
+        ]
+    },
+    {
+        "source": "FabNER",
+        "sentence": "对偷盗者，既要加紧防范，给予制裁，有关措施又要合法。",
+        "coarse_types": [
+            "组织机构",
+            "人",
+            "位置"
+        ],
+        "entities": []
+    },
+    {
+        "source": "FabNER",
+        "sentence": "三、任命崔永乾为中华人民共和国驻中非共和国特命全权大使。",
+        "coarse_types": [
+            "学历",
+            "位置",
+            "人",
+            "文学"
+        ],
+        "entities": [
+            {
+                "name": "中华人民共和国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "中非共和国",
+                "coarse_type": "位置",
+                "fine_type": "国家"
+            },
+            {
+                "name": "崔永乾",
+                "coarse_type": "人",
+                "fine_type": "政治家"
+            },
+            {
+                "name": "崔永乾",
+                "coarse_type": "政治",
+                "fine_type": "政治家"
+            }
+        ]
+    }
+]
