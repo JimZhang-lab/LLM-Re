@@ -143,14 +143,14 @@ class TypeManager:
     
     def format_types_for_prompt(self, 
                               types: List[str], 
-                              max_types: int = 500,
+                              max_types: int = None,
                               group_by_coarse: bool = True) -> str:
         """
         Format types for use in LLM prompts.
         
         Args:
             types: List of types to format
-            max_types: Maximum number of types to include
+            max_types: Maximum number of types to include (None = no limit)
             group_by_coarse: If True, group fine types under their coarse types
             
         Returns:
@@ -159,8 +159,8 @@ class TypeManager:
         if not types:
             return "No types available"
         
-        # Limit types if too many
-        if len(types) > max_types:
+        # Limit types if too many (only if max_types is specified)
+        if max_types is not None and len(types) > max_types:
             types = types[:max_types]
         
         if not group_by_coarse:

@@ -213,8 +213,8 @@ class ConcurrentExtractorWithJSONL(ConcurrentExtractor):
                         'coarse_type': entity['coarse_type'],
                         'fine_type': entity['fine_type']
                     }
-                    if 'description' in entity and entity['description']:
-                        cleaned_entity['description'] = entity['description']
+                    # if 'description' in entity and entity['description']:
+                    #     cleaned_entity['description'] = entity['description']
                     cleaned_entities.append(cleaned_entity)
                 
                 # Preserve original id or generate new one

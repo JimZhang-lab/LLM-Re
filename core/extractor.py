@@ -301,14 +301,14 @@ def get_entity_types_for_prompt(
         entity_types: Custom entity types to use (overrides defaults)
         type_mode: Type extraction mode ("coarse", "fine", "both", "auto")
         use_hierarchical_types: Whether to use hierarchical type system
-        max_types: Maximum number of types to include
+        max_types: Maximum number of types to include (None = no limit)
         
     Returns:
         Formatted string of entity types for prompt
     """
     if entity_types is not None:
         # Use custom entity types
-        if max_types and len(entity_types) > max_types:
+        if max_types is not None and len(entity_types) > max_types:
             entity_types = entity_types[:max_types]
         return ", ".join(sorted(entity_types))
     
@@ -328,7 +328,8 @@ def get_entity_types_for_prompt(
     elif type_mode == "auto":
         # Auto mode: use fine types if available, otherwise coarse
         fine_types = type_manager.get_fine_types()
-        if fine_types and len(fine_types) <= max_types:
+        # If max_types is None, always use fine types; otherwise check limit
+        if max_types is None or (fine_types and len(fine_types) <= max_types):
             types = fine_types
         else:
             types = type_manager.get_coarse_types()

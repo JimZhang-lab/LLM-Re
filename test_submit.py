@@ -592,27 +592,14 @@ class HierarchicalEntityExtractor:
         """Build continue extraction prompt for coarse entities."""
         extracted_list = "\n".join([f"- {name}" for name in extracted_names])
         
-        prompt = f"""---Task---
-You have already extracted the following entities from the text:
-
-{extracted_list}
-
-Now, carefully review the text again and extract ANY MISSED entities that were NOT in the above list.
-
----Text---
-{sentence}
-
----Available Coarse Types---
-{coarse_types_str}
-
----Instructions---
-1. ONLY output entities that are NOT in the already extracted list above
-2. Use the same format: entity{tuple_delimiter}name{tuple_delimiter}coarse_type{tuple_delimiter}description
-3. If there are NO missed entities, just output: {completion_delimiter}
-4. Do NOT repeat any entity from the already extracted list
-
-<Output>
-"""
+        # Use standardized prompt from HIERARCHICAL_PROMPTS
+        prompt = HIERARCHICAL_PROMPTS["coarse_continue_extraction_prompt"].format(
+            extracted_entities_list=extracted_list,
+            sentence=sentence,
+            coarse_types=coarse_types_str,
+            tuple_delimiter=tuple_delimiter,
+            completion_delimiter=completion_delimiter
+        )
         return prompt
     
     async def _extract_fine_types_for_entities(
@@ -676,6 +663,127 @@ Now, carefully review the text again and extract ANY MISSED entities that were N
         
         return result_entities
     
+    async def _extract_fine_types_batch(
+        self,
+        sentence: str,
+        entities: List[Dict],
+        coarse_type: str,
+        fine_types: List[str]
+    ) -> List[Dict]:
+        """
+        批量提取细粒度类型（使用三元组格式，效率更高）
+        
+        Args:
+            sentence: The sentence
+            entities: List of entities with coarse type
+            coarse_type: The coarse type
+            fine_types: Available fine types
+            
+        Returns:
+            List of entities with both coarse and fine types
+        """
+        from core.prompts import PROMPTS
+        
+        try:
+            # Select examples based on language
+            if self.language.lower() == "chinese":
+                examples = HIERARCHICAL_PROMPTS.get("fine_extraction_batch_examples_zh", [])
+            else:
+                examples = HIERARCHICAL_PROMPTS.get("fine_extraction_batch_examples_en", [])
+            examples_str = "\n".join(examples)
+            
+            # Get delimiters
+            tuple_delimiter = PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>")
+            completion_delimiter = PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>")
+            
+            # Build entities list
+            entities_list = ", ".join([e["name"] for e in entities])
+            fine_types_str = ", ".join(fine_types)
+            
+            # Build batch extraction prompt
+            system_prompt = HIERARCHICAL_PROMPTS["fine_extraction_batch_system_prompt"].format(
+                sentence=sentence,
+                coarse_type=coarse_type,
+                entities_list=entities_list,
+                fine_types=fine_types_str,
+                tuple_delimiter=tuple_delimiter,
+                completion_delimiter=completion_delimiter,
+                language=self.language,
+                examples=examples_str
+            )
+            
+            logger.debug(f"  🔧 使用批量细粒度抽取，处理 {len(entities)} 个实体")
+            
+            # Call LLM
+            response = await self.llm_func(system_prompt)
+            
+            # Parse response using the standard parser
+            from core.extractor import _process_extraction_result
+            import time
+            
+            entities_dict, _ = await _process_extraction_result(
+                response,
+                chunk_key="fine_batch_extraction",
+                timestamp=int(time.time()),
+                file_path="fine_batch",
+                tuple_delimiter=tuple_delimiter,
+                completion_delimiter=completion_delimiter,
+                use_hierarchical_types=False
+            )
+            
+            # Map extracted entities back to original entities
+            result_entities = []
+            entity_name_lower_map = {e["name"].lower(): e["name"] for e in entities}
+            
+            for entity_name_lower, entity_list in entities_dict.items():
+                if entity_list:
+                    entity_data = entity_list[0]
+                    fine_type = entity_data.get("entity_type", "")
+                    
+                    # Find original entity name
+                    original_name = entity_name_lower_map.get(entity_name_lower.lower())
+                    if not original_name:
+                        # Try exact match
+                        original_name = next((e["name"] for e in entities if e["name"].lower() == entity_name_lower.lower()), entity_name_lower)
+                    
+                    # Validate fine type
+                    if fine_type and fine_type.lower() in [ft.lower() for ft in fine_types]:
+                        result_entities.append({
+                            "name": original_name,
+                            "coarse_type": coarse_type,
+                            "fine_type": fine_type
+                        })
+                        logger.info(f"    ✓ {original_name}: {coarse_type} -> {fine_type}")
+                    else:
+                        # Fallback to coarse type
+                        result_entities.append({
+                            "name": original_name,
+                            "coarse_type": coarse_type,
+                            "fine_type": coarse_type
+                        })
+                        logger.warning(f"    ⚠ {original_name}: 无效细粒度类型，使用粗粒度类型")
+            
+            # Handle entities not in response
+            extracted_names_lower = {e["name"].lower() for e in result_entities}
+            for entity in entities:
+                if entity["name"].lower() not in extracted_names_lower:
+                    result_entities.append({
+                        "name": entity["name"],
+                        "coarse_type": coarse_type,
+                        "fine_type": coarse_type
+                    })
+                    logger.warning(f"    ⚠ {entity['name']}: 未提取到，使用粗粒度类型")
+            
+            return result_entities
+            
+        except Exception as e:
+            logger.error(f"  ❌ 批量细粒度抽取失败: {e}")
+            # Fallback to individual extraction
+            logger.info(f"  🔄 回退到逐个抽取方式...")
+            return await self._extract_fine_types_with_gleaning_individual(
+                sentence, entities, coarse_type, fine_types, max_gleaning=0
+            )
+    
     async def _extract_fine_types_with_gleaning(
         self,
         sentence: str,
@@ -686,6 +794,42 @@ Now, carefully review the text again and extract ANY MISSED entities that were N
     ) -> List[Dict]:
         """
         Extract fine types for entities with gleaning to catch missed entities.
+        优先使用批量抽取，如果实体数量较少则使用逐个抽取。
+        
+        Args:
+            sentence: The sentence
+            entities: List of entities with coarse type
+            coarse_type: The coarse type
+            fine_types: Available fine types
+            max_gleaning: Maximum gleaning iterations
+            
+        Returns:
+            List of entities with both coarse and fine types
+        """
+        # 如果实体数量>=3，使用批量抽取
+        if len(entities) >= 3:
+            logger.info(f"    📦 使用批量抽取模式 ({len(entities)} 个实体)")
+            result_entities = await self._extract_fine_types_batch(
+                sentence, entities, coarse_type, fine_types
+            )
+        else:
+            logger.info(f"    🔍 使用逐个抽取模式 ({len(entities)} 个实体)")
+            result_entities = await self._extract_fine_types_with_gleaning_individual(
+                sentence, entities, coarse_type, fine_types, max_gleaning
+            )
+        
+        return result_entities
+    
+    async def _extract_fine_types_with_gleaning_individual(
+        self,
+        sentence: str,
+        entities: List[Dict],
+        coarse_type: str,
+        fine_types: List[str],
+        max_gleaning: int = 1
+    ) -> List[Dict]:
+        """
+        逐个提取细粒度类型（原方法，用于少量实体或批量抽取失败时的回退）
         
         Args:
             sentence: The sentence
@@ -766,27 +910,13 @@ Now, carefully review the text again and extract ANY MISSED entities that were N
         extracted_list = "\n".join([f"- {name}" for name in extracted_names])
         fine_types_str = ", ".join(fine_types)  # No limit on types
         
-        prompt = f"""---Task---
-You have already extracted the following entities of type '{coarse_type}' from the text:
-
-{extracted_list}
-
-Now, carefully review the text again and find ANY MISSED entities of type '{coarse_type}' that were NOT in the above list.
-
----Text---
-{sentence}
-
----Coarse Type---
-{coarse_type}
-
----Instructions---
-1. ONLY look for entities of type '{coarse_type}'
-2. ONLY output entities that are NOT in the already extracted list above
-3. Output format: Just list the entity names, one per line
-4. If there are NO missed entities of type '{coarse_type}', just output: NONE
-
-<Output>
-"""
+        # Use standardized prompt from HIERARCHICAL_PROMPTS
+        prompt = HIERARCHICAL_PROMPTS["fine_continue_extraction_prompt"].format(
+            coarse_type=coarse_type,
+            extracted_entities_list=extracted_list,
+            sentence=sentence,
+            fine_types=fine_types_str
+        )
         return prompt
     
     def _parse_fine_continue_response(self, response: str, existing_names: List[str]) -> List[str]:
@@ -824,7 +954,7 @@ Now, carefully review the text again and find ANY MISSED entities of type '{coar
         max_retries: int = 2
     ) -> str:
         """
-        Extract fine-grained type for a single entity.
+        Extract fine-grained type for a single entity using triplet format.
         If the extracted fine type is the same as coarse type, add error to history and retry extraction.
         
         Args:
@@ -837,7 +967,13 @@ Now, carefully review the text again and find ANY MISSED entities of type '{coar
         Returns:
             Fine-grained type or None if extraction fails
         """
+        from core.prompts import PROMPTS
+        
         history_messages = []  # Track conversation history for retries
+        
+        # Get delimiters
+        tuple_delimiter = PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>")
+        completion_delimiter = PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>")
         
         for attempt in range(max_retries + 1):
             try:
@@ -862,7 +998,10 @@ Now, carefully review the text again and find ANY MISSED entities of type '{coar
                     coarse_type=coarse_type,
                     sentence=sentence,
                     fine_types=fine_types_str,
-                    examples=examples
+                    examples=examples,
+                    tuple_delimiter=tuple_delimiter,
+                    completion_delimiter=completion_delimiter,
+                    language=self.language
                 )
                 
                 # Call LLM with history messages on retry
@@ -873,8 +1012,33 @@ Now, carefully review the text again and find ANY MISSED entities of type '{coar
                 else:
                     response = await self.llm_func(prompt)
                 
-                # Parse response
-                extracted_type = self._parse_type_from_response(response, fine_types)
+                # Parse triplet response
+                from core.extractor import _process_extraction_result
+                import time
+                
+                entities_dict, _ = await _process_extraction_result(
+                    response,
+                    chunk_key="fine_single_extraction",
+                    timestamp=int(time.time()),
+                    file_path="fine_single",
+                    tuple_delimiter=tuple_delimiter,
+                    completion_delimiter=completion_delimiter,
+                    use_hierarchical_types=False
+                )
+                
+                # Extract fine type from parsed entities
+                extracted_type = None
+                for entity_name_lower, entity_list in entities_dict.items():
+                    if entity_list and entity_name.lower() in entity_name_lower.lower():
+                        extracted_type = entity_list[0].get("entity_type", "")
+                        break
+                
+                # If not found by name match, try to get any extracted entity (should be only one)
+                if not extracted_type and entities_dict:
+                    for entity_list in entities_dict.values():
+                        if entity_list:
+                            extracted_type = entity_list[0].get("entity_type", "")
+                            break
                 
                 # Check if extracted type is the same as coarse type
                 if extracted_type and extracted_type.lower() != coarse_type.lower():
@@ -892,13 +1056,15 @@ Now, carefully review the text again and find ANY MISSED entities of type '{coar
 
 Available fine-grained types: {fine_types_str}
 
-Please provide a MORE SPECIFIC type that is DIFFERENT from "{coarse_type}". Choose the most appropriate fine-grained type from the list above."""
+Please provide a MORE SPECIFIC type that is DIFFERENT from "{coarse_type}" in the triplet format:
+entity{tuple_delimiter}{entity_name}{tuple_delimiter}[fine_type]{tuple_delimiter}[description]
+{completion_delimiter}"""
                         
                         # Build history messages in the format expected by OpenAI API
                         if not history_messages:
                             # First retry: add initial user message and assistant's wrong response
                             history_messages.append({"role": "user", "content": prompt})
-                            history_messages.append({"role": "assistant", "content": f"Type: {extracted_type}"})
+                            history_messages.append({"role": "assistant", "content": response})
                         
                         # Add error feedback as user message
                         history_messages.append({"role": "user", "content": error_message})
@@ -913,11 +1079,13 @@ Please provide a MORE SPECIFIC type that is DIFFERENT from "{coarse_type}". Choo
                         logger.warning(f"      未提取到有效类型, 将错误添加到历史并重试 (尝试 {attempt + 1}/{max_retries})...")
                         
                         # Add the error to history
-                        error_message = f"""❌ ERROR: Your previous response did not contain a valid type.
+                        error_message = f"""❌ ERROR: Your previous response did not contain a valid triplet format.
 
 Available fine-grained types: {fine_types_str}
 
-Please provide ONE of the above fine-grained types in the format: Type: [type_name]"""
+Please provide the fine-grained type in the triplet format:
+entity{tuple_delimiter}{entity_name}{tuple_delimiter}[fine_type]{tuple_delimiter}[description]
+{completion_delimiter}"""
                         
                         if not history_messages:
                             history_messages.append({"role": "user", "content": prompt})
@@ -949,23 +1117,55 @@ Please provide ONE of the above fine-grained types in the format: Type: [type_na
             List of entities with name and fine_type
         """
         try:
-            # Call extract_from_text with fine types
-            # extract_from_text returns (entities_dict, relationships_list)
-            entities_dict, relationships_list = await extract_from_text(
-                text=sentence,
-                entity_types=fine_types,
-                llm_func=self.llm_func,
-                use_hierarchical_types=False,
-                max_gleaning=max_gleaning,
-                language=self.language
+            from core.prompts import PROMPTS
+            
+            # Select examples based on language
+            if self.language.lower() == "chinese":
+                examples = HIERARCHICAL_PROMPTS.get("reverse_extraction_examples_zh", [])
+            else:
+                examples = HIERARCHICAL_PROMPTS.get("reverse_extraction_examples_en", [])
+            examples_str = "\n".join(examples)
+            
+            # Get delimiters
+            tuple_delimiter = PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>")
+            completion_delimiter = PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>")
+            
+            # Build reverse extraction prompt with examples
+            fine_types_str = ", ".join(fine_types)  # Use all fine types without limit
+            system_prompt = HIERARCHICAL_PROMPTS["reverse_extraction_system_prompt"].format(
+                entity_types=fine_types_str,
+                tuple_delimiter=tuple_delimiter,
+                completion_delimiter=completion_delimiter,
+                language=self.language,
+                examples=examples_str,
+                input_text=sentence
+            )
+            
+            # Call LLM with optimized prompt
+            logger.debug(f"  🔧 使用优化的反向抽取提示词，包含 {len(fine_types)} 个细粒度类型")
+            response = await self.llm_func(
+                "",  # Empty user prompt since system prompt contains everything
+                system_prompt=system_prompt
+            )
+            
+            # Parse response
+            from core.extractor import _process_extraction_result
+            import time
+            
+            entities_dict, _ = await _process_extraction_result(
+                response,
+                chunk_key="reverse_extraction",
+                timestamp=int(time.time()),
+                file_path="reverse",
+                tuple_delimiter=tuple_delimiter,
+                completion_delimiter=completion_delimiter,
+                use_hierarchical_types=False
             )
             
             # Convert to our format
             entities = []
             for entity_name, entity_list in entities_dict.items():
-                # entity_list is a list of entity dicts for this entity name
                 if entity_list:
-                    # Take the first entity (should only be one in most cases)
                     entity_data = entity_list[0]
                     entity_type = entity_data.get("entity_type", "")
                     description = entity_data.get("description", "")
@@ -979,10 +1179,35 @@ Please provide ONE of the above fine-grained types in the format: Type: [type_na
             return entities
             
         except Exception as e:
-            logger.info(f"    ❌ 直接抽取细粒度实体失败: {e}")
-            import traceback
-            traceback.print_exc()
-            return []
+            logger.error(f"    ❌ 反向抽取失败，回退到旧方法: {e}")
+            # Fallback to old method
+            try:
+                entities_dict, relationships_list = await extract_from_text(
+                    text=sentence,
+                    entity_types=fine_types,
+                    llm_func=self.llm_func,
+                    use_hierarchical_types=False,
+                    max_gleaning=max_gleaning,
+                    language=self.language
+                )
+                
+                entities = []
+                for entity_name, entity_list in entities_dict.items():
+                    if entity_list:
+                        entity_data = entity_list[0]
+                        entity_type = entity_data.get("entity_type", "")
+                        description = entity_data.get("description", "")
+                        
+                        entities.append({
+                            'name': entity_name,
+                            'fine_type': entity_type,
+                            'description': description
+                        })
+                
+                return entities
+            except Exception as e2:
+                logger.error(f"    ❌ 回退方法也失败: {e2}")
+                return []
     
     def _parse_type_from_response(self, response: str, valid_types: List[str]) -> str:
         """
@@ -1071,96 +1296,6 @@ Please provide ONE of the above fine-grained types in the format: Type: [type_na
         
         # No exact match found
         return None
-    
-    async def _re_extract_with_fine_types(self, sentence: str, entity_name: str, coarse_type: str, coarse_fine_mapping: Dict[str, List[str]]) -> str:
-        """
-        Re-extract entity type using optimized prompt with only fine types.
-        
-        Args:
-            sentence: Original sentence
-            entity_name: Name of the entity to re-extract
-            coarse_type: The coarse type
-            coarse_fine_mapping: Mapping of coarse to fine types
-            
-        Returns:
-            A better fine-grained type or None if no better one found
-        """
-        if coarse_type not in coarse_fine_mapping:
-            return None
-        
-        fine_types = coarse_fine_mapping[coarse_type]
-        if not fine_types:
-            return None
-        
-        logger.info(f"🔄 重新抽取实体 '{entity_name}' 的细粒度类型...")
-        logger.info(f"📋 可用细粒度类型 ({len(fine_types)}个): {fine_types[:10]}{'...' if len(fine_types) > 10 else ''}")
-        
-        try:
-            # Get appropriate examples for this coarse type based on language
-            if self.language.lower() == "chinese":
-                examples_dict = HIERARCHICAL_PROMPTS.get("re_extraction_examples_zh", 
-                                                        HIERARCHICAL_PROMPTS["re_extraction_examples"])
-            else:
-                examples_dict = HIERARCHICAL_PROMPTS.get("re_extraction_examples_en", 
-                                                        HIERARCHICAL_PROMPTS["re_extraction_examples"])
-            
-            examples = examples_dict.get(
-                coarse_type, 
-                examples_dict.get("person", examples_dict.get("人", ""))
-            )
-            
-            # Build re-extraction prompt (no limit on types)
-            fine_types_str = ", ".join(fine_types)
-            re_extraction_prompt = HIERARCHICAL_PROMPTS["re_extraction_prompt"].format(
-                entity_name=entity_name,
-                sentence=sentence,
-                fine_types=fine_types_str,
-                examples=examples
-            )
-            
-            # Call LLM with optimized prompt
-            response = await self.llm_func(re_extraction_prompt)
-            
-            # Extract type from response
-            extracted_type = self._parse_type_from_response(response, fine_types)
-            
-            if extracted_type:
-                logger.info(f"✅ 重新抽取成功: {entity_name} -> {coarse_type} -> {extracted_type}")
-                return extracted_type
-            
-            # Fallback: use general extraction with fine types only
-            logger.info(f"🔄 尝试使用通用抽取方法...")
-            entities, relationships = await extract_from_text(
-                text=sentence,
-                llm_func=self.llm_func,
-                entity_types=fine_types,  # Only use fine types (no limit)
-                language=self.language,
-                use_hierarchical_types=False,  # Disable hierarchical types
-                type_mode="fine",
-                max_gleaning=0,  # No gleaning for re-extraction
-                max_types_for_prompt=len(fine_types)  # Use all fine types
-            )
-            
-            # Find the entity in results
-            for extracted_entity_name, entity_list in entities.items():
-                if extracted_entity_name.lower() == entity_name.lower():
-                    entity = entity_list[0]
-                    extracted_type = entity.get('entity_type', '')
-                    
-                    # Validate type (exact match only)
-                    if extracted_type.lower() in [ft.lower() for ft in fine_types]:
-                        logger.info(f"✅ 通用抽取成功 (精确匹配): {entity_name} -> {coarse_type} -> {extracted_type}")
-                        return extracted_type
-            
-            # No valid type found after all attempts
-            logger.warning(f"  无法提取有效细粒度类型，保持原类型: {entity_name} -> {coarse_type}")
-            return None
-            
-        except Exception as e:
-            logger.error(f" 重新抽取失败: {e}")
-            import traceback
-            traceback.print_exc()
-            return None
     
     def show_type_mapping_stats(self, coarse_types: List[str]):
         """Show statistics about the type mapping for given coarse types."""

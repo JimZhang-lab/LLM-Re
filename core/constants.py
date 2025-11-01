@@ -5,7 +5,7 @@ Constants for the RE (Relationship Extraction) module.
 # Default values for extraction settings
 DEFAULT_SUMMARY_LANGUAGE = "English"
 DEFAULT_MAX_GLEANING = 1
-DEFAULT_ENTITY_NAME_MAX_LENGTH = 256
+DEFAULT_ENTITY_NAME_MAX_LENGTH = 64
 
 # Number of description fragments to trigger LLM summary
 DEFAULT_FORCE_LLM_SUMMARY_ON_MERGE = 8

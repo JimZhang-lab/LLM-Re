@@ -60,7 +60,7 @@ async def extract_from_text(
     # New hierarchical type parameters
     use_hierarchical_types: bool = False,
     type_mode: str = "fine",
-    max_types_for_prompt: int = 50,
+    max_types_for_prompt: int = None,
 ) -> tuple[dict, dict]:
     """
     Extract entities and relationships from text.
