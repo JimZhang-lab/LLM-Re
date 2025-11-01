@@ -12,25 +12,37 @@ from typing import Dict, List, Any
 from collections import defaultdict
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
+from dotenv import load_dotenv
+
+# 加载 .env 配置文件
+load_dotenv()
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-os.environ["OPENAI_API_BASE"] = "https://api-inference.modelscope.cn/v1"
-os.environ["OPENAI_API_KEY"] = "ms-077e268d-aca4-4e06-a693-53ca0b70c132"
-os.environ["OPENAI_MODEL"] = "Qwen/Qwen3-235B-A22B-Instruct-2507"
-os.environ["EXTRACT_LANGUAGE"] = "Chinese"
+# 获取项目根目录
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-INPUT_FILE = "/Users/jim/Desktop/extensiveWork/project/relation_extraction/RE/data/zh_data_test1.json"
-# INPUT_FILE = "/Users/jim/Desktop/extensiveWork/project/relation_extraction/RE/data/en_data_test1.json"
-OUTPUT_FILE = "/Users/jim/Desktop/extensiveWork/project/relation_extraction/RE/output/submit_results00t.json"
-TYPE_DICT_PATH = "/Users/jim/Desktop/extensiveWork/project/relation_extraction/RE/data/coarse_fine_type_dict.json"
+# 从环境变量读取配置
+OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", "https://api-inference.modelscope.cn/v1")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "Qwen/Qwen3-235B-A22B-Instruct-2507")
+EXTRACT_LANGUAGE = os.getenv("EXTRACT_LANGUAGE", "Chinese")
 
-EXTRACT_LANGUAGE = "Chinese"
+# 设置环境变量（兼容旧代码）
+os.environ["OPENAI_API_BASE"] = OPENAI_API_BASE
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+os.environ["OPENAI_MODEL"] = OPENAI_MODEL
+os.environ["EXTRACT_LANGUAGE"] = EXTRACT_LANGUAGE
+
+# 文件路径配置（支持相对路径）
+INPUT_FILE = os.path.join(PROJECT_ROOT, os.getenv("INPUT_FILE", "data/zh_data_dev1.json"))
+OUTPUT_FILE = os.path.join(PROJECT_ROOT, os.getenv("OUTPUT_FILE", "output/submit_results.json"))
+TYPE_DICT_PATH = os.path.join(PROJECT_ROOT, os.getenv("TYPE_DICT_PATH", "data/coarse_fine_type_dict.json"))
 
 # 日志配置
-LOG_DIR = "/Users/jim/Desktop/extensiveWork/project/relation_extraction/RE/logs"
-LOG_FILE_MAX_BYTES = 10 * 1024 * 1024  # 10MB
-LOG_FILE_BACKUP_COUNT = 5
+LOG_DIR = os.path.join(PROJECT_ROOT, os.getenv("LOG_DIR", "logs"))
+LOG_FILE_MAX_BYTES = int(os.getenv("LOG_FILE_MAX_BYTES", str(10 * 1024 * 1024)))
+LOG_FILE_BACKUP_COUNT = int(os.getenv("LOG_FILE_BACKUP_COUNT", "5"))
 
 
 def setup_logger(name: str = "entity_extractor", log_level: int = logging.INFO) -> logging.Logger:

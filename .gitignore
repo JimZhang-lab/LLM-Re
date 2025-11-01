@@ -211,3 +211,5 @@ logs/
 
 # output
 output/
+
+.DS_Store

@@ -3,6 +3,7 @@
 # Core dependencies
 openai>=1.0.0
 pydantic>=2.0.0
+python-dotenv>=1.0.0  # For .env configuration
 
 # Optional dependencies for storage
 nano_vectordb>=0.1.0  # For vector storage
