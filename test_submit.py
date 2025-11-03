@@ -286,7 +286,15 @@ class HierarchicalEntityExtractor:
                 source = entity.get('source', 'unknown')
                 logger.info(f"   - {entity['name']}: {entity['coarse_type']} -> {entity['fine_type']} (来源: {source})")
             
-            return merged_entities
+            # ============ Stage 4: Final Verification ============
+            logger.info(f"\n【阶段4-最终验证】验证所有抽取结果的质量...")
+            verified_entities = await self._verify_all_entities(merged_entities, sentence, coarse_fine_mapping)
+            
+            logger.info(f"\n🎉 最终验证完成，输出 {len(verified_entities)} 个高质量实体")
+            for entity in verified_entities:
+                logger.info(f"   ✓ {entity['name']}: {entity['coarse_type']} -> {entity['fine_type']}")
+            
+            return verified_entities
             
         except Exception as e:
             logger.error(f" 提取失败: {e}")
@@ -467,6 +475,22 @@ class HierarchicalEntityExtractor:
         logger.info(f"     - 反向替换: {sum(1 for e in merged_entities if e['source'] == '反向(替换)')}")
         logger.info(f"     - 两者都有: {sum(1 for e in merged_entities if e['source'] == '正向+反向')}")
         
+        # Quality check: Filter out entities with same coarse and fine types
+        low_quality_entities = []
+        high_quality_entities = []
+        
+        for entity in merged_entities:
+            if entity['coarse_type'].lower() == entity['fine_type'].lower():
+                low_quality_entities.append(entity)
+                logger.warning(f"  ⚠️ 低质量实体（粗细类型相同）: {entity['name']} ({entity['coarse_type']})")
+            else:
+                high_quality_entities.append(entity)
+        
+        if low_quality_entities:
+            logger.warning(f"  ⚠️ 发现 {len(low_quality_entities)} 个低质量实体（粗细类型相同），将被过滤")
+            logger.info(f"  ✅ 保留 {len(high_quality_entities)} 个高质量实体（粗细类型不同）")
+            merged_entities = high_quality_entities
+        
         # Check for entities with same name but different types
         name_counts = defaultdict(list)
         for entity in merged_entities:
@@ -481,7 +505,226 @@ class HierarchicalEntityExtractor:
         
         return merged_entities
     
-    async def _extract_coarse_entities(self, sentence: str, coarse_types: List[str], max_gleaning: int = 1) -> List[Dict]:
+    async def _verify_all_entities(self, entities: List[Dict], sentence: str, coarse_fine_mapping: Dict[str, List[str]]) -> List[Dict]:
+        """
+        Final verification stage: Verify all entities before outputting results.
+        This ensures every entity passes quality checks.
+        
+        Args:
+            entities: List of merged entities
+            sentence: Original sentence
+            coarse_fine_mapping: Mapping from coarse to fine types
+            
+        Returns:
+            List of verified high-quality entities
+        """
+        if not entities:
+            return []
+        
+        logger.info(f"  🔍 开始验证 {len(entities)} 个实体...")
+        verified_entities = []
+        needs_verification_count = 0
+        corrected_count = 0
+        
+        for i, entity in enumerate(entities, 1):
+            entity_name = entity['name']
+            coarse_type = entity['coarse_type']
+            fine_type = entity['fine_type']
+            
+            logger.info(f"  [{i}/{len(entities)}] 验证: {entity_name}")
+            
+            # Check if fine type is same as coarse type
+            if fine_type.lower() == coarse_type.lower():
+                needs_verification_count += 1
+                logger.warning(f"    ⚠️ 粗细类型相同: {entity_name} ({fine_type})")
+                
+                # Get available fine types for this coarse type
+                fine_types = coarse_fine_mapping.get(coarse_type, [])
+                
+                if fine_types:
+                    # Try to get a better fine type
+                    logger.info(f"    🔄 尝试获取更具体的细粒度类型...")
+                    verified_fine_type = await self._verify_fine_type(
+                        entity_name, coarse_type, fine_type, sentence, fine_types
+                    )
+                    
+                    if verified_fine_type.lower() != coarse_type.lower():
+                        logger.info(f"    ✅ 修正成功: {entity_name} -> {verified_fine_type}")
+                        fine_type = verified_fine_type
+                        corrected_count += 1
+                    else:
+                        logger.warning(f"    ⚠️ 无法修正，保持原类型: {entity_name}")
+                else:
+                    logger.warning(f"    ⚠️ 无可用细粒度类型，保持原类型")
+            
+            # Validate that fine type is in the mapping (if not same as coarse)
+            if fine_type.lower() != coarse_type.lower():
+                expected_fine_types = coarse_fine_mapping.get(coarse_type, [])
+                if expected_fine_types:
+                    # Check if fine type is valid
+                    if fine_type.lower() not in [ft.lower() for ft in expected_fine_types]:
+                        logger.warning(f"    ⚠️ 细粒度类型不在映射表中: {fine_type}")
+                        # Try to verify
+                        verified_fine_type = await self._verify_fine_type(
+                            entity_name, coarse_type, fine_type, sentence, expected_fine_types
+                        )
+                        if verified_fine_type != fine_type:
+                            logger.info(f"    🔄 修正无效类型: {fine_type} -> {verified_fine_type}")
+                            fine_type = verified_fine_type
+                            corrected_count += 1
+            
+            # Add verified entity
+            verified_entities.append({
+                'name': entity_name,
+                'coarse_type': coarse_type,
+                'fine_type': fine_type,
+                'description': entity.get('description', '')
+            })
+            
+            logger.info(f"    ✓ 验证完成: {entity_name} ({coarse_type} -> {fine_type})")
+        
+        logger.info(f"  📊 验证统计:")
+        logger.info(f"     - 总实体数: {len(entities)}")
+        logger.info(f"     - 需要验证: {needs_verification_count}")
+        logger.info(f"     - 成功修正: {corrected_count}")
+        logger.info(f"     - 最终输出: {len(verified_entities)}")
+        
+        return verified_entities
+    
+    async def _verify_coarse_type(self, entity_name: str, coarse_type: str, sentence: str, available_types: List[str]) -> str:
+        """
+        Verify if the coarse type is correct for the entity using a second-pass validation.
+        This helps catch obvious misclassifications.
+        
+        Args:
+            entity_name: Name of the entity
+            coarse_type: Assigned coarse type
+            sentence: Original sentence
+            available_types: List of available coarse types
+            
+        Returns:
+            Verified coarse type (may be different from input if correction is needed)
+        """
+        # Skip verification for "other" types
+        if coarse_type.lower() in ["other", "其他"]:
+            return coarse_type
+        
+        # Build verification prompt
+        available_types_str = ", ".join(available_types)
+        verification_prompt = f"""请验证以下实体的粗粒度分类是否正确：
+
+句子: {sentence}
+实体: {entity_name}
+当前粗粒度分类: {coarse_type}
+
+可用的粗粒度类型: {available_types_str}
+
+如果当前分类正确，请直接回答 "正确:{coarse_type}"
+如果当前分类错误，请回答 "错误:[正确的类型]"
+
+只需要回答一个词或短语，不要解释。"""
+
+        try:
+            response = await self.llm_func(verification_prompt)
+            response = remove_think_tags(response).strip().lower()
+            
+            # Parse response
+            if "正确" in response or "correct" in response.lower():
+                return coarse_type
+            elif "错误" in response or "incorrect" in response.lower():
+                # Try to extract the correct type
+                for t in available_types:
+                    if t.lower() in response:
+                        logger.info(f"      🔄 粗粒度验证修正: {entity_name} 从 {coarse_type} 改为 {t}")
+                        return t
+                # If no type found, keep original
+                return coarse_type
+            else:
+                # Ambiguous response, keep original
+                return coarse_type
+                
+        except Exception as e:
+            logger.debug(f"      粗粒度验证失败: {e}")
+            return coarse_type
+    
+    async def _verify_fine_type(self, entity_name: str, coarse_type: str, fine_type: str, sentence: str, available_fine_types: List[str]) -> str:
+        """
+        Verify if the fine type is correct for the entity using a second-pass validation.
+        This helps catch cases where coarse and fine types are the same or incorrect.
+        
+        Args:
+            entity_name: Name of the entity
+            coarse_type: Coarse type of the entity
+            fine_type: Assigned fine type
+            sentence: Original sentence
+            available_fine_types: List of available fine types for this coarse type
+            
+        Returns:
+            Verified fine type (may be different from input if correction is needed)
+        """
+        # If fine type is same as coarse type, definitely needs verification
+        is_same_type = fine_type.lower() == coarse_type.lower()
+        
+        # Build verification prompt
+        available_types_str = ", ".join(available_fine_types)
+        
+        if is_same_type:
+            verification_prompt = f"""⚠️ 错误：细粒度类型与粗粒度类型相同！
+
+句子: {sentence}
+实体: {entity_name}
+粗粒度类型: {coarse_type}
+当前细粒度类型: {fine_type} 错误：与粗粒度类型相同
+
+可用的细粒度类型: {available_types_str}
+
+请从可用的细粒度类型中选择一个更具体的类型。
+只需要回答类型名称，不要解释。"""
+        else:
+            verification_prompt = f"""请验证以下实体的细粒度分类是否正确：
+
+句子: {sentence}
+实体: {entity_name}
+粗粒度类型: {coarse_type}
+当前细粒度类型: {fine_type}
+
+可用的细粒度类型: {available_types_str}
+
+如果当前细粒度类型正确，请直接回答 "正确:{fine_type}"
+如果当前细粒度类型错误，请回答 "错误:[正确的类型]"
+
+只需要回答一个词或短语，不要解释。"""
+
+        try:
+            response = await self.llm_func(verification_prompt)
+            response = remove_think_tags(response).strip()
+            
+            # Parse response
+            response_lower = response.lower()
+            
+            if not is_same_type and ("正确" in response_lower or "correct" in response_lower):
+                return fine_type
+            else:
+                # Try to extract a fine type from the response
+                for ft in available_fine_types:
+                    if ft.lower() in response_lower:
+                        # Make sure it's not the same as coarse type
+                        if ft.lower() != coarse_type.lower():
+                            logger.info(f"      🔄 细粒度验证修正: {entity_name} 从 {fine_type} 改为 {ft}")
+                            return ft
+                
+                # If no valid fine type found, return coarse type as fallback
+                logger.warning(f"      ⚠️ 细粒度验证失败，使用粗粒度类型: {entity_name}")
+                return coarse_type
+                
+        except Exception as e:
+            logger.debug(f"      细粒度验证失败: {e}")
+            # If verification fails and types are same, return coarse type
+            if is_same_type:
+                return coarse_type
+            return fine_type
+    
+    async def _extract_coarse_entities(self, sentence: str, coarse_types: List[str], max_gleaning: int = 1, verify_types: bool = False) -> List[Dict]:
         """
         Stage 1: Extract entities and classify them into coarse types with gleaning.
         Uses unified extract_from_text with custom coarse-specific prompts.
@@ -490,6 +733,7 @@ class HierarchicalEntityExtractor:
             sentence: The text to extract entities from
             coarse_types: List of available coarse types
             max_gleaning: Maximum number of gleaning iterations to find missed entities
+            verify_types: Whether to verify coarse types with a second pass (slower but more accurate)
             
         Returns:
             List of entities with name and coarse_type
@@ -700,6 +944,25 @@ class HierarchicalEntityExtractor:
                     break
         
         logger.info(f"    ✅ 粗粒度抽取完成（含gleaning）：提取到 {len(entities)} 个实体")
+        
+        # Optional verification step for improved accuracy
+        if verify_types and entities:
+            logger.info(f"    🔍 开始验证粗粒度类型...")
+            verified_entities = []
+            for entity in entities:
+                verified_type = await self._verify_coarse_type(
+                    entity["name"], 
+                    entity["coarse_type"], 
+                    sentence, 
+                    coarse_types
+                )
+                verified_entities.append({
+                    "name": entity["name"],
+                    "coarse_type": verified_type
+                })
+            entities = verified_entities
+            logger.info(f"    ✅ 类型验证完成")
+        
         return entities
     
     async def _extract_fine_types_for_entities(
@@ -815,6 +1078,7 @@ class HierarchicalEntityExtractor:
             
             # Map extracted entities back to original entities
             result_entities = []
+            entities_need_retry = []  # Entities with same coarse/fine type that need retry
             entity_name_lower_map = {e["name"].lower(): e["name"] for e in entities}
             
             for entity_name_lower, entity_list in entities_dict.items():
@@ -830,31 +1094,58 @@ class HierarchicalEntityExtractor:
                     
                     # Validate fine type
                     if fine_type and fine_type.lower() in [ft.lower() for ft in fine_types]:
-                        result_entities.append({
-                            "name": original_name,
-                            "coarse_type": coarse_type,
-                            "fine_type": fine_type
-                        })
-                        logger.info(f"    ✓ {original_name}: {coarse_type} -> {fine_type}")
+                        # Check if fine type is same as coarse type
+                        if fine_type.lower() == coarse_type.lower():
+                            logger.warning(f"    ⚠️ {original_name}: 细粒度类型与粗粒度类型相同 ({fine_type})，标记为需要重试")
+                            # Find original entity to retry
+                            original_entity = next((e for e in entities if e["name"].lower() == original_name.lower()), None)
+                            if original_entity:
+                                entities_need_retry.append(original_entity)
+                        else:
+                            result_entities.append({
+                                "name": original_name,
+                                "coarse_type": coarse_type,
+                                "fine_type": fine_type
+                            })
+                            logger.info(f"    ✓ {original_name}: {coarse_type} -> {fine_type}")
                     else:
-                        # Fallback to coarse type
-                        result_entities.append({
-                            "name": original_name,
-                            "coarse_type": coarse_type,
-                            "fine_type": coarse_type
-                        })
-                        logger.warning(f"    ⚠ {original_name}: 无效细粒度类型，使用粗粒度类型")
+                        # Invalid fine type, mark for retry
+                        logger.warning(f"    ⚠️ {original_name}: 无效细粒度类型 ({fine_type})，标记为需要重试")
+                        original_entity = next((e for e in entities if e["name"].lower() == original_name.lower()), None)
+                        if original_entity:
+                            entities_need_retry.append(original_entity)
             
             # Handle entities not in response
             extracted_names_lower = {e["name"].lower() for e in result_entities}
             for entity in entities:
                 if entity["name"].lower() not in extracted_names_lower:
+                    # Check if already marked for retry
+                    if entity not in entities_need_retry:
+                        logger.warning(f"    ⚠️ {entity['name']}: 未提取到，标记为需要重试")
+                        entities_need_retry.append(entity)
+            
+            # Retry entities with same coarse/fine type using individual extraction
+            if entities_need_retry:
+                logger.info(f"    🔄 使用单独抽取模式重试 {len(entities_need_retry)} 个实体...")
+                for entity in entities_need_retry:
+                    fine_type = await self._extract_fine_type_for_entity(
+                        sentence, entity["name"], coarse_type, fine_types, max_retries=2
+                    )
+                    
+                    # Verify fine type if it's same as coarse type
+                    if fine_type and fine_type.lower() == coarse_type.lower():
+                        logger.warning(f"    ⚠️ 重试后仍然粗细类型相同，进行验证: {entity['name']}")
+                        verified_fine_type = await self._verify_fine_type(
+                            entity["name"], coarse_type, fine_type, sentence, fine_types
+                        )
+                        fine_type = verified_fine_type
+                    
                     result_entities.append({
                         "name": entity["name"],
                         "coarse_type": coarse_type,
-                        "fine_type": coarse_type
+                        "fine_type": fine_type if fine_type else coarse_type
                     })
-                    logger.warning(f"    ⚠ {entity['name']}: 未提取到，使用粗粒度类型")
+                    logger.info(f"    ✓ (重试) {entity['name']}: {coarse_type} -> {fine_type if fine_type else coarse_type}")
             
             return result_entities
             
@@ -933,6 +1224,14 @@ class HierarchicalEntityExtractor:
             fine_type = await self._extract_fine_type_for_entity(
                 sentence, entity_name, coarse_type, fine_types
             )
+            
+            # Verify fine type if it's same as coarse type
+            if fine_type and fine_type.lower() == coarse_type.lower():
+                logger.warning(f"    ⚠️ 粗细类型相同，进行验证: {entity_name}")
+                verified_fine_type = await self._verify_fine_type(
+                    entity_name, coarse_type, fine_type, sentence, fine_types
+                )
+                fine_type = verified_fine_type
             
             result_entities.append({
                 "name": entity_name,
@@ -1081,6 +1380,14 @@ class HierarchicalEntityExtractor:
                     fine_type = await self._extract_fine_type_for_entity(
                         sentence, entity_name, coarse_type, fine_types
                     )
+                    
+                    # Verify fine type if it's same as coarse type
+                    if fine_type and fine_type.lower() == coarse_type.lower():
+                        logger.warning(f"    ⚠️ 补充实体粗细类型相同，进行验证: {entity_name}")
+                        verified_fine_type = await self._verify_fine_type(
+                            entity_name, coarse_type, fine_type, sentence, fine_types
+                        )
+                        fine_type = verified_fine_type
                     
                     result_entities.append({
                         "name": entity_name,
@@ -1590,4 +1897,4 @@ async def process_full_dataset():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(process_full_dataset())

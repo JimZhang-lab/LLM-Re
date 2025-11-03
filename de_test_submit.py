@@ -463,7 +463,7 @@ async def main():
     await process_dataset_file(
         input_file=INPUT_FILE,
         output_file=OUTPUT_FILE,
-        max_samples=3,  # 测试：只处理前3个样本
+        max_samples=10,  # 测试：只处理前3个样本
         max_concurrent=MAX_CONCURRENT_TASKS
     )
 

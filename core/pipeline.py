@@ -140,6 +140,7 @@ async def extract_from_text(
         # relationship_types=", ".join(relationship_types),
         examples=examples,
         language=language,
+        sentence=text,  # Add alias for backward compatibility with hierarchical_prompts
     )
     
     # Generate chunk key
