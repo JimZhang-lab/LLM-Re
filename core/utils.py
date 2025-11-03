@@ -200,30 +200,6 @@ def remove_think_tags(text: str) -> str:
         flags=re.DOTALL | re.IGNORECASE
     )
     
-    # Remove any remaining unclosed <think> tags and content after them until end or </think>
-    text = re.sub(
-        r"<think>.*?(?=</think>|$)",
-        "",
-        text,
-        flags=re.DOTALL | re.IGNORECASE
-    )
-    
-    # Remove standalone closing </think> tags
-    text = re.sub(
-        r"</think>",
-        "",
-        text,
-        flags=re.IGNORECASE
-    )
-    
-    # Remove standalone opening <think> tags
-    text = re.sub(
-        r"<think>",
-        "",
-        text,
-        flags=re.IGNORECASE
-    )
-    
     if len(text.split("</think>")) > 1:
         text = text.split("</think>")[1].strip()
     else:
