@@ -1,0 +1,80 @@
+[
+{
+    "id": "c9946072-c4c5-5eb4-9eed-a1aa0373efe1",
+    "sentence": "Troponymy is one of the possible relations between verbs in the semantic network of the WordNet database.",
+    "entities": [
+      {
+        "name": "WordNet",
+        "coarse_type": "science",
+        "fine_type": "standard"
+      }
+    ]
+  },
+  {
+    "id": "de266279-19d0-5b05-a5ab-9d7c931b92f3",
+    "sentence": "NIST also differs from Bilingual evaluation understudy in its calculation of the brevity penalty insofar as small variations in translation length do not impact the overall score as much.",
+    "entities": [
+      {
+        "name": "NIST",
+        "coarse_type": "organisation",
+        "fine_type": "government"
+      },
+      {
+        "name": "NIST",
+        "coarse_type": "politics",
+        "fine_type": "government"
+      }
+    ]
+  },
+{
+    "id": "f9a2b1f1-77bd-5149-a22f-06f198c454cc",
+    "sentence": "这部电影获得了奥斯卡奖提名，包括最佳影片奖（制片人劳伦斯·图尔曼）、最佳男演员奖（达斯汀·霍夫曼）、最佳女演员奖（安妮·班克罗夫特）、最佳女配角奖（凯瑟琳·罗斯）、最佳改编剧本奖（巴克·亨利和卡尔德·威灵汉姆）以及最佳摄影奖（罗伯特·L·瑟蒂斯）。",
+    "entities": [
+      {
+        "name": "劳伦斯·图尔曼",
+        "coarse_type": "人",
+        "fine_type": "制片人"
+      },
+      {
+        "name": "达斯汀·霍夫曼",
+        "coarse_type": "人",
+        "fine_type": "演员"
+      },
+      {
+        "name": "安妮·班克罗夫特",
+        "coarse_type": "人",
+        "fine_type": "演员"
+      },
+      {
+        "name": "凯瑟琳·罗斯",
+        "coarse_type": "人",
+        "fine_type": "演员"
+      },
+      {
+        "name": "巴克·亨利",
+        "coarse_type": "人",
+        "fine_type": "作家"
+      },
+      {
+        "name": "巴克·亨利",
+        "coarse_type": "文学",
+        "fine_type": "作家"
+      },
+      {
+        "name": "卡尔德·威灵汉姆",
+        "coarse_type": "人",
+        "fine_type": "作家"
+      },
+      {
+        "name": "卡尔德·威灵汉姆",
+        "coarse_type": "文学",
+        "fine_type": "作家"
+      },
+      {
+        "name": "罗伯特·L·瑟蒂斯",
+        "coarse_type": "人",
+        "fine_type": "摄影师"
+      }
+    ]
+  }
+]
