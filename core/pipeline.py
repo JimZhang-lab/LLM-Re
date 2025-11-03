@@ -61,6 +61,13 @@ async def extract_from_text(
     use_hierarchical_types: bool = False,
     type_mode: str = "fine",
     max_types_for_prompt: int = None,
+    # Custom prompt parameters
+    custom_system_prompt: str = None,
+    custom_user_prompt: str = None,
+    custom_continue_prompt: str = None,
+    custom_examples: List[str] = None,  # Custom examples for different stages
+    # History support for multi-turn conversations
+    initial_history_messages: Optional[List[Dict]] = None,
 ) -> tuple[dict, dict]:
     """
     Extract entities and relationships from text.
@@ -105,7 +112,11 @@ async def extract_from_text(
         completion_delimiter = PROMPTS["DEFAULT_COMPLETION_DELIMITER"]
     
     # Prepare prompts
-    examples = "\n".join(PROMPTS.get("entity_extraction_examples", []))
+    # Use custom examples if provided, otherwise use defaults
+    if custom_examples:
+        examples = "\n".join(custom_examples)
+    else:
+        examples = "\n".join(PROMPTS.get("entity_extraction_examples", []))
     
     example_context_base = dict(
         tuple_delimiter=tuple_delimiter,
@@ -114,9 +125,13 @@ async def extract_from_text(
         language=language,
     )
     
-    # Format examples
-    if examples:
-        examples = examples.format(**example_context_base)
+    # Format examples (if they contain placeholders)
+    if examples and "{" in examples:
+        try:
+            examples = examples.format(**example_context_base)
+        except KeyError:
+            # If formatting fails, use examples as-is
+            pass
     
     context_base = dict(
         tuple_delimiter=tuple_delimiter,
@@ -131,26 +146,72 @@ async def extract_from_text(
     chunk_key = compute_mdhash_id(text, prefix="chunk-")
     timestamp = int(time.time())
     
-    # Prepare prompts
-    entity_extraction_system_prompt = PROMPTS["entity_extraction_system_prompt"].format(
-        **{**context_base, "input_text": text}
-    )
-    entity_extraction_user_prompt = PROMPTS["entity_extraction_user_prompt"].format(
-        **{**context_base, "input_text": text}
-    )
-    entity_continue_extraction_user_prompt = PROMPTS.get(
-        "entity_continue_extraction_user_prompt", ""
-    ).format(**{**context_base, "input_text": text})
+    # Prepare prompts - use custom prompts if provided, otherwise use defaults
+    if custom_system_prompt:
+        try:
+            entity_extraction_system_prompt = custom_system_prompt.format(
+                **{**context_base, "input_text": text}
+            )
+        except KeyError as e:
+            logger.warning(f"Custom system prompt requires missing parameter: {e}. Using default prompt.")
+            entity_extraction_system_prompt = PROMPTS["entity_extraction_system_prompt"].format(
+                **{**context_base, "input_text": text}
+            )
+    else:
+        entity_extraction_system_prompt = PROMPTS["entity_extraction_system_prompt"].format(
+            **{**context_base, "input_text": text}
+        )
+    
+    if custom_user_prompt:
+        try:
+            entity_extraction_user_prompt = custom_user_prompt.format(
+                **{**context_base, "input_text": text}
+            )
+        except KeyError as e:
+            logger.warning(f"Custom user prompt requires missing parameter: {e}. Using default prompt.")
+            entity_extraction_user_prompt = PROMPTS["entity_extraction_user_prompt"].format(
+                **{**context_base, "input_text": text}
+            )
+    else:
+        entity_extraction_user_prompt = PROMPTS["entity_extraction_user_prompt"].format(
+            **{**context_base, "input_text": text}
+        )
+    
+    if custom_continue_prompt:
+        try:
+            # Try to format with available context
+            entity_continue_extraction_user_prompt = custom_continue_prompt.format(
+                **{**context_base, "input_text": text}
+            )
+        except KeyError as e:
+            # If custom template requires parameters we don't have, use default instead
+            logger.warning(f"Custom continue prompt requires missing parameter: {e}. Using default prompt.")
+            entity_continue_extraction_user_prompt = PROMPTS.get(
+                "entity_continue_extraction_user_prompt", ""
+            ).format(**{**context_base, "input_text": text})
+    else:
+        entity_continue_extraction_user_prompt = PROMPTS.get(
+            "entity_continue_extraction_user_prompt", ""
+        ).format(**{**context_base, "input_text": text})
     
     # Call LLM for initial extraction
     logger.info(f"Extracting from text (chunk: {chunk_key[:12]}...)")
     
     try:
-        # First extraction
-        final_result = await llm_func(
-            entity_extraction_user_prompt,
-            system_prompt=entity_extraction_system_prompt,
-        )
+        # First extraction - use initial history if provided
+        if initial_history_messages:
+            # If initial history is provided, use it directly
+            final_result = await llm_func(
+                entity_extraction_user_prompt,
+                system_prompt=entity_extraction_system_prompt,
+                history_messages=initial_history_messages,
+            )
+        else:
+            # Normal first extraction
+            final_result = await llm_func(
+                entity_extraction_user_prompt,
+                system_prompt=entity_extraction_system_prompt,
+            )
         
         # Remove think tags from LLM response
         final_result = remove_think_tags(final_result)
@@ -168,9 +229,32 @@ async def extract_from_text(
         
         # Gleaning passes
         if max_gleaning > 0 and entity_continue_extraction_user_prompt:
-            history = pack_user_ass_to_openai_messages(
-                entity_extraction_user_prompt, final_result
-            )
+            # Build history - if initial_history was provided, extend it
+            if initial_history_messages:
+                history = list(initial_history_messages)
+                # Add current round to history
+                history.extend(pack_user_ass_to_openai_messages(
+                    entity_extraction_user_prompt, final_result
+                ))
+            else:
+                history = pack_user_ass_to_openai_messages(
+                    entity_extraction_user_prompt, final_result
+                )
+            
+            # Track progress to detect infinite loops
+            # Use (name, type) signatures to properly track entities with different types
+            def get_entity_signatures(nodes_dict):
+                """Get set of (name, type) signatures for all entities"""
+                signatures = set()
+                for name, entity_list in nodes_dict.items():
+                    for entity in entity_list:
+                        entity_type = entity.get("entity_type", "unknown")
+                        signatures.add((name.lower(), entity_type.lower()))
+                return signatures
+            
+            previous_round_entities = get_entity_signatures(maybe_nodes)
+            no_new_entity_rounds = 0
+            max_no_progress_rounds = 2
             
             for glean_pass in range(max_gleaning):
                 logger.info(f"Gleaning pass {glean_pass + 1}/{max_gleaning}")
@@ -184,6 +268,12 @@ async def extract_from_text(
                 # Remove think tags from gleaning response
                 glean_result = remove_think_tags(glean_result)
                 
+                # Check if response indicates no more entities
+                glean_result_upper = glean_result.upper().strip()
+                if "NONE" in glean_result_upper or not glean_result.strip():
+                    logger.info(f"No more entities found in gleaning pass {glean_pass + 1}, stopping")
+                    break
+                
                 # Process gleaning result
                 glean_nodes, glean_edges = await _process_extraction_result(
                     glean_result,
@@ -195,19 +285,43 @@ async def extract_from_text(
                     use_hierarchical_types=use_hierarchical_types,
                 )
                 
-                # Merge results
+                # Track new entities found in this round
+                new_entities_this_round = 0
+                current_round_entities = set(maybe_nodes.keys())
+                
+                # Merge results - consider entity types to allow same name with different types
                 for entity_name, glean_entities in glean_nodes.items():
                     if entity_name in maybe_nodes:
-                        # Compare and keep better version
-                        original_desc_len = len(
-                            maybe_nodes[entity_name][0].get("description", "") or ""
-                        )
-                        glean_desc_len = len(glean_entities[0].get("description", "") or "")
+                        # Check if any glean entity has a different type than existing ones
+                        existing_entities = maybe_nodes[entity_name]
+                        existing_types = {e.get("entity_type", "").lower() for e in existing_entities}
                         
-                        if glean_desc_len > original_desc_len:
-                            maybe_nodes[entity_name] = list(glean_entities)
+                        entities_to_add = []
+                        for glean_entity in glean_entities:
+                            glean_type = glean_entity.get("entity_type", "").lower()
+                            
+                            if glean_type in existing_types:
+                                # Same type exists, compare descriptions and update if better
+                                for i, existing in enumerate(existing_entities):
+                                    if existing.get("entity_type", "").lower() == glean_type:
+                                        original_desc_len = len(existing.get("description", "") or "")
+                                        glean_desc_len = len(glean_entity.get("description", "") or "")
+                                        
+                                        if glean_desc_len > original_desc_len:
+                                            existing_entities[i] = glean_entity
+                                        break
+                            else:
+                                # Different type, add as new entity variant
+                                entities_to_add.append(glean_entity)
+                                new_entities_this_round += 1
+                        
+                        # Add new type variants
+                        if entities_to_add:
+                            maybe_nodes[entity_name].extend(entities_to_add)
+                            logger.info(f"Added {len(entities_to_add)} new type variant(s) for entity '{entity_name}'")
                     else:
                         maybe_nodes[entity_name] = list(glean_entities)
+                        new_entities_this_round += len(glean_entities)
                 
                 for edge_key, glean_edge_list in glean_edges.items():
                     if edge_key in maybe_edges:
@@ -221,6 +335,24 @@ async def extract_from_text(
                             maybe_edges[edge_key] = list(glean_edge_list)
                     else:
                         maybe_edges[edge_key] = list(glean_edge_list)
+                
+                # Check for progress using entity signatures (name + type)
+                new_round_entities = get_entity_signatures(maybe_nodes)
+                
+                # Detect infinite loop: same entities (name+type combinations) returned
+                if new_round_entities == previous_round_entities:
+                    logger.warning(f"No new entities in gleaning pass {glean_pass + 1}, detected potential loop")
+                    no_new_entity_rounds += 1
+                    
+                    if no_new_entity_rounds >= max_no_progress_rounds:
+                        logger.info(f"No progress for {no_new_entity_rounds} consecutive rounds, stopping gleaning")
+                        break
+                else:
+                    no_new_entity_rounds = 0
+                    new_signatures = new_round_entities - previous_round_entities
+                    logger.info(f"Found {len(new_signatures)} new entity-type combinations in gleaning pass {glean_pass + 1}")
+                
+                previous_round_entities = new_round_entities
                 
                 # Update history for next pass
                 # Extend history with the new user prompt and assistant response

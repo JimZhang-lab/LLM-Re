@@ -118,6 +118,8 @@ from common.openai import OpenAIRE
 from core.pipeline import extract_from_text
 from core.type_manager import get_type_manager, initialize_type_manager
 from core.hierarchical_prompts import HIERARCHICAL_PROMPTS
+from core.utils import remove_think_tags
+from core.prompts import PROMPTS
 
 
 class HierarchicalEntityExtractor:
@@ -136,6 +138,21 @@ class HierarchicalEntityExtractor:
         # Verify that the mapping file was loaded correctly
         self._verify_type_mapping_loaded()
         self.language = os.environ["EXTRACT_LANGUAGE"] if "EXTRACT_LANGUAGE" in os.environ else EXTRACT_LANGUAGE
+    
+    def _get_language_code(self) -> str:
+        """
+        Convert language names to standard codes.
+        Chinese/chinese -> zh
+        English/english -> en
+        """
+        lang_lower = self.language.lower()
+        if lang_lower in ["chinese", "zh", "中文"]:
+            return "zh"
+        elif lang_lower in ["english", "en"]:
+            return "en"
+        else:
+            # Default to zh for unknown languages
+            return "zh"
         
     def _verify_type_mapping_loaded(self):
         """Verify that the coarse_fine_type_dict.json file was loaded correctly."""
@@ -384,9 +401,9 @@ class HierarchicalEntityExtractor:
         Merge results from forward and reverse extraction.
         
         Strategy:
-        1. If entity appears in both, prefer the one with more specific fine type
-        2. If entity only appears in one, include it
-        3. Deduplicate by entity name (case-insensitive)
+        1. Same entity with different coarse types => keep both (e.g., "Apple" as company and fruit)
+        2. Same entity with same coarse type => prefer more specific fine type
+        3. Use (name, coarse_type) as unique key to allow same entity with different types
         
         Args:
             forward_entities: Results from forward extraction
@@ -396,25 +413,29 @@ class HierarchicalEntityExtractor:
         Returns:
             Merged list of entities
         """
-        logger.info(f"  🔀 合并策略：优先选择更具体的细粒度类型")
+        logger.info(f"  🔀 合并策略：基于(名称,粗粒度类型)去重，允许同名实体有不同分类")
         logger.info(f"  📊 正向结果: {len(forward_entities)} 个实体")
         logger.info(f"  📊 反向结果: {len(reverse_entities)} 个实体")
         
-        # Build a dictionary keyed by lowercase entity name
+        # Build a dictionary keyed by (name_lower, coarse_type_lower) to allow different types
         entity_dict = {}
         
         # Add forward entities
         for entity in forward_entities:
             name_lower = entity['name'].lower()
-            entity_dict[name_lower] = entity.copy()
+            coarse_type_lower = entity['coarse_type'].lower()
+            key = (name_lower, coarse_type_lower)
+            entity_dict[key] = entity.copy()
         
         # Process reverse entities
         for entity in reverse_entities:
             name_lower = entity['name'].lower()
+            coarse_type_lower = entity['coarse_type'].lower()
+            key = (name_lower, coarse_type_lower)
             
-            if name_lower in entity_dict:
-                # Entity exists in both - compare and choose better one
-                existing = entity_dict[name_lower]
+            if key in entity_dict:
+                # Same entity with same coarse type - compare and choose better one
+                existing = entity_dict[key]
                 
                 # Prefer entity where coarse and fine types are different
                 existing_same = existing['coarse_type'].lower() == existing['fine_type'].lower()
@@ -422,20 +443,20 @@ class HierarchicalEntityExtractor:
                 
                 if existing_same and not new_same:
                     # New entity has different types, prefer it
-                    logger.info(f"  🔄 替换 '{entity['name']}': {existing['source']}结果粗细类型相同，使用{entity['source']}结果")
-                    entity_dict[name_lower] = entity.copy()
-                    entity_dict[name_lower]['source'] = '反向(替换)'
+                    logger.info(f"  🔄 替换 '{entity['name']}' ({entity['coarse_type']}): {existing['source']}结果粗细类型相同，使用{entity['source']}结果")
+                    entity_dict[key] = entity.copy()
+                    entity_dict[key]['source'] = '反向(替换)'
                 elif not existing_same and new_same:
                     # Existing entity is better, keep it
-                    logger.info(f"  ✓ 保留 '{entity['name']}': {existing['source']}结果更具体")
+                    logger.info(f"  ✓ 保留 '{entity['name']}' ({entity['coarse_type']}): {existing['source']}结果更具体")
                 else:
                     # Both are similar, mark as from both sources
-                    logger.info(f"  ≈ 重复 '{entity['name']}': 两种方法结果相似，保留{existing['source']}结果")
-                    entity_dict[name_lower]['source'] = '正向+反向'
+                    logger.info(f"  ≈ 重复 '{entity['name']}' ({entity['coarse_type']}): 两种方法结果相似，保留{existing['source']}结果")
+                    entity_dict[key]['source'] = '正向+反向'
             else:
-                # New entity only in reverse
-                logger.info(f"  ➕ 新增 '{entity['name']}': 仅在反向抽取中发现")
-                entity_dict[name_lower] = entity.copy()
+                # New entity (different coarse type or completely new name)
+                logger.info(f"  ➕ 新增 '{entity['name']}' ({entity['coarse_type']}): 仅在反向抽取中发现")
+                entity_dict[key] = entity.copy()
         
         # Convert back to list
         merged_entities = list(entity_dict.values())
@@ -446,11 +467,24 @@ class HierarchicalEntityExtractor:
         logger.info(f"     - 反向替换: {sum(1 for e in merged_entities if e['source'] == '反向(替换)')}")
         logger.info(f"     - 两者都有: {sum(1 for e in merged_entities if e['source'] == '正向+反向')}")
         
+        # Check for entities with same name but different types
+        name_counts = defaultdict(list)
+        for entity in merged_entities:
+            name_counts[entity['name'].lower()].append(entity['coarse_type'])
+        
+        multi_type_entities = {name: types for name, types in name_counts.items() if len(set(types)) > 1}
+        if multi_type_entities:
+            logger.info(f"  🔍 检测到 {len(multi_type_entities)} 个实体有多种分类:")
+            for name, types in list(multi_type_entities.items())[:5]:  # Show first 5
+                unique_types = list(set(types))
+                logger.info(f"     - {name}: {', '.join(unique_types)}")
+        
         return merged_entities
     
     async def _extract_coarse_entities(self, sentence: str, coarse_types: List[str], max_gleaning: int = 1) -> List[Dict]:
         """
         Stage 1: Extract entities and classify them into coarse types with gleaning.
+        Uses unified extract_from_text with custom coarse-specific prompts.
         
         Args:
             sentence: The text to extract entities from
@@ -460,147 +494,213 @@ class HierarchicalEntityExtractor:
         Returns:
             List of entities with name and coarse_type
         """
-        from core.prompts import PROMPTS
-        
-        # Get delimiters from prompts
-        tuple_delimiter = PROMPTS["DEFAULT_TUPLE_DELIMITER"]
-        completion_delimiter = PROMPTS["DEFAULT_COMPLETION_DELIMITER"]
-        
         # Add "other/其他" type for misannotated data
         coarse_types_with_other = coarse_types + ["other", "其他"]
         
-        # Build coarse extraction prompt
-        coarse_types_str = ", ".join(coarse_types_with_other)
+        # Use extract_from_text with coarse extraction prompts
+        # Get coarse extraction examples based on language
+        lang_code = self._get_language_code()
+        coarse_examples_key = f"coarse_extraction_examples_{lang_code}"
+        coarse_examples = HIERARCHICAL_PROMPTS.get(coarse_examples_key, [])
         
-        # Select examples based on language environment variable
-        if self.language.lower() == "chinese":
-            examples = HIERARCHICAL_PROMPTS.get("coarse_extraction_examples_zh", 
-                                               HIERARCHICAL_PROMPTS["coarse_extraction_examples_en"])
-        else:
-            examples = HIERARCHICAL_PROMPTS["coarse_extraction_examples_en"]
-        examples_str = "\n".join(examples)
-        
-        # Initial extraction
-        system_prompt = HIERARCHICAL_PROMPTS["coarse_extraction_system_prompt"].format(
-            entity_types=coarse_types_str,
-            tuple_delimiter=tuple_delimiter,
-            completion_delimiter=completion_delimiter,
+        # Initial extraction without gleaning
+        entities_dict, _ = await extract_from_text(
+            text=sentence,
+            llm_func=self.llm_func,
+            entity_types=coarse_types_with_other,
             language=self.language,
-            examples=examples_str,
-            input_text=sentence
+            max_gleaning=0,  # No gleaning in extract_from_text, we'll do it manually with custom prompt
+            file_path="coarse_extraction",
+            custom_system_prompt=HIERARCHICAL_PROMPTS["coarse_extraction_system_prompt"],
+            custom_user_prompt=HIERARCHICAL_PROMPTS.get("entity_extraction_user_prompt", PROMPTS["entity_extraction_user_prompt"]),
+            custom_examples=coarse_examples
         )
         
-        # Call LLM
-        response = await self.llm_func(system_prompt)
-        
-        # Parse response
-        entities = self._parse_coarse_entities_response(response, coarse_types_with_other, tuple_delimiter, completion_delimiter)
-        
-        # Gleaning: Continue extraction for missed entities
-        for gleaning_round in range(max_gleaning):
-            if not entities:
-                break
-                
-            logger.info(f"    🔄 继续抽取（第 {gleaning_round + 1}/{max_gleaning} 轮）检查遗漏实体...")
-            
-            # Build continue extraction prompt
-            extracted_names = [e["name"] for e in entities]
-            continue_prompt = self._build_coarse_continue_prompt(
-                sentence, 
-                coarse_types_str, 
-                extracted_names,
-                tuple_delimiter,
-                completion_delimiter
-            )
-            
-            # Call LLM for continue extraction
-            continue_response = await self.llm_func(continue_prompt)
-            
-            # Parse continue response
-            new_entities = self._parse_coarse_entities_response(
-                continue_response, 
-                coarse_types_with_other, 
-                tuple_delimiter, 
-                completion_delimiter
-            )
-            
-            # Add new entities (avoid duplicates)
-            existing_names_lower = {e["name"].lower() for e in entities}
-            added_count = 0
-            for entity in new_entities:
-                if entity["name"].lower() not in existing_names_lower:
-                    entities.append(entity)
-                    existing_names_lower.add(entity["name"].lower())
-                    added_count += 1
-            
-            if added_count > 0:
-                logger.info(f"    ✅ 发现 {added_count} 个遗漏实体")
-            else:
-                logger.info(f"    ✓ 未发现遗漏实体，停止继续抽取")
-                break
-        
-        return entities
-    
-    def _parse_coarse_entities_response(
-        self, 
-        response: str, 
-        coarse_types: List[str], 
-        tuple_delimiter: str, 
-        completion_delimiter: str
-    ) -> List[Dict]:
-        """Parse coarse entities from LLM response."""
+        # Convert to the expected format
         entities = []
-        lines = response.strip().split('\n')
-        
-        for line in lines:
-            line = line.strip()
-            if not line or line == completion_delimiter:
-                continue
-            
-            # Parse: entity<|>name<|>type<|>description
-            if tuple_delimiter in line:
-                parts = line.split(tuple_delimiter)
-                if len(parts) >= 3 and parts[0].strip().lower() == "entity":
-                    entity_name = parts[1].strip()
-                    entity_type = parts[2].strip()
-                    
-                    # Validate coarse type
-                    if entity_type.lower() in [ct.lower() for ct in coarse_types]:
+        for entity_name, entity_list in entities_dict.items():
+            if entity_list:
+                entity_data = entity_list[0]
+                coarse_type = entity_data.get("entity_type", "")
+                
+                # Validate entity name - skip if contains JSON patterns
+                if '{' in entity_name or '}' in entity_name or '"name":' in entity_name:
+                    logger.warning(f"  ⚠️  跳过包含JSON字符的实体: {entity_name[:100]}...")
+                    continue
+                
+                # Skip if entity name is empty or too long
+                if not entity_name or len(entity_name) > 200:
+                    logger.warning(f"  ⚠️  跳过无效实体名称: {entity_name[:100] if entity_name else '(空)'}")
+                    continue
+                
+                # Validate coarse type
+                if coarse_type.lower() in [ct.lower() for ct in coarse_types_with_other]:
+                    entities.append({
+                        "name": entity_name,
+                        "coarse_type": coarse_type
+                    })
+                else:
+                    # Try to map to one of the coarse types
+                    mapped_type = self._map_to_coarse_type(coarse_type, coarse_types_with_other, {})
+                    if mapped_type:
                         entities.append({
                             "name": entity_name,
-                            "coarse_type": entity_type
+                            "coarse_type": mapped_type
                         })
+        
+        logger.info(f"    ✅ 初始粗粒度抽取：提取到 {len(entities)} 个实体")
+        
+        # Gleaning: Use coarse_continue_extraction_prompt
+        if max_gleaning > 0 and len(entities) > 0:
+            from core.extractor import _process_extraction_result
+            import time
+            
+            tuple_delimiter = PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>")
+            completion_delimiter = PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>")
+            
+            gleaning_history = []
+            previous_round_entities = set()
+            no_new_entity_rounds = 0
+            max_no_progress_rounds = 2
+            
+            for gleaning_round in range(max_gleaning):
+                logger.info(f"    🔄 粗粒度继续抽取（第 {gleaning_round + 1}/{max_gleaning} 轮）...")
+                
+                # Build extracted entities list
+                extracted_names = [e["name"] for e in entities]
+                extracted_list = "\n".join([f"- {name} ({e['coarse_type']})" for name, e in zip(extracted_names, entities)])
+                
+                # Use coarse_continue_extraction_prompt template
+                coarse_types_str = ", ".join(coarse_types_with_other)
+                system_prompt = HIERARCHICAL_PROMPTS.get(
+                    "entity_extraction_system_prompt",
+                    PROMPTS["entity_extraction_system_prompt"]
+                )
+                
+                user_prompt = HIERARCHICAL_PROMPTS.get(
+                    "coarse_continue_extraction_prompt",
+                    PROMPTS["entity_continue_extraction_user_prompt"]
+                )
+                
+                # Format the prompt with required parameters
+                try:
+                    user_prompt = user_prompt.format(
+                        extracted_entities_list=extracted_list,
+                        sentence=sentence,
+                        coarse_types=coarse_types_str,
+                        tuple_delimiter=tuple_delimiter,
+                        completion_delimiter=completion_delimiter
+                    )
+                except KeyError as e:
+                    logger.warning(f"      ⚠️  格式化提示词失败，缺少参数: {e}")
+                    # Use a simple fallback format
+                    user_prompt = f"""已抽取的实体：
+{extracted_list}
+
+请检查是否有遗漏的实体。如果没有遗漏，请输出 "{completion_delimiter}"。
+ ** 重要：不要重复输出已经抽取的实体！** 
+
+文本：
+{sentence}
+
+可用的粗粒度类型：{coarse_types_str}
+
+输出格式：entity{tuple_delimiter}name{tuple_delimiter}coarse_type{tuple_delimiter}description
+"""
+                
+                # Call LLM with history
+                try:
+                    if gleaning_history:
+                        response = await self.llm_func(
+                            user_prompt,
+                            system_prompt=system_prompt,
+                            history_messages=gleaning_history
+                        )
                     else:
-                        # Try to map to one of the coarse types
-                        mapped_type = self._map_to_coarse_type(entity_type, coarse_types, {})
-                        if mapped_type:
-                            entities.append({
+                        response = await self.llm_func(
+                            user_prompt,
+                            system_prompt=system_prompt
+                        )
+                    
+                    # Remove think tags
+                    response = remove_think_tags(response)
+                    
+                    # Check if response indicates no more entities
+                    if completion_delimiter in response and len(response.strip()) < 50:
+                        logger.info(f"      ✓ 大模型表示没有遗漏实体，停止继续抽取")
+                        break
+                    
+                    # Update history
+                    from core.utils import pack_user_ass_to_openai_messages
+                    gleaning_history.extend(pack_user_ass_to_openai_messages(user_prompt, response))
+                    
+                    # Parse response
+                    glean_entities_dict, _ = await _process_extraction_result(
+                        response,
+                        chunk_key="coarse_gleaning",
+                        timestamp=int(time.time()),
+                        file_path="coarse_gleaning",
+                        tuple_delimiter=tuple_delimiter,
+                        completion_delimiter=completion_delimiter,
+                        use_hierarchical_types=False
+                    )
+                    
+                    # Extract new entities
+                    new_entities = []
+                    existing_signatures = {(e["name"].lower(), e["coarse_type"].lower()) for e in entities}
+                    current_round_entities = set()
+                    
+                    for entity_name, entity_list in glean_entities_dict.items():
+                        if not entity_list:
+                            continue
+                        
+                        entity_data = entity_list[0]
+                        entity_type = entity_data.get("entity_type", "unknown")
+                        entity_signature = (entity_name.lower(), entity_type.lower())
+                        current_round_entities.add(entity_signature)
+                        
+                        if entity_signature not in existing_signatures:
+                            # Validate entity name
+                            if '{' in entity_name or '}' in entity_name or '"name":' in entity_name:
+                                logger.warning(f"        ⚠️  跳过包含JSON字符的实体: {entity_name[:100]}...")
+                                continue
+                            if len(entity_name) > 200:
+                                logger.warning(f"        ⚠️  跳过过长的实体名称: {entity_name[:100]}...")
+                                continue
+                            
+                            new_entities.append({
                                 "name": entity_name,
-                                "coarse_type": mapped_type
+                                "coarse_type": entity_type
                             })
+                        else:
+                            logger.debug(f"        ℹ️  跳过重复实体: {entity_name} ({entity_type})")
+                    
+                    # Check for infinite loop
+                    if current_round_entities and current_round_entities == previous_round_entities:
+                        logger.warning(f"      ⚠️  检测到连续重复的抽取结果，停止继续抽取")
+                        break
+                    
+                    previous_round_entities = current_round_entities
+                    
+                    if not new_entities:
+                        no_new_entity_rounds += 1
+                        logger.info(f"      ✓ 未发现新实体（连续 {no_new_entity_rounds} 轮）")
+                        
+                        if no_new_entity_rounds >= max_no_progress_rounds:
+                            logger.info(f"      ✓ 连续 {no_new_entity_rounds} 轮未发现新实体，停止继续抽取")
+                            break
+                        continue
+                    else:
+                        no_new_entity_rounds = 0
+                        entities.extend(new_entities)
+                        logger.info(f"      ✅ 发现 {len(new_entities)} 个遗漏的实体")
+                
+                except Exception as e:
+                    logger.error(f"      ❌ Gleaning 失败: {e}")
+                    break
         
+        logger.info(f"    ✅ 粗粒度抽取完成（含gleaning）：提取到 {len(entities)} 个实体")
         return entities
-    
-    def _build_coarse_continue_prompt(
-        self, 
-        sentence: str, 
-        coarse_types_str: str, 
-        extracted_names: List[str],
-        tuple_delimiter: str,
-        completion_delimiter: str
-    ) -> str:
-        """Build continue extraction prompt for coarse entities."""
-        extracted_list = "\n".join([f"- {name}" for name in extracted_names])
-        
-        # Use standardized prompt from HIERARCHICAL_PROMPTS
-        prompt = HIERARCHICAL_PROMPTS["coarse_continue_extraction_prompt"].format(
-            extracted_entities_list=extracted_list,
-            sentence=sentence,
-            coarse_types=coarse_types_str,
-            tuple_delimiter=tuple_delimiter,
-            completion_delimiter=completion_delimiter
-        )
-        return prompt
     
     async def _extract_fine_types_for_entities(
         self, 
@@ -671,7 +771,7 @@ class HierarchicalEntityExtractor:
         fine_types: List[str]
     ) -> List[Dict]:
         """
-        批量提取细粒度类型（使用三元组格式，效率更高）
+        批量提取细粒度类型（使用统一的 extract_from_text）
         
         Args:
             sentence: The sentence
@@ -682,53 +782,35 @@ class HierarchicalEntityExtractor:
         Returns:
             List of entities with both coarse and fine types
         """
-        from core.prompts import PROMPTS
-        
         try:
-            # Select examples based on language
-            if self.language.lower() == "chinese":
-                examples = HIERARCHICAL_PROMPTS.get("fine_extraction_batch_examples_zh", [])
-            else:
-                examples = HIERARCHICAL_PROMPTS.get("fine_extraction_batch_examples_en", [])
-            examples_str = "\n".join(examples)
+            logger.debug(f"  🔧 使用统一抽取函数进行批量细粒度抽取，处理 {len(entities)} 个实体")
             
-            # Get delimiters
-            tuple_delimiter = PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>")
-            completion_delimiter = PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>")
-            
-            # Build entities list
+            # Build entities list for prompt context
             entities_list = ", ".join([e["name"] for e in entities])
-            fine_types_str = ", ".join(fine_types)
             
-            # Build batch extraction prompt
-            system_prompt = HIERARCHICAL_PROMPTS["fine_extraction_batch_system_prompt"].format(
-                sentence=sentence,
-                coarse_type=coarse_type,
-                entities_list=entities_list,
-                fine_types=fine_types_str,
-                tuple_delimiter=tuple_delimiter,
-                completion_delimiter=completion_delimiter,
-                language=self.language,
-                examples=examples_str
+            # Create custom prompt that includes entity list
+            fine_batch_system_prompt = HIERARCHICAL_PROMPTS.get(
+                "fine_extraction_batch_system_prompt",
+                PROMPTS["entity_extraction_system_prompt"]
             )
             
-            logger.debug(f"  🔧 使用批量细粒度抽取，处理 {len(entities)} 个实体")
+            # Use extract_from_text with fine batch extraction prompts
+            # Get fine batch extraction examples based on language
+            lang_code = self._get_language_code()
+            fine_batch_examples_key = f"fine_extraction_batch_examples_{lang_code}"
+            fine_batch_examples = HIERARCHICAL_PROMPTS.get(fine_batch_examples_key, [])
             
-            # Call LLM
-            response = await self.llm_func(system_prompt)
-            
-            # Parse response using the standard parser
-            from core.extractor import _process_extraction_result
-            import time
-            
-            entities_dict, _ = await _process_extraction_result(
-                response,
-                chunk_key="fine_batch_extraction",
-                timestamp=int(time.time()),
-                file_path="fine_batch",
-                tuple_delimiter=tuple_delimiter,
-                completion_delimiter=completion_delimiter,
-                use_hierarchical_types=False
+            entities_dict, _ = await extract_from_text(
+                text=sentence,
+                llm_func=self.llm_func,
+                entity_types=fine_types,
+                language=self.language,
+                max_gleaning=0,  # No gleaning for batch mode
+                file_path="fine_batch_extraction",
+                use_hierarchical_types=False,
+                custom_system_prompt=fine_batch_system_prompt,
+                custom_user_prompt=HIERARCHICAL_PROMPTS.get("entity_extraction_user_prompt", PROMPTS["entity_extraction_user_prompt"]),
+                custom_examples=fine_batch_examples
             )
             
             # Map extracted entities back to original entities
@@ -778,6 +860,8 @@ class HierarchicalEntityExtractor:
             
         except Exception as e:
             logger.error(f"  ❌ 批量细粒度抽取失败: {e}")
+            import traceback
+            traceback.print_exc()
             # Fallback to individual extraction
             logger.info(f"  🔄 回退到逐个抽取方式...")
             return await self._extract_fine_types_with_gleaning_individual(
@@ -858,92 +942,159 @@ class HierarchicalEntityExtractor:
             
             logger.info(f"    ✓ {entity_name}: {coarse_type} -> {fine_type if fine_type else coarse_type}")
         
-        # Gleaning: Check for missed entities of this coarse type
+        # Gleaning: Check for missed entities of this coarse type using unified extract_from_text
+        # Keep track of conversation history across gleaning rounds
+        gleaning_history = []
+        # Track entities found in each round to detect infinite loops
+        previous_round_entities = set()
+        no_new_entity_rounds = 0  # Count consecutive rounds with no new entities
+        max_no_progress_rounds = 2  # Maximum consecutive rounds without progress
+        
         for gleaning_round in range(max_gleaning):
             logger.info(f"    🔄 继续抽取（第 {gleaning_round + 1}/{max_gleaning} 轮）检查遗漏的 {coarse_type} 类型实体...")
             
             # Build continue extraction prompt for this coarse type
             extracted_names = [e["name"] for e in result_entities]
-            continue_prompt = self._build_fine_continue_prompt(
-                sentence,
-                coarse_type,
-                fine_types,
-                extracted_names
-            )
+            extracted_list = "\n".join([f"- {name}" for name in extracted_names])
             
-            # Call LLM for continue extraction
-            continue_response = await self.llm_func(continue_prompt)
-            
-            # Parse new entities
-            new_entity_names = self._parse_fine_continue_response(continue_response, extracted_names)
-            
-            if not new_entity_names:
-                logger.info(f"    ✓ 未发现遗漏的 {coarse_type} 实体，停止继续抽取")
-                break
-            
-            logger.info(f"    ✅ 发现 {len(new_entity_names)} 个遗漏的 {coarse_type} 实体")
-            
-            # Extract fine types for new entities
-            for entity_name in new_entity_names:
-                fine_type = await self._extract_fine_type_for_entity(
-                    sentence, entity_name, coarse_type, fine_types
+            # Use extract_from_text with continue extraction prompt
+            try:
+                # Use the standard entity extraction system prompt
+                continue_system_prompt = HIERARCHICAL_PROMPTS.get(
+                    "entity_extraction_system_prompt",
+                    PROMPTS["entity_extraction_system_prompt"]
                 )
                 
-                result_entities.append({
-                    "name": entity_name,
-                    "coarse_type": coarse_type,
-                    "fine_type": fine_type if fine_type else coarse_type
-                })
+                # Build the user prompt using fine_continue_extraction_prompt template
+                fine_types_str = ", ".join(fine_types)
+                user_prompt = HIERARCHICAL_PROMPTS.get(
+                    "fine_continue_extraction_prompt",
+                    PROMPTS["entity_continue_extraction_user_prompt"]
+                ).format(
+                    coarse_type=coarse_type,
+                    extracted_entities_list=extracted_list,
+                    sentence=sentence,
+                    fine_types=fine_types_str
+                )
                 
-                logger.info(f"    ✓ (补充) {entity_name}: {coarse_type} -> {fine_type if fine_type else coarse_type}")
+                # Call LLM directly with history to maintain context
+                if gleaning_history:
+                    # Use history from previous rounds
+                    response = await self.llm_func(
+                        user_prompt,
+                        system_prompt=continue_system_prompt,
+                        history_messages=gleaning_history
+                    )
+                else:
+                    # First gleaning round
+                    response = await self.llm_func(
+                        user_prompt,
+                        system_prompt=continue_system_prompt
+                    )
+                
+                # Remove think tags from response
+                response = remove_think_tags(response)
+                
+                # Check if response indicates no more entities
+                response_upper = response.upper().strip()
+                if "NONE" in response_upper or not response.strip():
+                    logger.info(f"    ✓ 大模型明确表示没有遗漏实体，停止继续抽取")
+                    break
+                
+                # Update history for next round
+                from core.utils import pack_user_ass_to_openai_messages
+                gleaning_history.extend(pack_user_ass_to_openai_messages(user_prompt, response))
+                
+                # Parse the response to extract entity names
+                from core.extractor import _process_extraction_result
+                import time
+                
+                glean_entities_dict, _ = await _process_extraction_result(
+                    response,
+                    chunk_key="fine_gleaning",
+                    timestamp=int(time.time()),
+                    file_path="fine_gleaning",
+                    tuple_delimiter=PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>"),
+                    completion_delimiter=PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>"),
+                    use_hierarchical_types=False
+                )
+                
+                # Extract new entity names from gleaning results
+                # Use (name, type) combination for deduplication to allow same entity with different types
+                new_entity_names_with_types = []
+                existing_entity_signatures = {(e["name"].lower(), e["coarse_type"].lower(), e.get("fine_type", e["coarse_type"]).lower()) 
+                                             for e in result_entities}
+                current_round_entities = set()
+                
+                for entity_name, entity_list in glean_entities_dict.items():
+                    if not entity_list:
+                        continue
+                    
+                    entity_data = entity_list[0]
+                    entity_type = entity_data.get("entity_type", coarse_type)
+                    entity_name_lower = entity_name.lower()
+                    
+                    # Create signature for this entity (name + type)
+                    entity_signature = (entity_name_lower, coarse_type.lower(), entity_type.lower())
+                    current_round_entities.add(entity_signature)
+                    
+                    # Check if this exact combination already exists
+                    if entity_signature not in existing_entity_signatures:
+                        # Validate entity name
+                        if '{' in entity_name or '}' in entity_name or '"name":' in entity_name:
+                            logger.warning(f"      ⚠️  跳过包含JSON字符的实体: {entity_name[:100]}...")
+                            continue
+                        if len(entity_name) > 200:
+                            logger.warning(f"      ⚠️  跳过过长的实体名称: {entity_name[:100]}...")
+                            continue
+                        new_entity_names_with_types.append((entity_name, entity_type))
+                    else:
+                        logger.info(f"      ℹ️  跳过重复实体: {entity_name} ({entity_type})")
+                
+                # Extract just the names for further processing
+                new_entity_names = [name for name, _ in new_entity_names_with_types]
+                
+                # Check for infinite loop: if this round returned exactly the same entities as previous round
+                if current_round_entities and current_round_entities == previous_round_entities:
+                    logger.warning(f"    ⚠️  检测到连续重复的抽取结果，停止继续抽取")
+                    break
+                
+                previous_round_entities = current_round_entities
+                
+                if not new_entity_names:
+                    no_new_entity_rounds += 1
+                    logger.info(f"    ✓ 未发现新实体（连续 {no_new_entity_rounds} 轮）")
+                    
+                    # If no new entities for multiple consecutive rounds, stop
+                    if no_new_entity_rounds >= max_no_progress_rounds:
+                        logger.info(f"    ✓ 连续 {no_new_entity_rounds} 轮未发现新实体，停止继续抽取")
+                        break
+                    continue
+                else:
+                    # Reset counter when new entities are found
+                    no_new_entity_rounds = 0
+                
+                logger.info(f"    ✅ 发现 {len(new_entity_names)} 个遗漏的 {coarse_type} 实体")
+                
+                # Extract fine types for new entities
+                for entity_name in new_entity_names:
+                    fine_type = await self._extract_fine_type_for_entity(
+                        sentence, entity_name, coarse_type, fine_types
+                    )
+                    
+                    result_entities.append({
+                        "name": entity_name,
+                        "coarse_type": coarse_type,
+                        "fine_type": fine_type if fine_type else coarse_type
+                    })
+                    
+                    logger.info(f"    ✓ (补充) {entity_name}: {coarse_type} -> {fine_type if fine_type else coarse_type}")
+            
+            except Exception as e:
+                logger.error(f"    ❌ Gleaning 失败: {e}")
+                break
         
         return result_entities
-    
-    def _build_fine_continue_prompt(
-        self,
-        sentence: str,
-        coarse_type: str,
-        fine_types: List[str],
-        extracted_names: List[str]
-    ) -> str:
-        """Build continue extraction prompt for fine-grained entities."""
-        extracted_list = "\n".join([f"- {name}" for name in extracted_names])
-        fine_types_str = ", ".join(fine_types)  # No limit on types
-        
-        # Use standardized prompt from HIERARCHICAL_PROMPTS
-        prompt = HIERARCHICAL_PROMPTS["fine_continue_extraction_prompt"].format(
-            coarse_type=coarse_type,
-            extracted_entities_list=extracted_list,
-            sentence=sentence,
-            fine_types=fine_types_str
-        )
-        return prompt
-    
-    def _parse_fine_continue_response(self, response: str, existing_names: List[str]) -> List[str]:
-        """Parse continue extraction response for fine entities."""
-        response = response.strip()
-        
-        if not response or "NONE" in response.upper():
-            return []
-        
-        # Parse entity names from response
-        new_names = []
-        existing_names_lower = {name.lower() for name in existing_names}
-        
-        lines = response.split('\n')
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
-            
-            # Remove leading markers like "- ", "* ", numbers, etc.
-            entity_name = line.lstrip('-*•123456789. ').strip()
-            
-            if entity_name and entity_name.lower() not in existing_names_lower:
-                new_names.append(entity_name)
-                existing_names_lower.add(entity_name.lower())
-        
-        return new_names
     
     async def _extract_fine_type_for_entity(
         self, 
@@ -978,12 +1129,10 @@ class HierarchicalEntityExtractor:
         for attempt in range(max_retries + 1):
             try:
                 # Get examples for this coarse type based on language
-                if self.language.lower() == "chinese":
-                    examples_dict = HIERARCHICAL_PROMPTS.get("fine_extraction_examples_zh", 
-                                                            HIERARCHICAL_PROMPTS["fine_extraction_examples"])
-                else:
-                    examples_dict = HIERARCHICAL_PROMPTS.get("fine_extraction_examples_en", 
-                                                            HIERARCHICAL_PROMPTS["fine_extraction_examples"])
+                lang_code = self._get_language_code()
+                examples_key = f"fine_extraction_examples_{lang_code}"
+                examples_dict = HIERARCHICAL_PROMPTS.get(examples_key, 
+                                                        HIERARCHICAL_PROMPTS["fine_extraction_examples"])
                 
                 examples = examples_dict.get(
                     coarse_type.lower(),
@@ -1011,6 +1160,9 @@ class HierarchicalEntityExtractor:
                     response = await self.llm_func("", history_messages=history_messages)
                 else:
                     response = await self.llm_func(prompt)
+                
+                # Remove think tags from response
+                response = remove_think_tags(response)
                 
                 # Parse triplet response
                 from core.extractor import _process_extraction_result
@@ -1107,6 +1259,7 @@ entity{tuple_delimiter}{entity_name}{tuple_delimiter}[fine_type]{tuple_delimiter
     async def _extract_fine_entities_directly(self, sentence: str, fine_types: List[str], max_gleaning: int = 1) -> List[Dict]:
         """
         Extract entities directly with fine-grained types (for reverse extraction).
+        Uses unified extract_from_text with custom reverse extraction prompts.
         
         Args:
             sentence: The text to extract entities from
@@ -1117,49 +1270,27 @@ entity{tuple_delimiter}{entity_name}{tuple_delimiter}[fine_type]{tuple_delimiter
             List of entities with name and fine_type
         """
         try:
-            from core.prompts import PROMPTS
+            logger.debug(f"  🔧 使用统一抽取函数进行反向抽取，包含 {len(fine_types)} 个细粒度类型")
             
-            # Select examples based on language
-            if self.language.lower() == "chinese":
-                examples = HIERARCHICAL_PROMPTS.get("reverse_extraction_examples_zh", [])
-            else:
-                examples = HIERARCHICAL_PROMPTS.get("reverse_extraction_examples_en", [])
-            examples_str = "\n".join(examples)
+            # Use extract_from_text with reverse extraction prompts
+            # Get reverse extraction examples based on language
+            lang_code = self._get_language_code()
+            reverse_examples_key = f"reverse_extraction_examples_{lang_code}"
+            reverse_examples = HIERARCHICAL_PROMPTS.get(reverse_examples_key, [])
             
-            # Get delimiters
-            tuple_delimiter = PROMPTS.get("DEFAULT_TUPLE_DELIMITER", "<|#|>")
-            completion_delimiter = PROMPTS.get("DEFAULT_COMPLETION_DELIMITER", "<|COMPLETE|>")
-            
-            # Build reverse extraction prompt with examples
-            fine_types_str = ", ".join(fine_types)  # Use all fine types without limit
-            system_prompt = HIERARCHICAL_PROMPTS["reverse_extraction_system_prompt"].format(
-                entity_types=fine_types_str,
-                tuple_delimiter=tuple_delimiter,
-                completion_delimiter=completion_delimiter,
+            entities_dict, _ = await extract_from_text(
+                text=sentence,
+                llm_func=self.llm_func,
+                entity_types=fine_types,
                 language=self.language,
-                examples=examples_str,
-                input_text=sentence
-            )
-            
-            # Call LLM with optimized prompt
-            logger.debug(f"  🔧 使用优化的反向抽取提示词，包含 {len(fine_types)} 个细粒度类型")
-            response = await self.llm_func(
-                "",  # Empty user prompt since system prompt contains everything
-                system_prompt=system_prompt
-            )
-            
-            # Parse response
-            from core.extractor import _process_extraction_result
-            import time
-            
-            entities_dict, _ = await _process_extraction_result(
-                response,
-                chunk_key="reverse_extraction",
-                timestamp=int(time.time()),
-                file_path="reverse",
-                tuple_delimiter=tuple_delimiter,
-                completion_delimiter=completion_delimiter,
-                use_hierarchical_types=False
+                max_gleaning=max_gleaning,
+                file_path="reverse_extraction",
+                use_hierarchical_types=False,
+                custom_system_prompt=HIERARCHICAL_PROMPTS.get("reverse_extraction_system_prompt", PROMPTS["entity_extraction_system_prompt"]),
+                custom_user_prompt=HIERARCHICAL_PROMPTS.get("entity_extraction_user_prompt", PROMPTS["entity_extraction_user_prompt"]),
+                # Use generic continue prompt for reverse extraction
+                custom_continue_prompt=None,  # Will use default continue prompt
+                custom_examples=reverse_examples
             )
             
             # Convert to our format
@@ -1176,38 +1307,14 @@ entity{tuple_delimiter}{entity_name}{tuple_delimiter}[fine_type]{tuple_delimiter
                         'description': description
                     })
             
+            logger.info(f"  ✅ 反向抽取完成：提取到 {len(entities)} 个细粒度实体")
             return entities
             
         except Exception as e:
-            logger.error(f"    ❌ 反向抽取失败，回退到旧方法: {e}")
-            # Fallback to old method
-            try:
-                entities_dict, relationships_list = await extract_from_text(
-                    text=sentence,
-                    entity_types=fine_types,
-                    llm_func=self.llm_func,
-                    use_hierarchical_types=False,
-                    max_gleaning=max_gleaning,
-                    language=self.language
-                )
-                
-                entities = []
-                for entity_name, entity_list in entities_dict.items():
-                    if entity_list:
-                        entity_data = entity_list[0]
-                        entity_type = entity_data.get("entity_type", "")
-                        description = entity_data.get("description", "")
-                        
-                        entities.append({
-                            'name': entity_name,
-                            'fine_type': entity_type,
-                            'description': description
-                        })
-                
-                return entities
-            except Exception as e2:
-                logger.error(f"    ❌ 回退方法也失败: {e2}")
-                return []
+            logger.error(f"    ❌ 反向抽取失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return []
     
     def _parse_type_from_response(self, response: str, valid_types: List[str]) -> str:
         """
